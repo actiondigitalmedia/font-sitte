@@ -30,11 +30,13 @@ A reproducible pipeline that aggregates **2,000+ commercial-safe libre fonts** f
 
 ```bash
 cd free-font-site
-python3 -m http.server 8080
+python3 -m http.server 8080 --bind 0.0.0.0
 # open http://localhost:8080/web/
 ```
 
-The UI loads `data/output/catalog.json`, supports search/filter/sort, lazy-loads font previews, and opens a detail modal with download links.
+**Important:** open **`http://localhost:8080/web/`** (via the local server). Opening `index.html` as a file will not work because the catalog is loaded with `fetch`.
+
+The UI loads `web/catalog-lite.json`, supports search/filter/sort, lazy-loads font previews, and opens a detail modal with download links.
 
 ### Refresh the catalog data
 

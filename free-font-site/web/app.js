@@ -1,5 +1,5 @@
 const PAGE_SIZE = 48;
-const CATALOG_URL = "../data/output/catalog.json";
+const CATALOG_URL = "./catalog-lite.json";
 
 const state = {
   fonts: [],
@@ -22,9 +22,19 @@ const els = {
   sentinel: document.getElementById("sentinel"),
   detail: document.getElementById("detail"),
   detailBody: document.getElementById("detail-body"),
+  status: document.getElementById("status"),
 };
 
-function googleCssUrl(familyName) {
+function setStatus(message, type = "loading") {
+  els.status.hidden = false;
+  els.status.className = `status ${type}`;
+  els.status.textContent = message;
+}
+
+function clearStatus() {
+  els.status.hidden = true;
+  els.status.textContent = "";
+}
   const family = familyName.trim().replace(/\s+/g, "+");
   return `https://fonts.googleapis.com/css2?family=${encodeURIComponent(family).replace(/%20/g, "+")}&display=swap`;
 }
@@ -245,20 +255,42 @@ function wireEvents() {
 
 async function init() {
   wireEvents();
-  const response = await fetch(CATALOG_URL);
-  const catalog = await response.json();
 
-  state.fonts = catalog.fonts;
-  renderStats(catalog.catalog_info);
+  if (window.location.protocol === "file:") {
+    setStatus(
+      "Open this UI through the local server: http://localhost:8080/web/ (not as a file:// URL).",
+      "error"
+    );
+    els.resultCount.textContent = "Server required";
+    return;
+  }
 
-  const categories = [...new Set(state.fonts.map((f) => f.category))].sort();
-  const sources = [...new Set(state.fonts.map((f) => f.source))].sort();
-  fillSelect(els.category, categories);
-  fillSelect(els.source, sources);
+  setStatus("Loading font catalog…");
 
-  applyFilters();
+  try {
+    const response = await fetch(CATALOG_URL);
+    if (!response.ok) {
+      throw new Error(`Catalog fetch failed (${response.status})`);
+    }
+
+    const catalog = await response.json();
+    state.fonts = catalog.fonts;
+    renderStats(catalog.catalog_info);
+
+    const categories = [...new Set(state.fonts.map((f) => f.category))].sort();
+    const sources = [...new Set(state.fonts.map((f) => f.source))].sort();
+    fillSelect(els.category, categories);
+    fillSelect(els.source, sources);
+
+    clearStatus();
+    applyFilters();
+  } catch (error) {
+    setStatus(
+      `Failed to load catalog: ${error.message}. Make sure the server is running: python3 -m http.server 8080 --bind 0.0.0.0 --directory free-font-site`,
+      "error"
+    );
+    els.resultCount.textContent = "Catalog unavailable";
+  }
 }
 
-init().catch((error) => {
-  els.resultCount.textContent = `Failed to load catalog: ${error.message}`;
-});
+init();

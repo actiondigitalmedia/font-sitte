@@ -164,6 +164,25 @@ select {
   color: var(--muted);
 }
 
+.status {
+  margin-bottom: 1rem;
+  padding: 0.85rem 1rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--panel-2);
+  color: var(--muted);
+}
+
+.status.error {
+  border-color: #f87171;
+  color: #fecaca;
+}
+
+.status.loading {
+  border-color: rgba(96, 165, 250, 0.45);
+  color: #bfdbfe;
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
