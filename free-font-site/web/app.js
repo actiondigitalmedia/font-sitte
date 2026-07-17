@@ -35,6 +35,8 @@ function clearStatus() {
   els.status.hidden = true;
   els.status.textContent = "";
 }
+
+function googleCssUrl(familyName) {
   const family = familyName.trim().replace(/\s+/g, "+");
   return `https://fonts.googleapis.com/css2?family=${encodeURIComponent(family).replace(/%20/g, "+")}&display=swap`;
 }
@@ -146,6 +148,8 @@ function cardHtml(font) {
     font.variable ? `<span class="badge">Variable</span>` : "",
   ].join("");
 
+  const styleCount = font.variant_count || font.variants?.length || 0;
+
   return `
     <article class="card" data-id="${font.id}">
       <div class="card-top">
@@ -155,7 +159,7 @@ function cardHtml(font) {
       <p class="preview" style="font-family:'${font.family_name.replace(/'/g, "\\'")}', var(--font-ui)">
         ${font.preview_text || "The quick brown fox jumps over the lazy dog"}
       </p>
-      <p class="meta">${font.license_type} · ${font.variants?.length || 0} styles</p>
+      <p class="meta">${font.license_type} · ${styleCount} styles</p>
     </article>
   `;
 }
@@ -209,6 +213,8 @@ function openDetail(font) {
     .filter(Boolean)
     .join("");
 
+  const styleCount = font.variant_count || font.variants?.length || 0;
+
   els.detailBody.innerHTML = `
     <h2>${font.family_name}</h2>
     <p class="detail-preview" style="font-family:'${font.family_name.replace(/'/g, "\\'")}', var(--font-ui)">
@@ -218,7 +224,7 @@ function openDetail(font) {
       <div><dt>Category</dt><dd>${font.category}</dd></div>
       <div><dt>Source</dt><dd>${font.source}</dd></div>
       <div><dt>License</dt><dd>${font.license_type}</dd></div>
-      <div><dt>Styles</dt><dd>${font.variants?.length || 0}</dd></div>
+      <div><dt>Styles</dt><dd>${styleCount}</dd></div>
       <div><dt>Designers</dt><dd>${(font.designers || []).join(", ") || "—"}</dd></div>
       <div><dt>Featured lists</dt><dd>${(font.featured_lists || []).join(", ") || "—"}</dd></div>
     </dl>
@@ -286,11 +292,16 @@ async function init() {
     applyFilters();
   } catch (error) {
     setStatus(
-      `Failed to load catalog: ${error.message}. Make sure the server is running: python3 -m http.server 8080 --bind 0.0.0.0 --directory free-font-site`,
+      `Failed to load catalog: ${error.message}. If the page header is visible but this persists, hard-refresh. Server: python3 -m http.server 8080 --bind 0.0.0.0 --directory free-font-site`,
       "error"
     );
     els.resultCount.textContent = "Catalog unavailable";
+    console.error(error);
   }
 }
 
-init();
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", init);
+} else {
+  init();
+}
