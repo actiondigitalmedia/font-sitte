@@ -26,6 +26,18 @@ A reproducible pipeline that aggregates **2,000+ commercial-safe libre fonts** f
 
 ## Quick start
 
+### Browse the catalog (UI)
+
+```bash
+cd free-font-site
+python3 -m http.server 8080
+# open http://localhost:8080/web/
+```
+
+The UI loads `data/output/catalog.json`, supports search/filter/sort, lazy-loads font previews, and opens a detail modal with download links.
+
+### Refresh the catalog data
+
 ```bash
 cd free-font-site
 pip install -r requirements.txt

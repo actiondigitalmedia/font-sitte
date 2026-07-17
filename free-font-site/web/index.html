@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Free Font Catalog</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-inner">
+        <div class="brand">
+          <h1>Free Font Catalog</h1>
+          <p class="subtitle">Libre &amp; commercial-safe typefaces</p>
+        </div>
+        <div class="stats" id="stats"></div>
+      </div>
+    </header>
+
+    <main class="layout">
+      <aside class="sidebar">
+        <label class="field">
+          <span>Search</span>
+          <input id="search" type="search" placeholder="Family, designer, tag…" autocomplete="off" />
+        </label>
+
+        <label class="field">
+          <span>Category</span>
+          <select id="category">
+            <option value="">All categories</option>
+          </select>
+        </label>
+
+        <label class="field">
+          <span>Source</span>
+          <select id="source">
+            <option value="">All sources</option>
+          </select>
+        </label>
+
+        <label class="check">
+          <input id="featured" type="checkbox" />
+          Featured only
+        </label>
+
+        <label class="check">
+          <input id="variable" type="checkbox" />
+          Variable fonts only
+        </label>
+
+        <button id="reset" class="btn-secondary" type="button">Reset filters</button>
+      </aside>
+
+      <section class="content">
+        <div class="toolbar">
+          <p id="result-count">Loading catalog…</p>
+          <label class="field inline">
+            <span>Sort</span>
+            <select id="sort">
+              <option value="name">Name A–Z</option>
+              <option value="featured">Featured first</option>
+              <option value="category">Category</option>
+            </select>
+          </label>
+        </div>
+        <div id="grid" class="grid"></div>
+        <div id="sentinel" class="sentinel"></div>
+      </section>
+    </main>
+
+    <dialog id="detail">
+      <form method="dialog" class="detail-shell">
+        <button class="close" aria-label="Close">&times;</button>
+        <div id="detail-body"></div>
+      </form>
+    </dialog>
+
+    <script src="app.js" type="module"></script>
+  </body>
+</html>
