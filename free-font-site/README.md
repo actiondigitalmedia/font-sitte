@@ -12,9 +12,11 @@ A reproducible pipeline that aggregates **2,000+ commercial-safe libre fonts** f
 | [Velvetyne](https://velvetyne.fr) | 22 | OFL |
 | [The League of Moveable Type](https://www.theleagueofmoveabletype.com) | 20 | OFL |
 | [Nerd Fonts](https://www.nerdfonts.com) | 67 | Mixed (base fonts are libre) |
+| [Fontsource](https://fontsource.org) | 120 (non-Google) | OFL / Apache |
+| [Omnibus Type](https://www.omnibus-type.com) | 29 | OFL |
 | [Open Foundry](https://open-foundry.com) | 1* | OFL |
 
-**Merged catalog (deduplicated, commercial-safe): 2,013 families · 7,875 variants**
+**Merged catalog: 2,136 families · 8,580 variants · 2,061 live previews**
 
 \* Open Foundry is a client-rendered SPA; their catalog is partially captured. Re-run when they expose an API.
 
