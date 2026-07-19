@@ -1,0 +1,10 @@
+{
+  "created_at": "2026-07-19T04:55:12+00:00",
+  "project": "font-sitte",
+  "branch": "cursor/free-font-aggregation-43e3",
+  "contents": [
+    "free-font-site/ (excluding data/raw/)",
+    "memory-bank/"
+  ],
+  "restore_hint": "Copy free-font-site/ and memory-bank/ back to repo root"
+}

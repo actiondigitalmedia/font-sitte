@@ -1,0 +1,49 @@
+{
+  "entries": [
+    {
+      "date": "2026-07-06",
+      "pattern": "Prefer libre-only sources with clear licenses over DaFont/FontSpace mixed-license portals",
+      "context": "Initial aggregation scope decision"
+    },
+    {
+      "date": "2026-07-06",
+      "pattern": "Use Google Fonts metadata endpoint (fonts.google.com/metadata/fonts) instead of 1GB GitHub zip",
+      "context": "Faster, lighter aggregation without downloading all binaries"
+    },
+    {
+      "date": "2026-07-06",
+      "pattern": "FontGet-Sources GitHub mirrors are reliable for Font Squirrel and Nerd Fonts JSON",
+      "context": "font_squirrel.py and nerd_fonts.py adapters"
+    },
+    {
+      "date": "2026-07-17",
+      "pattern": "Cursor cloud browser needs server on 0.0.0.0:8080, not 127.0.0.1 only",
+      "context": "Port forwarding for preview panel"
+    },
+    {
+      "date": "2026-07-17",
+      "pattern": "Serve catalog-lite.json from web/ same-origin; avoid ../data/ fetch paths",
+      "context": "UI catalog loading"
+    },
+    {
+      "date": "2026-07-17",
+      "pattern": "Avoid ES module type=module if possible; use defer script. Always validate app.js with node --check after edits",
+      "context": "Broken googleCssUrl caused total UI failure from syntax error"
+    },
+    {
+      "date": "2026-07-17",
+      "pattern": "health.html is essential for diagnosing Cursor port-forward vs app bugs",
+      "context": "User saw blank page — needed to separate server vs JS issues"
+    },
+    {
+      "date": "2026-07-19",
+      "pattern": "User confirmed UI working and looking nice after app.js fix",
+      "context": "Milestone — local browse UI validated"
+    },
+    {
+      "date": "2026-07-19",
+      "pattern": "User prefers memory banks + daily backups; never lose aggregation progress",
+      "context": "Backup and memory-bank setup requested"
+    }
+  ]
+}

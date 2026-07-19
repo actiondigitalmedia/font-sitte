@@ -1,0 +1,137 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Free Font Catalog Schema",
+  "description": "Unified schema for the free-font-site aggregated catalog",
+  "type": "object",
+  "required": ["catalog_info", "fonts"],
+  "properties": {
+    "catalog_info": {
+      "type": "object",
+      "required": ["version", "generated_at", "total_families", "sources"],
+      "properties": {
+        "version": { "type": "string" },
+        "generated_at": { "type": "string", "format": "date-time" },
+        "total_families": { "type": "integer", "minimum": 0 },
+        "total_variants": { "type": "integer", "minimum": 0 },
+        "license_policy": {
+          "type": "string",
+          "description": "e.g. libre-only, commercial-free"
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "name", "url", "family_count"],
+            "properties": {
+              "id": { "type": "string" },
+              "name": { "type": "string" },
+              "url": { "type": "string", "format": "uri" },
+              "family_count": { "type": "integer" },
+              "fetched_at": { "type": "string", "format": "date-time" }
+            }
+          }
+        }
+      }
+    },
+    "fonts": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/font_family" }
+    }
+  },
+  "definitions": {
+    "font_family": {
+      "type": "object",
+      "required": ["id", "family_name", "license_type", "source", "category", "variants"],
+      "properties": {
+        "id": { "type": "string", "description": "URL-safe slug, unique in catalog" },
+        "family_name": { "type": "string" },
+        "license_type": {
+          "type": "string",
+          "description": "OFL, Apache-2.0, UFL, MIT, etc."
+        },
+        "license_url": { "type": "string", "format": "uri" },
+        "commercial_use": {
+          "type": "boolean",
+          "description": "Safe for commercial use per source license"
+        },
+        "source": { "type": "string" },
+        "source_url": { "type": "string", "format": "uri" },
+        "foundry": { "type": "string" },
+        "designers": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "category": {
+          "type": "string",
+          "enum": [
+            "serif",
+            "sans-serif",
+            "slab-serif",
+            "monospace",
+            "display",
+            "handwriting",
+            "script",
+            "decorative",
+            "symbol",
+            "other"
+          ]
+        },
+        "subsets": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "tags": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "featured": { "type": "boolean", "default": false },
+        "featured_lists": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "e.g. usable-fonts, typewolf-top-40"
+        },
+        "variable": { "type": "boolean" },
+        "axes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "tag": { "type": "string" },
+              "min": { "type": "number" },
+              "max": { "type": "number" },
+              "default": { "type": "number" }
+            }
+          }
+        },
+        "popularity": { "type": "integer" },
+        "date_added": { "type": "string" },
+        "last_modified": { "type": "string" },
+        "preview_text": { "type": "string" },
+        "download_url": { "type": "string", "format": "uri" },
+        "github_url": { "type": "string", "format": "uri" },
+        "variants": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/variant" }
+        }
+      }
+    },
+    "variant": {
+      "type": "object",
+      "required": ["name", "weight", "style"],
+      "properties": {
+        "name": { "type": "string" },
+        "weight": { "type": "integer", "minimum": 100, "maximum": 900 },
+        "style": { "type": "string", "enum": ["normal", "italic", "oblique"] },
+        "files": {
+          "type": "object",
+          "properties": {
+            "woff2": { "type": "string", "format": "uri" },
+            "woff": { "type": "string", "format": "uri" },
+            "ttf": { "type": "string", "format": "uri" },
+            "otf": { "type": "string", "format": "uri" }
+          }
+        }
+      }
+    }
+  }
+}
