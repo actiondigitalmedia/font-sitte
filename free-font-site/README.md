@@ -32,24 +32,9 @@ A reproducible pipeline that aggregates **2,000+ commercial-safe libre fonts** f
 
 ```bash
 cd free-font-site
+python3 scripts/build_all.py   # builds dist/ with SEO pages
 python3 scripts/serve.py 8080
-# open http://localhost:8080/web/
-```
-
-**Important:** use `scripts/serve.py` (not plain `http.server`) — it includes a same-origin font proxy required for Cursor's embedded browser.
-
-After refreshing catalog data, rebuild previews:
-```bash
-python3 scripts/build_web_catalog.py
-python3 scripts/enrich_preview_urls.py   # fetches real woff2 URLs (~40s cached)
-```
-
-### Refresh the catalog data
-
-```bash
-cd free-font-site
-pip install -r requirements.txt
-python3 scripts/aggregate.py
+# open http://localhost:8080/
 ```
 
 Outputs land in `data/output/`:
