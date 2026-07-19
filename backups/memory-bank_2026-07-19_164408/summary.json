@@ -1,0 +1,23 @@
+{
+  "project": "font-sitte",
+  "updated_at": "2026-07-19T16:45:00Z",
+  "status": "seo-plans-drafted",
+  "branch": "cursor/seo-strategy-plans-d92e",
+  "related": {
+    "catalog_branch": "cursor/free-font-aggregation-43e3",
+    "catalog_pr": "https://github.com/actiondigitalmedia/font-sitte/pull/1"
+  },
+  "cms": "custom-static",
+  "seo_goal": "publishing-discovery-pseo",
+  "key_paths": {
+    "seo_stack": "seo-stack/",
+    "plans": "seo-stack/plans/",
+    "workflows": "seo-stack/workflows/",
+    "memory_bank": "memory-bank/"
+  },
+  "next_steps": [
+    "User approve SEO plan",
+    "Deploy catalog (Phase 0)",
+    "Build static /fonts/{slug}/ pages (Phase 1)"
+  ]
+}

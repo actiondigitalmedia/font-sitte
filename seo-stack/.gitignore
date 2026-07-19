@@ -1,0 +1,7 @@
+data/cache/
+data/*.csv
+data/competitor-structure.json
+data/keyword-map.csv
+data/ctr-repair.csv
+logs/
+*.secret

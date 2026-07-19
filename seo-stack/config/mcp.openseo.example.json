@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "openseo": {
+      "command": "npx",
+      "args": ["-y", "openseo-mcp"],
+      "env": {
+        "OPENSEO_API_URL": "http://localhost:3000",
+        "OPENSEO_API_KEY": "REPLACE_ME"
+      }
+    }
+  },
+  "_comment": "Example only. Adjust to whatever OpenSEO MCP package/command your install docs specify after self-hosting. Do not commit real keys. Prefer Cursor Settings → MCP UI."
+}
