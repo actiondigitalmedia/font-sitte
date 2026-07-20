@@ -10,17 +10,16 @@ on:
     - cron: "0 6 * * 1"
   workflow_dispatch:
 
+# Branch-based Pages: push built site to gh-pages (no Pages "GitHub Actions" source required)
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
 concurrency:
-  group: pages
+  group: pages-branch
   cancel-in-progress: true
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -32,27 +31,19 @@ jobs:
       - name: Install dependencies
         run: pip install -r free-font-site/requirements.txt
 
-      # Catalog JSON is committed — skip live aggregate/enrich for reliable deploys.
-      # Weekly schedule can re-run with FETCH=1 via workflow_dispatch inputs later.
       - name: Build SEO static site
         run: |
           python3 free-font-site/scripts/build_web_catalog.py
           python3 free-font-site/scripts/build_site.py
           python3 free-font-site/scripts/verify_seo.py
+          touch free-font-site/dist/.nojekyll
         env:
           SITE_URL: https://actiondigitalmedia.github.io/font-sitte
 
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Publish to gh-pages branch
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          path: free-font-site/dist
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - id: deployment
-        uses: actions/deploy-pages@v4
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: free-font-site/dist
+          force_orphan: true
+          enable_jekyll: false
