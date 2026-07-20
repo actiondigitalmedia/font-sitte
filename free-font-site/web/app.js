@@ -1,4 +1,6 @@
 const PAGE_SIZE = 48;
+/** Insert a native card-sized ad after every N font cards (keeps grid complete). */
+const AD_EVERY_N_CARDS = 12;
 const CATALOG_URL = "./catalog-lite.json";
 const FAVORITES_KEY = "font-site-favorites";
 /** GitHub project Pages base, e.g. "/font-sitte" — set in index.html at build time */
@@ -164,6 +166,8 @@ function applyFilters() {
   const favoritesOnly = els.favoritesOnly?.checked;
   const favs = getFavorites();
 
+  // Client-side filter stays snappy into the low tens of thousands of families.
+  // Beyond that we'd swap to a built search index (Minisearch) or shard the catalog.
   state.filtered = state.fonts.filter((font) => {
     if (category && font.category !== category) return false;
     if (source && font.source !== source) return false;
@@ -200,8 +204,14 @@ function applyFilters() {
 
   state.rendered = 0;
   els.grid.innerHTML = "";
-  els.resultCount.textContent = `${state.filtered.length.toLocaleString()} families match your filters`;
+  els.resultCount.textContent = `${state.filtered.length.toLocaleString()} fonts`;
   renderMore();
+}
+
+let filterTimer = 0;
+function scheduleFilters() {
+  window.clearTimeout(filterTimer);
+  filterTimer = window.setTimeout(applyFilters, 120);
 }
 
 function cardHtml(font) {
@@ -232,8 +242,30 @@ function cardHtml(font) {
   `;
 }
 
-function insertInFeedAd(_container) {
-  // Intentionally no-op: in-feed placeholders broke the card grid (missing corner cell).
+function nativeAdCardHtml() {
+  return `
+    <article class="card card-ad" data-ad="true" aria-label="Sponsored">
+      <div class="card-top">
+        <h2>Sponsored</h2>
+        <span class="badge">Ad</span>
+      </div>
+      <div class="badges"><span class="badge">Native placement</span></div>
+      <div class="ad-native-body" data-ad-slot="in-feed-native">
+        <span class="ad-placeholder">Ad space</span>
+      </div>
+      <p class="meta">Same size as font cards · non-intrusive</p>
+    </article>
+  `;
+}
+
+function insertNativeAd(container) {
+  const wrapper = document.createElement("div");
+  wrapper.innerHTML = nativeAdCardHtml();
+  const adCard = wrapper.firstElementChild;
+  // Don't open font detail when clicking ads
+  adCard.addEventListener("click", (e) => e.stopPropagation());
+  container.appendChild(adCard);
+  if (window.initAds) window.initAds();
 }
 
 function renderMore() {
@@ -241,7 +273,8 @@ function renderMore() {
   if (!slice.length) return;
 
   const fragment = document.createDocumentFragment();
-  for (const font of slice) {
+  for (let i = 0; i < slice.length; i++) {
+    const font = slice[i];
     const wrapper = document.createElement("div");
     wrapper.innerHTML = cardHtml(font);
     const card = wrapper.firstElementChild;
@@ -254,6 +287,11 @@ function renderMore() {
     card.querySelector(".card-link")?.addEventListener("click", (e) => e.stopPropagation());
     card.addEventListener("click", () => openDetail(font));
     fragment.appendChild(card);
+
+    const absoluteIndex = state.rendered + i + 1;
+    if (absoluteIndex % AD_EVERY_N_CARDS === 0) {
+      insertNativeAd(fragment);
+    }
   }
 
   els.grid.appendChild(fragment);
@@ -262,7 +300,7 @@ function renderMore() {
 }
 
 function observeCards() {
-  const cards = els.grid.querySelectorAll(".card:not([data-loaded])");
+  const cards = els.grid.querySelectorAll(".card:not([data-ad]):not([data-loaded])");
   const observer = new IntersectionObserver(
     (entries) => {
       for (const entry of entries) {
@@ -345,12 +383,14 @@ function syncSearchInputs(source) {
 function wireEvents() {
   for (const el of [els.search, els.searchMain, els.category, els.source, els.featured, els.variable, els.favoritesOnly, els.sort]) {
     if (!el) continue;
+    const isSearch = el === els.search || el === els.searchMain;
     el.addEventListener("input", () => {
-      if (el === els.search || el === els.searchMain) syncSearchInputs(el);
-      applyFilters();
+      if (isSearch) syncSearchInputs(el);
+      if (isSearch) scheduleFilters();
+      else applyFilters();
     });
     el.addEventListener("change", () => {
-      if (el === els.search || el === els.searchMain) syncSearchInputs(el);
+      if (isSearch) syncSearchInputs(el);
       applyFilters();
     });
   }
