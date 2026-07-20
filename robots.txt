@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://actiondigitalmedia.github.io/font-sitte/sitemap.xml
