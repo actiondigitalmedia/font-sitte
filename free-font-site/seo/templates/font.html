@@ -1,4 +1,20 @@
 {% extends "base.html" %}
+{% block head %}
+  {% if preview_stylesheet %}
+  <link rel="stylesheet" href="{{ preview_stylesheet }}" />
+  {% endif %}
+  {% if preview_woff2 %}
+  <style>
+    @font-face {
+      font-family: "ff-{{ font.id }}";
+      src: url("{{ preview_woff2 }}") format("woff2");
+      font-display: swap;
+      font-weight: 100 900;
+      font-style: normal;
+    }
+  </style>
+  {% endif %}
+{% endblock %}
 {% block body_class %}specimen-page{% endblock %}
 {% block header_title %}
   <h1>{{ font.family_name }}</h1>
@@ -25,8 +41,20 @@
     {% if font.featured %}<span class="badge">Featured</span>{% endif %}
   </div>
 
-  <p class="specimen-preview" id="specimen-preview" data-font-id="{{ font.id }}" style="font-family: '{{ font.family_name }}', system-ui, sans-serif;">
+  <p
+    class="specimen-preview"
+    id="specimen-preview"
+    data-font-id="{{ font.id }}"
+    {% if preview_stylesheet %}data-preview-css="{{ preview_stylesheet }}"{% endif %}
+    {% if preview_woff2 %}data-preview-woff2="{{ preview_woff2 }}"{% endif %}
+    style="font-family: {% if preview_woff2 %}'ff-{{ font.id }}', {% endif %}'{{ font.family_name }}', system-ui, sans-serif;"
+  >
     {{ font.preview_text or "The quick brown fox jumps over the lazy dog" }}
+  </p>
+  <p class="specimen-alphabet" style="font-family: {% if preview_woff2 %}'ff-{{ font.id }}', {% endif %}'{{ font.family_name }}', system-ui, sans-serif;">
+    ABCDEFGHIJKLMNOPQRSTUVWXYZ<br />
+    abcdefghijklmnopqrstuvwxyz<br />
+    0123456789
   </p>
 
   <p class="lead">{{ best_for }}</p>

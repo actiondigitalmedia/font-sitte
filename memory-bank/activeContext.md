@@ -15,6 +15,12 @@ Settings → Pages → **Source: Deploy from a branch** → Branch **`gh-pages`*
 
 Do NOT need “GitHub Actions” as source. `gh-pages` branch is already pushed with the full site.
 
+## Font preview fix (2026-07-20)
+- CI had stripped preview_woff2; restored via preview-cache in build_web_catalog
+- Specimen pages now inject Google Fonts/Fontshare CSS + @font-face
+- Fixed specimen.js base path for /font-sitte/
+- Live verified: 2061 previews + googleapis CSS on /fonts/roboto/
+
 ## Next after Pages live
 - Smoke URLs in DEPLOY.md
 - Export GSC Pages CSV → ctr-repair when impressions exist

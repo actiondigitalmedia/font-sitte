@@ -88,10 +88,21 @@
 .badge-warn {
   color: #fbbf24;
 }
-.lead {
+.specimen-preview {
+  font-size: clamp(2.2rem, 7vw, 4.5rem);
+  line-height: 1.15;
+  margin: 0.5rem 0 0.75rem;
+  word-break: break-word;
+}
+.specimen-alphabet {
+  font-size: clamp(1.1rem, 2.8vw, 1.75rem);
+  line-height: 1.35;
   color: var(--muted);
-  line-height: 1.55;
-  max-width: 62ch;
+  margin: 0 0 1.25rem;
+  letter-spacing: 0.02em;
+}
+.specimen-loaded {
+  color: var(--text);
 }
 .cta-row {
   display: flex;

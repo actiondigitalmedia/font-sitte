@@ -10,7 +10,7 @@ import shutil
 from collections import defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
-from urllib.parse import urlparse
+from urllib.parse import quote, urlparse
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 from markupsafe import Markup
@@ -245,6 +245,34 @@ def website_json_ld() -> dict:
     }
 
 
+def preview_stylesheet(font: dict) -> str | None:
+    """Official CSS APIs so specimen pages render the real face without JS."""
+    source = font.get("source")
+    name = font.get("family_name") or ""
+    weight = 400
+    variants = font.get("variants") or []
+    if variants and variants[0].get("weight"):
+        try:
+            weight = int(variants[0]["weight"])
+        except (TypeError, ValueError):
+            weight = 400
+
+    if source in ("google-fonts", "omnibus-type") and name:
+        # Request regular + bold so pages look obviously different across families
+        family = quote(name)
+        return f"https://fonts.googleapis.com/css2?family={family}:wght@400;700&display=swap"
+    if source == "fontshare":
+        slug = (font.get("id") or "").replace("fontshare-", "", 1)
+        if slug:
+            return f"https://api.fontshare.com/v2/css?f[]={quote(slug)}@{weight}&display=swap"
+    if source == "fontsource":
+        slug = (font.get("id") or "").replace("fontsource-", "", 1)
+        if slug:
+            # css2 package on jsDelivr
+            return f"https://cdn.jsdelivr.net/fontsource/css/{quote(slug)}@latest/index.css"
+    return None
+
+
 def make_env() -> Environment:
     env = Environment(
         loader=FileSystemLoader(str(TEMPLATES)),
@@ -253,6 +281,7 @@ def make_env() -> Environment:
     env.filters["tojson"] = lambda v: Markup(json.dumps(v, ensure_ascii=False))
     env.globals["asset"] = asset
     env.globals["site_name"] = SITE_NAME
+    env.globals["base_path"] = BASE_PATH
     return env
 
 
@@ -448,6 +477,8 @@ def main() -> None:
             pairings=pairings,
             best_for=best_for_blurb(font),
             commercial_faq=faq_answer,
+            preview_stylesheet=preview_stylesheet(font),
+            preview_woff2=font.get("preview_woff2"),
         )
         write(DIST / "fonts" / font["id"] / "index.html", html)
 

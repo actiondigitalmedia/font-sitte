@@ -16,6 +16,7 @@
   <meta name="twitter:title" content="{{ title }}" />
   <meta name="twitter:description" content="{{ description }}" />
   <link rel="stylesheet" href="{{ asset('/styles.css') }}" />
+  <script>window.__SITE_BASE__={{ base_path|tojson }};</script>
   {% if json_ld %}
   <script type="application/ld+json">{{ json_ld|tojson }}</script>
   {% endif %}

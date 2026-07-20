@@ -51,11 +51,20 @@ def main() -> int:
         for needle in REQUIRED_IN_FONT:
             if needle not in html:
                 errors.append(f"roboto page missing: {needle}")
+        if "fonts.googleapis.com" not in html and "ff-roboto" not in html:
+            errors.append("roboto page missing preview CSS / @font-face")
         if not re.search(r"<title>[^<]+</title>", html):
             errors.append("roboto page missing title")
         # inbound-ish modules
         if html.count('href="') < 8:
             errors.append("roboto page looks under-linked")
+
+    lite = DIST / "catalog-lite.json"
+    if lite.exists():
+        fonts = json.loads(lite.read_text(encoding="utf-8")).get("fonts") or []
+        with_preview = sum(1 for f in fonts if f.get("preview_woff2"))
+        if with_preview < 1000:
+            errors.append(f"catalog-lite preview_woff2 too low: {with_preview}")
 
     robots = (DIST / "robots.txt").read_text(encoding="utf-8") if (DIST / "robots.txt").exists() else ""
     if "Sitemap:" not in robots:

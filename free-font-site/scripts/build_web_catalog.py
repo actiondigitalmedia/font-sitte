@@ -9,13 +9,23 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "data" / "output" / "catalog.json"
 OUT = ROOT / "web" / "catalog-lite.json"
+CACHE = ROOT / "data" / "preview-cache.json"
+
+
+def load_preview_cache() -> dict[str, str]:
+    if not CACHE.exists():
+        return {}
+    raw = json.loads(CACHE.read_text(encoding="utf-8"))
+    return {k: v for k, v in raw.items() if v}
 
 
 def main() -> None:
     data = json.loads(SRC.read_text(encoding="utf-8"))
+    previews = load_preview_cache()
     lite_fonts = []
+    enriched = 0
     for f in data["fonts"]:
-        lite_fonts.append({
+        item = {
             "id": f["id"],
             "family_name": f["family_name"],
             "license_type": f["license_type"],
@@ -42,13 +52,21 @@ def main() -> None:
                 for v in (f.get("variants") or [])[:8]
             ],
             "variant_count": len(f.get("variants") or []),
-        })
+        }
+        # Prefer existing catalog field, then preview-cache (survives lite rebuilds)
+        woff2 = f.get("preview_woff2") or previews.get(f["id"])
+        if woff2:
+            item["preview_woff2"] = woff2
+            enriched += 1
+        lite_fonts.append(item)
 
+    info = dict(data["catalog_info"])
+    info["preview_enriched"] = enriched
     OUT.write_text(
-        json.dumps({"catalog_info": data["catalog_info"], "fonts": lite_fonts}, ensure_ascii=False, separators=(",", ":")),
+        json.dumps({"catalog_info": info, "fonts": lite_fonts}, ensure_ascii=False, separators=(",", ":")),
         encoding="utf-8",
     )
-    print(f"Wrote {OUT} ({OUT.stat().st_size:,} bytes, {len(lite_fonts)} families)")
+    print(f"Wrote {OUT} ({OUT.stat().st_size:,} bytes, {len(lite_fonts)} families, {enriched} previews)")
 
 
 if __name__ == "__main__":
