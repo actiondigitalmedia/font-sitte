@@ -1,0 +1,29 @@
+{
+  "project": "font-sitte",
+  "updated_at": "2026-07-19T16:45:00Z",
+  "status": "seo-jinja2-builder-verified",
+  "branch": "cursor/seo-strategy-plans-d92e",
+  "related": {
+    "catalog_branch": "cursor/free-font-aggregation-43e3",
+    "catalog_pr": "https://github.com/actiondigitalmedia/font-sitte/pull/1",
+    "seo_pr": "https://github.com/actiondigitalmedia/font-sitte/pull/2"
+  },
+  "cms": "custom-static-python-jinja2",
+  "seo_goal": "publishing-discovery-pseo",
+  "metrics": {
+    "font_pages": 2136,
+    "engine": "python-jinja2"
+  },
+  "key_paths": {
+    "seo_stack": "seo-stack/",
+    "builder": "free-font-site/scripts/build_site.py",
+    "templates": "free-font-site/seo/templates/",
+    "standards": "free-font-site/seo/STANDARDS.md",
+    "memory_bank": "memory-bank/"
+  },
+  "next_steps": [
+    "Deploy Pages (Phase 0)",
+    "GSC + CTR loop",
+    "Optional DataForSEO/OpenSEO"
+  ]
+}

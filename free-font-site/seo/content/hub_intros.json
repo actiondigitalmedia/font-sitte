@@ -1,0 +1,18 @@
+{
+  "commercial-use": "Stop risking personal-use fonts on client work. This catalog lists libre families (OFL, Apache, and similar) marked safe for commercial use, with live previews and links to official downloads.",
+  "category": {
+    "sans-serif": "Browse free sans-serif fonts verified for commercial use. Clean UI, branding, and web typefaces under open licenses — preview here, download from the source.",
+    "serif": "Free serif fonts for editorial, long-form, and classic branding. Every family listed is libre and flagged for commercial use when the license allows.",
+    "display": "Free display fonts for headlines, posters, and logos. Commercial-safe open licenses with clear attribution paths.",
+    "handwriting": "Free handwriting and script-style fonts for invitations and informal brands — filtered for libre commercial-safe licenses.",
+    "monospace": "Free monospace fonts for coding, terminals, and technical UI. Includes popular open-source coding families.",
+    "other": "Additional libre font categories aggregated from trusted open sources."
+  },
+  "use": {
+    "logos": "Free fonts suitable for logo exploration — favor distinctive display and sans families with clear commercial licenses.",
+    "websites": "Free fonts for websites: readable sans and serif families, including variable fonts where available.",
+    "invitations": "Free fonts for invitations and stationery — handwriting, script, and elegant display faces under libre licenses.",
+    "coding": "Free monospace and nerd-font families for editors and terminals.",
+    "presentations": "Free fonts for decks and slides — strong sans and display options you can use commercially."
+  }
+}

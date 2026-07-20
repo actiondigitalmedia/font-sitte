@@ -1,0 +1,49 @@
+name: Build and Deploy Pages
+
+on:
+  push:
+    branches:
+      - main
+      - cursor/seo-strategy-plans-d92e
+      - cursor/free-font-aggregation-43e3
+  schedule:
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+
+# Branch-based Pages: push built site to gh-pages (no Pages "GitHub Actions" source required)
+permissions:
+  contents: write
+
+concurrency:
+  group: pages-branch
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r free-font-site/requirements.txt
+
+      - name: Build SEO static site
+        run: |
+          python3 free-font-site/scripts/build_web_catalog.py
+          python3 free-font-site/scripts/build_site.py
+          python3 free-font-site/scripts/verify_seo.py
+          touch free-font-site/dist/.nojekyll
+        env:
+          SITE_URL: https://actiondigitalmedia.github.io/font-sitte
+
+      - name: Publish to gh-pages branch
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: free-font-site/dist
+          force_orphan: true
+          enable_jekyll: false

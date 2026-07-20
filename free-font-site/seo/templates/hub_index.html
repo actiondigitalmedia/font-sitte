@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block header_title %}
+  <h1>Font categories</h1>
+  <p class="subtitle">Commercial-safe libre fonts by style</p>
+{% endblock %}
+{% block content %}
+  <ul class="category-list">
+    {% for item in items %}
+    <li>
+      <a href="{{ asset(item.path) }}">{{ item.label }}</a>
+      <span class="meta">{{ item.count }} families</span>
+    </li>
+    {% endfor %}
+  </ul>
+{% endblock %}

@@ -1,0 +1,22 @@
+{
+  "@context": "https://schema.org",
+  "@type": ["CreativeWork", "SoftwareApplication"],
+  "name": "{{name}}",
+  "description": "{{meta_description}}",
+  "url": "{{canonical_url}}",
+  "applicationCategory": "DesignApplication",
+  "operatingSystem": "Windows, macOS, Linux",
+  "isAccessibleForFree": true,
+  "license": "{{license_url}}",
+  "creator": {
+    "@type": "Organization",
+    "name": "{{designer_or_foundry}}"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock",
+    "url": "{{download_url}}"
+  }
+}

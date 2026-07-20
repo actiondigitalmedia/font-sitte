@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "dataforseo": {
+      "command": "npx",
+      "args": ["-y", "dataforseo-mcp-server"],
+      "env": {
+        "DATAFORSEO_USERNAME": "REPLACE_ME",
+        "DATAFORSEO_PASSWORD": "REPLACE_ME",
+        "ENABLED_MODULES": "KEYWORDS,SERP,LABS,SEARCH_CONSOLE"
+      }
+    }
+  },
+  "_comment": "Example only — verify current package name in DataForSEO MCP docs before use. Keep ENABLED_MODULES minimal. Set dashboard spend caps. Never commit real credentials."
+}

@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block header_title %}
+  <h1>{{ h1 }}</h1>
+  <p class="subtitle">{{ subtitle }}</p>
+{% endblock %}
+{% block breadcrumbs %}
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <ol>
+    <li><a href="{{ asset('/') }}">Home</a></li>
+    {% if breadcrumb_parent %}
+    <li><a href="{{ asset(breadcrumb_parent.path) }}">{{ breadcrumb_parent.label }}</a></li>
+    {% endif %}
+    <li aria-current="page">{{ h1 }}</li>
+  </ol>
+</nav>
+{% endblock %}
+{% block content %}
+  <p class="lead">{{ intro }}</p>
+
+  {% if sibling_hubs %}
+  <nav class="sibling-hubs" aria-label="Related hubs">
+    {% for hub in sibling_hubs %}
+    <a class="chip" href="{{ asset(hub.path) }}">{{ hub.label }}</a>
+    {% endfor %}
+  </nav>
+  {% endif %}
+
+  <p class="hub-count"><strong>{{ fonts|length }}</strong> families</p>
+  <ul class="category-list">
+    {% for f in fonts[:limit] %}
+    <li>
+      <a href="{{ asset('/fonts/' ~ f.id ~ '/') }}">{{ f.family_name }}</a>
+      <span class="meta">{{ f.license_type }}{% if f.commercial_use %} · commercial{% endif %}{% if f.featured %} · featured{% endif %}</span>
+    </li>
+    {% endfor %}
+  </ul>
+  {% if fonts|length > limit %}
+  <p class="meta">Showing top {{ limit }} of {{ fonts|length }}. Prefer featured and commercial-safe families first.</p>
+  {% endif %}
+{% endblock %}

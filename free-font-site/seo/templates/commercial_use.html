@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block header_title %}
+  <h1>Free Fonts for Commercial Use</h1>
+  <p class="subtitle">OFL &amp; open-source typefaces verified for commercial projects</p>
+{% endblock %}
+{% block breadcrumbs %}
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <ol>
+    <li><a href="{{ asset('/') }}">Home</a></li>
+    <li aria-current="page">Commercial use</li>
+  </ol>
+</nav>
+{% endblock %}
+{% block content %}
+  <p class="lead">{{ intro }}</p>
+
+  <section aria-labelledby="why-heading">
+    <h2 id="why-heading">Why license clarity matters</h2>
+    <p>Many “free font” downloads are personal-use only. Every family on this money page is marked <strong>commercial_use: true</strong> in our catalog, with an explicit libre license (typically OFL).</p>
+  </section>
+
+  <section aria-labelledby="cats-heading">
+    <h2 id="cats-heading">Browse by style</h2>
+    <div class="chips">
+      {% for cat in categories %}
+      <a class="chip" href="{{ asset('/category/' ~ cat ~ '/') }}">{{ cat.replace('-', ' ')|title }}</a>
+      {% endfor %}
+      <a class="chip" href="{{ asset('/licenses/ofl/') }}">All OFL fonts</a>
+    </div>
+  </section>
+
+  <section aria-labelledby="featured-heading">
+    <h2 id="featured-heading">Featured commercial-safe fonts</h2>
+    <ul class="category-list">
+      {% for f in fonts %}
+      <li>
+        <a href="{{ asset('/fonts/' ~ f.id ~ '/') }}">{{ f.family_name }}</a>
+        <span class="meta">{{ f.category }} · {{ f.license_type }} · {{ f.source }}</span>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <section aria-labelledby="use-heading">
+    <h2 id="use-heading">By use case</h2>
+    <div class="chips">
+      {% for u in use_cases %}
+      <a class="chip" href="{{ asset('/use/' ~ u ~ '/') }}">{{ u|title }}</a>
+      {% endfor %}
+    </div>
+  </section>
+{% endblock %}

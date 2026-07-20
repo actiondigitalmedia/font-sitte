@@ -1,0 +1,138 @@
+{% extends "base.html" %}
+{% block head %}
+  {% if preview_stylesheet %}
+  <link rel="stylesheet" href="{{ preview_stylesheet }}" />
+  {% endif %}
+  {% if preview_woff2 %}
+  <style>
+    @font-face {
+      font-family: "ff-{{ font.id }}";
+      src: url("{{ preview_woff2 }}") format("woff2");
+      font-display: swap;
+      font-weight: 100 900;
+      font-style: normal;
+    }
+  </style>
+  {% endif %}
+{% endblock %}
+{% block body_class %}specimen-page{% endblock %}
+{% block header_title %}
+  <h1>{{ font.family_name }}</h1>
+  <p class="subtitle">Free {{ font.category.replace('-', ' ') }} font · {{ font.license_type }}{% if font.commercial_use %} · commercial use OK{% endif %}</p>
+{% endblock %}
+{% block breadcrumbs %}
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <ol>
+    <li><a href="{{ asset('/') }}">Home</a></li>
+    <li><a href="{{ asset('/category/' ~ font.category ~ '/') }}">{{ font.category.replace('-', ' ')|title }}</a></li>
+    <li aria-current="page">{{ font.family_name }}</li>
+  </ol>
+</nav>
+{% endblock %}
+{% block content %}
+  <div class="trust-row" role="group" aria-label="License summary">
+    <span class="badge badge-license">{{ font.license_type }}</span>
+    {% if font.commercial_use %}
+    <span class="badge badge-ok">Commercial use verified</span>
+    {% else %}
+    <span class="badge badge-warn">Check license before commercial use</span>
+    {% endif %}
+    {% if font.variable %}<span class="badge">Variable</span>{% endif %}
+    {% if font.featured %}<span class="badge">Featured</span>{% endif %}
+  </div>
+
+  <p
+    class="specimen-preview"
+    id="specimen-preview"
+    data-font-id="{{ font.id }}"
+    {% if preview_stylesheet %}data-preview-css="{{ preview_stylesheet }}"{% endif %}
+    {% if preview_woff2 %}data-preview-woff2="{{ preview_woff2 }}"{% endif %}
+    style="font-family: {% if preview_woff2 %}'ff-{{ font.id }}', {% endif %}'{{ font.family_name }}', system-ui, sans-serif;"
+  >
+    {{ font.preview_text or "The quick brown fox jumps over the lazy dog" }}
+  </p>
+  <p class="specimen-alphabet" style="font-family: {% if preview_woff2 %}'ff-{{ font.id }}', {% endif %}'{{ font.family_name }}', system-ui, sans-serif;">
+    ABCDEFGHIJKLMNOPQRSTUVWXYZ<br />
+    abcdefghijklmnopqrstuvwxyz<br />
+    0123456789
+  </p>
+
+  <p class="lead">{{ best_for }}</p>
+
+  <dl class="detail-grid">
+    <div><dt>Category</dt><dd><a href="{{ asset('/category/' ~ font.category ~ '/') }}">{{ font.category }}</a></dd></div>
+    <div><dt>Source</dt><dd><a href="{{ asset('/source/' ~ font.source ~ '/') }}">{{ font.source }}</a></dd></div>
+    <div><dt>License</dt><dd><a href="{{ asset('/licenses/' ~ license_slug ~ '/') }}">{{ font.license_type }}</a></dd></div>
+    <div><dt>Styles</dt><dd>{{ variant_count }}</dd></div>
+    {% if font.designers %}<div><dt>Designer</dt><dd>{{ font.designers|join(', ') }}</dd></div>{% endif %}
+    {% if font.foundry %}<div><dt>Foundry</dt><dd>{{ font.foundry }}</dd></div>{% endif %}
+  </dl>
+
+  {% if variant_names %}
+  <section aria-labelledby="styles-heading">
+    <h2 id="styles-heading">Styles</h2>
+    <ul class="variant-list">
+      {% for v in variant_names %}<li>{{ v }}</li>{% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
+  <div class="cta-row links">
+    {% if font.download_url %}<a class="btn" href="{{ font.download_url }}" rel="noopener sponsored">Download / use</a>{% endif %}
+    {% if font.source_url %}<a class="btn btn-ghost" href="{{ font.source_url }}" rel="noopener">Official source</a>{% endif %}
+    {% if font.license_url %}<a class="btn btn-ghost" href="{{ font.license_url }}" rel="noopener">License text</a>{% endif %}
+    {% if font.github_url %}<a class="btn btn-ghost" href="{{ font.github_url }}" rel="noopener">GitHub</a>{% endif %}
+  </div>
+
+  {% if tags %}
+  <section aria-labelledby="tags-heading">
+    <h2 id="tags-heading">Tags</h2>
+    <div class="chips">
+      {% for tag in tags %}
+      <a class="chip" href="{{ asset('/tags/' ~ tag ~ '/') }}">{{ tag }}</a>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  {% if similar %}
+  <section aria-labelledby="similar-heading">
+    <h2 id="similar-heading">Similar free fonts</h2>
+    <div class="chips">
+      {% for s in similar %}
+      <a class="chip" href="{{ asset('/fonts/' ~ s.id ~ '/') }}">{{ s.family_name }}</a>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  {% if pairings %}
+  <section aria-labelledby="pair-heading">
+    <h2 id="pair-heading">Suggested pairings</h2>
+    <div class="chips">
+      {% for p in pairings %}
+      <a class="chip" href="{{ asset('/fonts/' ~ p.id ~ '/') }}">{{ p.family_name }} <span class="meta">({{ p.category }})</span></a>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  <section aria-labelledby="faq-heading">
+    <h2 id="faq-heading">FAQ</h2>
+    <details open>
+      <summary>Can I use {{ font.family_name }} commercially?</summary>
+      <p>{{ commercial_faq }}</p>
+    </details>
+    <details>
+      <summary>Is {{ font.family_name }} free to download?</summary>
+      <p>Yes. This catalog links to the official {{ font.source }} distribution under {{ font.license_type }}. We do not re-host font binaries.</p>
+    </details>
+    <details>
+      <summary>Where do I get the files?</summary>
+      <p>Use the official download/use link above to obtain files from the source maintainer.</p>
+    </details>
+  </section>
+{% endblock %}
+{% block scripts %}
+  <script src="{{ asset('/specimen.js') }}" defer></script>
+{% endblock %}

@@ -1,0 +1,25 @@
+{
+  "project": "font-sitte",
+  "updated_at": "2026-07-20T04:24:00Z",
+  "status": "deploy-ready-awaiting-pages-toggle",
+  "branch": "cursor/seo-strategy-plans-d92e",
+  "site_url": "https://actiondigitalmedia.github.io/font-sitte/",
+  "cms": "custom-static-python-jinja2",
+  "seo_goal": "publishing-discovery-pseo",
+  "blocked": ["Enable GitHub Pages source=GitHub Actions in repo settings"],
+  "related": {
+    "seo_pr": "https://github.com/actiondigitalmedia/font-sitte/pull/2"
+  },
+  "key_paths": {
+    "deploy_runbook": "free-font-site/seo/DEPLOY.md",
+    "workflow": ".github/workflows/deploy-pages.yml",
+    "gsc_ctr": "free-font-site/scripts/gsc_ctr_report.py",
+    "builder": "free-font-site/scripts/build_site.py",
+    "standards": "free-font-site/seo/STANDARDS.md"
+  },
+  "next_steps": [
+    "User enables Pages (Actions)",
+    "Workflow deploys site",
+    "GSC verify + submit sitemap.xml"
+  ]
+}

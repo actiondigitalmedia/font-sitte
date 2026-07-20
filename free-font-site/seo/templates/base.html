@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ title }}</title>
+  <meta name="description" content="{{ description }}" />
+  <link rel="canonical" href="{{ canonical }}" />
+  {% if robots %}<meta name="robots" content="{{ robots }}" />{% endif %}
+  <meta property="og:title" content="{{ title }}" />
+  <meta property="og:description" content="{{ description }}" />
+  <meta property="og:url" content="{{ canonical }}" />
+  <meta property="og:type" content="{{ og_type|default('website') }}" />
+  <meta property="og:site_name" content="{{ site_name }}" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="{{ title }}" />
+  <meta name="twitter:description" content="{{ description }}" />
+  <link rel="stylesheet" href="{{ asset('/styles.css') }}" />
+  <script>window.__SITE_BASE__={{ base_path|tojson }};</script>
+  {% if json_ld %}
+  <script type="application/ld+json">{{ json_ld|tojson }}</script>
+  {% endif %}
+  {% if json_ld_extra %}
+  <script type="application/ld+json">{{ json_ld_extra|tojson }}</script>
+  {% endif %}
+  {% block head %}{% endblock %}
+</head>
+<body class="{% block body_class %}{% endblock %}">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="header">
+    <div class="header-inner">
+      <div class="brand">
+        <p class="site-mark"><a href="{{ asset('/') }}">{{ site_name }}</a></p>
+        {% block header_title %}{% endblock %}
+      </div>
+      <nav class="header-nav" aria-label="Primary">
+        <a href="{{ asset('/commercial-use/') }}">Commercial use</a>
+        <a href="{{ asset('/category/') }}">Categories</a>
+        <a href="{{ asset('/') }}">Browse</a>
+      </nav>
+    </div>
+  </header>
+  {% block breadcrumbs %}{% endblock %}
+  <main id="main" class="{% block main_class %}specimen-main{% endblock %}">
+    {% block content %}{% endblock %}
+  </main>
+  <footer class="site-footer">
+    <p>{{ site_name }} — commercial-safe libre fonts only. We link to official sources; we do not re-host binaries.</p>
+    <p>
+      <a href="{{ asset('/commercial-use/') }}">Commercial use</a> ·
+      <a href="{{ asset('/licenses/ofl/') }}">OFL fonts</a> ·
+      <a href="{{ asset('/privacy.html') }}">Privacy</a> ·
+      <a href="{{ asset('/sitemap.xml') }}">Sitemap</a>
+    </p>
+  </footer>
+  {% block scripts %}{% endblock %}
+</body>
+</html>
