@@ -27,6 +27,7 @@ const state = {
 const els = {
   stats: document.getElementById("stats"),
   search: document.getElementById("search"),
+  searchMain: document.getElementById("search-main"),
   category: document.getElementById("category"),
   source: document.getElementById("source"),
   featured: document.getElementById("featured"),
@@ -155,7 +156,7 @@ function renderStats(info) {
 }
 
 function applyFilters() {
-  const q = els.search.value.trim().toLowerCase();
+  const q = (els.searchMain?.value || els.search?.value || "").trim().toLowerCase();
   const category = els.category.value;
   const source = els.source.value;
   const featuredOnly = els.featured.checked;
@@ -231,12 +232,8 @@ function cardHtml(font) {
   `;
 }
 
-function insertInFeedAd(container) {
-  const ad = document.createElement("div");
-  ad.className = "ad-slot ad-infeed";
-  ad.dataset.adSlot = "in-feed-native";
-  container.appendChild(ad);
-  if (window.initAds) window.initAds();
+function insertInFeedAd(_container) {
+  // Intentionally no-op: in-feed placeholders broke the card grid (missing corner cell).
 }
 
 function renderMore() {
@@ -257,10 +254,6 @@ function renderMore() {
     card.querySelector(".card-link")?.addEventListener("click", (e) => e.stopPropagation());
     card.addEventListener("click", () => openDetail(font));
     fragment.appendChild(card);
-
-    if ((state.rendered + fragment.childElementCount) % 12 === 0) {
-      insertInFeedAd(fragment);
-    }
   }
 
   els.grid.appendChild(fragment);
@@ -343,16 +336,28 @@ async function openDetail(font) {
   els.detail.showModal();
 }
 
+function syncSearchInputs(source) {
+  const value = source?.value || "";
+  if (els.search && els.search !== source) els.search.value = value;
+  if (els.searchMain && els.searchMain !== source) els.searchMain.value = value;
+}
+
 function wireEvents() {
-  for (const el of [els.search, els.category, els.source, els.featured, els.variable, els.favoritesOnly, els.sort]) {
-    if (el) {
-      el.addEventListener("input", applyFilters);
-      el.addEventListener("change", applyFilters);
-    }
+  for (const el of [els.search, els.searchMain, els.category, els.source, els.featured, els.variable, els.favoritesOnly, els.sort]) {
+    if (!el) continue;
+    el.addEventListener("input", () => {
+      if (el === els.search || el === els.searchMain) syncSearchInputs(el);
+      applyFilters();
+    });
+    el.addEventListener("change", () => {
+      if (el === els.search || el === els.searchMain) syncSearchInputs(el);
+      applyFilters();
+    });
   }
 
   els.reset.addEventListener("click", () => {
-    els.search.value = "";
+    if (els.search) els.search.value = "";
+    if (els.searchMain) els.searchMain.value = "";
     els.category.value = "";
     els.source.value = "";
     els.featured.checked = false;

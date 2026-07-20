@@ -25,13 +25,11 @@
         </nav>
         <div class="stats" id="stats"><span class="stat">Loading…</span></div>
       </div>
-      <div class="ad-slot ad-leaderboard" data-ad-slot="header-leaderboard"></div>
     </header>
 
     <main class="layout">
-      <aside class="sidebar">
-        <div class="ad-slot ad-sidebar" data-ad-slot="sidebar-sticky"></div>
-        <label class="field">
+      <aside class="sidebar" aria-label="Filters">
+        <label class="field field-search">
           <span>Search</span>
           <input id="search" type="search" placeholder="Family, designer, tag…" autocomplete="off" />
         </label>
@@ -52,6 +50,10 @@
       <section class="content">
         <div id="status" class="status loading">Booting UI…</div>
         <div class="toolbar">
+          <label class="field field-search-main">
+            <span class="visually-hidden">Search fonts</span>
+            <input id="search-main" type="search" placeholder="Search fonts by name, designer, tag…" autocomplete="off" />
+          </label>
           <p id="result-count">Loading catalog…</p>
           <label class="field inline">
             <span>Sort</span>
@@ -68,7 +70,7 @@
     </main>
 
     <footer class="site-footer">
-      <div class="ad-slot ad-footer" data-ad-slot="footer-banner"></div>
+      <div class="ad-slot ad-footer" data-ad-slot="footer-banner" hidden></div>
       <p>
         <a href="commercial-use/">Commercial use</a> ·
         <a href="privacy.html">Privacy</a> ·
