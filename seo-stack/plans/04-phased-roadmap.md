@@ -19,18 +19,19 @@ No calendar-day estimates. Phases are dependency-ordered work packages.
 
 **Exit criteria:** ≥2,000 indexable font URLs in sitemap; schema validates; internal links present.
 
-- [ ] Choose generator: Astro / Eleventy / custom Python static builder
-- [ ] Emit `/fonts/{slug}/index.html` from catalog
-- [ ] Title + meta templates (see `templates/`)
-- [ ] JSON-LD CreativeWork/SoftwareApplication + Breadcrumbs
-- [ ] OG/Twitter cards with specimen screenshot or static preview image
-- [ ] Category + source + license hub pages
-- [ ] `sitemap-index.xml` + ping GSC
+- [x] Choose generator: **Python + Jinja2** (locked — meets/exceeds SEO standards without Astro/Eleventy)
+- [x] Emit `/fonts/{slug}/index.html` from catalog (`scripts/build_site.py`)
+- [x] Title + meta templates (`seo/templates/`)
+- [x] JSON-LD CreativeWork/SoftwareApplication + Breadcrumbs + FAQPage
+- [x] OG/Twitter cards on entity + hub pages
+- [x] Category + source + license + tags + use hubs + `/commercial-use/`
+- [x] `sitemap.xml` index (hubs + fonts) + robots.txt
 - [ ] Fix CWV: lazy-load previews, shrink `catalog-lite` strategy for browse
+- [ ] Deploy + ping GSC
 
 **Cost:** $0 API
 
-**Cursor job:** implement builder in-repo; do not hand-edit 2k pages.
+**Verify:** `python3 free-font-site/scripts/build_site.py && python3 free-font-site/scripts/verify_seo.py`
 
 ## Phase 2 — Keyword intelligence (cheap data)
 
