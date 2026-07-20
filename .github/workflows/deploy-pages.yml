@@ -2,7 +2,10 @@ name: Build and Deploy Pages
 
 on:
   push:
-    branches: [main, cursor/free-font-aggregation-43e3]
+    branches:
+      - main
+      - cursor/seo-strategy-plans-d92e
+      - cursor/free-font-aggregation-43e3
   schedule:
     - cron: "0 6 * * 1"
   workflow_dispatch:
@@ -29,8 +32,13 @@ jobs:
       - name: Install dependencies
         run: pip install -r free-font-site/requirements.txt
 
-      - name: Build catalog and static site
-        run: python3 free-font-site/scripts/build_all.py
+      # Catalog JSON is committed — skip live aggregate/enrich for reliable deploys.
+      # Weekly schedule can re-run with FETCH=1 via workflow_dispatch inputs later.
+      - name: Build SEO static site
+        run: |
+          python3 free-font-site/scripts/build_web_catalog.py
+          python3 free-font-site/scripts/build_site.py
+          python3 free-font-site/scripts/verify_seo.py
         env:
           SITE_URL: https://actiondigitalmedia.github.io/font-sitte
 

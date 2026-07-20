@@ -1,6 +1,12 @@
 const PAGE_SIZE = 48;
 const CATALOG_URL = "./catalog-lite.json";
 const FAVORITES_KEY = "font-site-favorites";
+/** GitHub project Pages base, e.g. "/font-sitte" — set in index.html at build time */
+const SITE_BASE = (window.__SITE_BASE__ || "").replace(/\/$/, "");
+function sitePath(path) {
+  const p = path.startsWith("/") ? path : `/${path}`;
+  return `${SITE_BASE}${p}`;
+}
 const PAIRING_TARGETS = {
   "sans-serif": ["serif", "display"],
   serif: ["sans-serif"],
@@ -91,7 +97,7 @@ function suggestPairings(font, limit = 3) {
 }
 
 function chipLinks(fonts) {
-  return fonts.map((f) => `<a class="chip" href="/fonts/${f.id}/">${f.family_name}</a>`).join("");
+  return fonts.map((f) => `<a class="chip" href="${sitePath(`/fonts/${f.id}/`)}">${f.family_name}</a>`).join("");
 }
 
 async function loadPreviewFont(font) {
@@ -213,7 +219,7 @@ function cardHtml(font) {
   return `
     <article class="card" data-id="${font.id}">
       <div class="card-top">
-        <h2><a href="/fonts/${font.id}/" class="card-link">${font.family_name}</a></h2>
+        <h2><a href="${sitePath(`/fonts/${font.id}/`)}" class="card-link">${font.family_name}</a></h2>
         <button type="button" class="fav-btn ${isFav ? "active" : ""}" data-fav="${font.id}" aria-label="Favorite">${isFav ? "★" : "☆"}</button>
       </div>
       <div class="badges">${badges}</div>
@@ -299,7 +305,7 @@ async function openDetail(font) {
   const isFav = getFavorites().has(font.id);
 
   const links = [
-    `<a href="/fonts/${font.id}/">Specimen page</a>`,
+    `<a href="${sitePath(`/fonts/${font.id}/`)}">Specimen page</a>`,
     font.source_url ? `<a href="${font.source_url}" target="_blank" rel="noopener">Source</a>` : "",
     font.download_url ? `<a href="${font.download_url}" target="_blank" rel="noopener">Download</a>` : "",
     font.github_url ? `<a href="${font.github_url}" target="_blank" rel="noopener">GitHub</a>` : "",

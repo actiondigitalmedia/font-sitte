@@ -306,14 +306,22 @@ def build_sitemaps(fonts: list[dict], hub_urls: list[str]) -> None:
 
 
 def inject_home_seo(index_html: str) -> str:
-    """Ensure browse UI index has canonical + basic meta if missing."""
-    if 'rel="canonical"' in index_html:
-        return index_html
-    snippet = f"""  <link rel="canonical" href="{SITE_URL}/" />
-  <meta name="description" content="Browse {SITE_NAME} — commercial-safe libre fonts with live previews and clear OFL/open-source licenses." />
+    """Ensure browse UI index has canonical, site base, and WebSite JSON-LD."""
+    html = index_html
+    # Always stamp the correct GitHub Pages / custom-domain base path
+    html = re.sub(
+        r'<script>window\.__SITE_BASE__=.*?</script>',
+        f'<script>window.__SITE_BASE__={json.dumps(BASE_PATH)};</script>',
+        html,
+        count=1,
+    )
+    if 'rel="canonical"' not in html:
+        snippet = f"""  <link rel="canonical" href="{SITE_URL}/" />
+  <meta property="og:url" content="{SITE_URL}/" />
   <script type="application/ld+json">{json.dumps(website_json_ld(), ensure_ascii=False)}</script>
 """
-    return index_html.replace("</head>", snippet + "</head>", 1)
+        html = html.replace("</head>", snippet + "</head>", 1)
+    return html
 
 
 def main() -> None:
@@ -338,6 +346,10 @@ def main() -> None:
                 write(DIST / name, inject_home_seo(src.read_text(encoding="utf-8")))
             else:
                 shutil.copy2(src, DIST / name)
+
+    # GSC HTML-file verification tokens (drop google*.html into web/)
+    for google_file in sorted(WEB.glob("google*.html")):
+        shutil.copy2(google_file, DIST / google_file.name)
 
     if (ROOT / "health.html").exists():
         shutil.copy2(ROOT / "health.html", DIST / "health.html")
