@@ -1,14 +1,33 @@
-name: Build and Deploy Pages
+name: Refresh catalog and deploy site
 
 on:
   push:
-    branches: [main, cursor/free-font-aggregation-43e3]
+    branches:
+      - main
+      - cursor/free-font-aggregation-43e3
+    paths-ignore:
+      - "free-font-site/data/output/**"
+      - "free-font-site/web/catalog-lite.json"
+      - "free-font-site/data/preview-cache.json"
+      - "free-font-site/discovery/reports/**"
+      - "memory-bank/**"
+      - "backups/**"
   schedule:
-    - cron: "0 6 * * 1"
+    # Mon + Thu 06:00 UTC — fetch sources, rebuild, deploy GitHub Pages
+    - cron: "0 6 * * 1,4"
   workflow_dispatch:
+    inputs:
+      skip_fetch:
+        description: "Use cached raw data only (--no-fetch)"
+        type: boolean
+        default: false
+      run_discovery:
+        description: "Write discovery diff report"
+        type: boolean
+        default: true
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -29,10 +48,49 @@ jobs:
       - name: Install dependencies
         run: pip install -r free-font-site/requirements.txt
 
-      - name: Build catalog and static site
-        run: python3 free-font-site/scripts/build_all.py
+      - name: Refresh catalog and build static site
         env:
           SITE_URL: https://actiondigitalmedia.github.io/font-sitte
+        run: |
+          set -e
+          ARGS=()
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.skip_fetch }}" = "true" ]; then
+            ARGS+=(--no-fetch)
+          fi
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.run_discovery }}" = "false" ]; then
+            ARGS+=(--no-discover)
+          fi
+          python3 free-font-site/scripts/scheduled_refresh.py "${ARGS[@]}"
+
+      - name: Upload discovery artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: font-discovery-${{ github.run_id }}
+          path: |
+            free-font-site/discovery/reports/*.json
+          if-no-files-found: ignore
+
+      - name: Commit catalog to main (scheduled / manual refresh)
+        if: |
+          github.ref == 'refs/heads/main' &&
+          (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch')
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add \
+            free-font-site/data/output/catalog.json \
+            free-font-site/data/output/catalog.csv \
+            free-font-site/data/output/stats.json \
+            free-font-site/data/output/by-source \
+            free-font-site/web/catalog-lite.json \
+            free-font-site/data/preview-cache.json
+          if git diff --staged --quiet; then
+            echo "No catalog changes to commit."
+          else
+            git commit -m "chore(catalog): automated refresh $(date -u +%Y-%m-%dT%H:%MZ)"
+            git push
+          fi
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

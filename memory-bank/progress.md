@@ -1,58 +1,30 @@
 # Progress
 
-## What works ✅
+## Working
+- 2,136 commercial-safe font families aggregated (9 sources + approved-candidates hook)
+- 2,061 live previews (woff2 enrichment + localhost proxy)
+- Static site: specimen pages, categories, sitemap, ads scaffold, GitHub Pages workflow
+- Browse UI: search, filters (category, source, **style**), favorites, pairings, similar
+- **Font discovery operation** documented and scripted (discover → approve → aggregate → style tags → build)
 
-### Aggregation pipeline
-- [x] Google Fonts metadata fetch (1,940 families)
-- [x] Fontshare API pagination (100 families)
-- [x] Font Squirrel via FontGet mirror (608 families)
-- [x] Velvetyne GitHub org (22 repos)
-- [x] League of Moveable Type GitHub (20 repos)
-- [x] Nerd Fonts via FontGet (67 families)
-- [x] Open Foundry scrape (1 family — limited)
-- [x] Usable Fonts + Typewolf featured tagging
-- [x] Merge, dedupe, commercial-safe filter
-- [x] Output: catalog.json, catalog.csv, stats.json, by-source/*.json
+## Style tag coverage (auto, 2026-07-27)
+| Tag | Families |
+|-----|----------|
+| brand-display | 544 |
+| handwritten-script | 385 |
+| slab-workhorse | 365 |
+| monospace-dev | 145 |
+| web-modern | 46 |
+| pixel-retro | 30 |
+| experimental | 24 |
+| y2k-web | 7 |
+| old-english | 7 |
 
-### Browse UI
-- [x] Search, category/source/featured/variable filters
-- [x] Sort by name, featured, category
-- [x] Infinite scroll (48 per page)
-- [x] Lazy font preview loading via official CSS APIs (fixed 2026-07-19)
-- [x] Detail modal with source/download/license links
-- [x] health.html port-forward verification page
-- [x] Cursor browser preview working (user confirmed)
-
-### Catalog totals
-- **2,013** merged commercial-safe families
-- **7,875** variants
-- **105** featured
-
-## What's left to build
-- [ ] Public deployment
-- [ ] CI/CD catalog refresh (GitHub Action)
-- [ ] Open Foundry full catalog
-- [ ] Optional mixed-license sources (DaFont, FontSpace)
-- [ ] Smaller/paginated catalog for faster initial load
-- [ ] Merge PR #1 to main
+## Discovery backlog (from 2026-07-27 report)
+- Fontshare: 64 names not in merged catalog (dedupe investigation)
+- Free Faces: 47 candidate names for human license review
+- Extend raw adapters for velvetyne/league in `discover_fonts.py` for fuller diffs
 
 ## Known issues
-| Issue | Severity | Notes |
-|-------|----------|-------|
-| Open Foundry only 1 font | Low | SPA needs API or headless scrape |
-| catalog-lite.json ~2MB+ with previews | Low | Acceptable; 1940 fonts have preview_woff2 |
-| Cursor browser blocks 3rd-party fonts | Fixed | Use scripts/serve.py proxy + preview_woff2 |
-| app.js had syntax bug | Fixed | googleCssUrl restored 2026-07-17 |
-
-## Git history (key commits)
-```
-7bc598f Fix broken app.js that prevented UI from loading
-f81c96a Fix font UI for Cursor browser preview
-1d8365d Add browse UI for the free font catalog
-f568649 Add free font aggregation pipeline with 2013-family catalog
-2c54fb1 Initial commit
-```
-
-## Last verified
-- **2026-07-19** — User confirmed UI "looking nice" via localhost
-- Server health check passing on port 8080
+- Open Foundry SPA still ~1 family
+- MedievalSharp example in approved-candidates dedupes against Google Fonts (format demo only)

@@ -1,51 +1,33 @@
 # Active Context
 
-## Current focus (2026-07-19)
-1. **Fixed font previews** — was using fake gstatic woff2 URLs; now loads via Google Fonts CSS API + Fontshare CSS API
-2. User wants more verified OSS fonts + monetization (AdSense, native ads) + SEO as near-future steps
-
-See `memory-bank/roadmap.md` for full plan.
+## Current focus (2026-07-27)
+**Continuing Font Discovery Operation** — documented pipeline to find legal free fonts (Old English, Y2K, pixel, web-modern, etc.) and grow the catalog.
 
 ## Recent changes
-1. Built aggregation pipeline from 7 sources
-2. Created unified catalog (JSON, CSV, per-source slices, stats)
-3. Built static browse UI at `free-font-site/web/`
-4. Fixed Cursor browser preview issues:
-   - Server bind `0.0.0.0:8080`
-   - Same-origin `catalog-lite.json`
-   - Fixed broken `app.js` syntax error (googleCssUrl)
-   - Added `health.html` for port-forward verification
-5. User confirmed UI "looking nice" via localhost
+1. **`docs/font-discovery-operation.md`** — weekly playbook, legal bar, architecture
+2. **`discovery/`** — `sources-registry.json`, `style-taxonomy.json`, `approved-candidates.json`, reports (gitignored)
+3. **`scripts/discover_fonts.py`** — diff raw sources vs catalog; Free Faces scrape for candidates
+4. **`scripts/apply_style_tags.py`** — auto tags on aggregate (9 style buckets)
+5. **UI** — Style filter + badges on cards/detail; specimen pages show style tags
+6. **`approved-candidates`** adapter — human-verified fonts merge into aggregate
+7. **`.github/workflows/discover-fonts.yml`** — Monday discovery artifact
+8. Fixed **`aggregate.py`** (broken `main()`, style tags before single catalog write)
 
-## How to run right now
+## How to run
 ```bash
 cd free-font-site
-python3 -m http.server 8080 --bind 0.0.0.0
-# http://localhost:8080/health.html  — verify port forward
-# http://localhost:8080/web/           — browse UI
+python3 scripts/build_all.py --discover
+python3 scripts/serve.py 8080
 ```
 
-Refresh catalog data:
-```bash
-pip install -r requirements.txt
-python3 scripts/aggregate.py
-python3 scripts/build_web_catalog.py
-```
+Add a verified font: edit `discovery/approved-candidates.json` → re-run `aggregate.py` or `build_all.py`.
 
-## Next steps (prioritized)
-- [ ] User verify font previews look distinct (hard refresh /web/)
-- [ ] Add more verified libre sources (Fontsource, Omnibus, Collletttivo)
-- [ ] SEO: per-font pages, sitemap, structured data
-- [ ] Monetization: AdSense + native ad slots
-- [ ] Public deployment (GitHub Pages / Netlify)
+## Next steps
+- [ ] Merge PR to `main` and confirm GitHub Pages environment enabled
+- [ ] Create Cursor Automation using `docs/cloud-agent-catalog-runbook.md` (weekly license review)
+- [ ] Fix Fontshare discover false positives (64 “missing” names)
 
 ## Active decisions
-- Keep `data/raw/` gitignored — regenerate via aggregate.py
-- Ship `catalog-lite.json` in web/ for UI (~1.9MB)
-- Use Python http.server for dev preview (no build step)
-- Port 8080 declared in `.cursor/environment.json`
-
-## Known issues
-- Open Foundry scrape only gets 1 family (client-rendered SPA)
-- `catalog-lite.json` is ~1.9MB — acceptable but could be split
-- Cursor port forwarding may remap 8080 if local port taken
+- Free Faces = **candidates only**, never auto-merge
+- `style_tags` applied every aggregate run from taxonomy + manual tags on approved entries
+- Reports in `discovery/reports/` stay local/CI artifacts (gitignored)

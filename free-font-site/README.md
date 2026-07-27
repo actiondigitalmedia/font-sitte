@@ -51,7 +51,9 @@ We maintain an ongoing operation to find **new legal free fonts** (Old English, 
 - **Playbook:** [`docs/font-discovery-operation.md`](docs/font-discovery-operation.md)
 - **Human-approved adds:** edit [`discovery/approved-candidates.json`](discovery/approved-candidates.json) (OFL/commercial verified)
 - **Style filters:** [`discovery/style-taxonomy.json`](discovery/style-taxonomy.json) → applied on every `aggregate.py` run
-- **Reports:** `discovery/reports/YYYY-MM-DD-discovery.json` (also via GitHub Action `discover-fonts.yml` on Mondays)
+- **Reports:** `discovery/reports/YYYY-MM-DD-discovery.json` (CI artifacts on each deploy workflow run)
+
+See **[`docs/continuous-updates.md`](docs/continuous-updates.md)** for the always-on GitHub schedule + Cursor Cloud Agent setup.
 
 ```bash
 python3 scripts/discover_fonts.py

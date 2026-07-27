@@ -139,10 +139,18 @@ Then run `build_all.py`. Duplicates merge by family name slug.
 
 ## CI / automation
 
-GitHub Actions:
+**Primary (always-on):** [`.github/workflows/deploy-pages.yml`](../../.github/workflows/deploy-pages.yml)
 
-- **`deploy-pages.yml`** — weekly full rebuild + deploy.
-- **`discover-fonts.yml`** — weekly discovery report (artifact upload; optional PR comment in future).
+- **Schedule:** Mon + Thu 06:00 UTC — full source fetch, `scheduled_refresh.py`, GitHub Pages deploy, catalog commit to `main` when changed
+- **Manual:** Actions → *Refresh catalog and deploy site*
+
+**Cursor Cloud Agent (optional):** weekly license review + `approved-candidates.json` — see [`continuous-updates.md`](continuous-updates.md) and [`cloud-agent-catalog-runbook.md`](cloud-agent-catalog-runbook.md).
+
+Entry script for CI and agents:
+
+```bash
+python3 scripts/scheduled_refresh.py
+```
 
 ## Backlog (next sources to implement)
 
