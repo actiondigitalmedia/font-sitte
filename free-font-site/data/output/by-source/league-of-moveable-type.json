@@ -30,7 +30,7 @@
       "axes": [],
       "popularity": 145,
       "date_added": null,
-      "last_modified": "2026-05-17T02:34:16Z",
+      "last_modified": "2026-07-25T07:25:03Z",
       "preview_text": "A bad-ass, unholy-mother-shut-your-mouth stencil sans-serif.",
       "download_url": "https://github.com/theleagueof/blackout.git",
       "github_url": "https://github.com/theleagueof/blackout",
@@ -41,6 +41,9 @@
           "style": "normal",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "brand-display"
       ]
     },
     {
@@ -81,6 +84,9 @@
           "style": "normal",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "brand-display"
       ]
     },
     {
@@ -109,9 +115,9 @@
       ],
       "variable": false,
       "axes": [],
-      "popularity": 194,
+      "popularity": 193,
       "date_added": null,
-      "last_modified": "2026-07-14T16:53:49Z",
+      "last_modified": "2026-07-21T05:11:12Z",
       "preview_text": "A serif based on the work of a famous Czech-American type designer of yesteryear. ",
       "download_url": "https://github.com/theleagueof/fanwood.git",
       "github_url": "https://github.com/theleagueof/fanwood",
@@ -122,6 +128,9 @@
           "style": "normal",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "brand-display"
       ]
     },
     {
@@ -162,6 +171,9 @@
           "style": "normal",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "brand-display"
       ]
     },
     {
@@ -202,6 +214,10 @@
           "style": "normal",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "brand-display",
+        "handwritten-script"
       ]
     },
     {
@@ -242,6 +258,9 @@
           "style": "normal",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "brand-display"
       ]
     },
     {
@@ -282,6 +301,10 @@
           "style": "normal",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "brand-display",
+        "web-modern"
       ]
     }
   ]

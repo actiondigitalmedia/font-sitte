@@ -9,10 +9,19 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "data" / "output" / "catalog.json"
 OUT = ROOT / "web" / "catalog-lite.json"
+TAXONOMY = ROOT / "discovery" / "style-taxonomy.json"
 
 
 def main() -> None:
     data = json.loads(SRC.read_text(encoding="utf-8"))
+    style_labels = {}
+    if TAXONOMY.exists():
+        tax = json.loads(TAXONOMY.read_text(encoding="utf-8"))
+        style_labels = {
+            tid: rule.get("label", tid)
+            for tid, rule in (tax.get("style_tags") or {}).items()
+        }
+
     lite_fonts = []
     for f in data["fonts"]:
         lite_fonts.append({
@@ -29,6 +38,7 @@ def main() -> None:
             "variable": f.get("variable"),
             "designers": f.get("designers", []),
             "tags": f.get("tags", []),
+            "style_tags": f.get("style_tags", []),
             "preview_text": f.get("preview_text"),
             "download_url": f.get("download_url"),
             "github_url": f.get("github_url"),
@@ -44,8 +54,11 @@ def main() -> None:
             "variant_count": len(f.get("variants") or []),
         })
 
+    catalog_info = dict(data["catalog_info"])
+    catalog_info["style_tag_labels"] = style_labels
+
     OUT.write_text(
-        json.dumps({"catalog_info": data["catalog_info"], "fonts": lite_fonts}, ensure_ascii=False, separators=(",", ":")),
+        json.dumps({"catalog_info": catalog_info, "fonts": lite_fonts}, ensure_ascii=False, separators=(",", ":")),
         encoding="utf-8",
     )
     print(f"Wrote {OUT} ({OUT.stat().st_size:,} bytes, {len(lite_fonts)} families)")

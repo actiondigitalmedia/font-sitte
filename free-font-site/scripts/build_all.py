@@ -24,6 +24,8 @@ def main() -> None:
     run([sys.executable, str(SCRIPTS / "build_web_catalog.py")])
     run([sys.executable, str(SCRIPTS / "enrich_preview_urls.py")])
     run([sys.executable, str(SCRIPTS / "build_site.py")])
+    if "--discover" in sys.argv:
+        run([sys.executable, str(SCRIPTS / "discover_fonts.py")])
     print("\n✓ Build complete → free-font-site/dist/")
 
 

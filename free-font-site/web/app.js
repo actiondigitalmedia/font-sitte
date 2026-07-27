@@ -23,6 +23,7 @@ const els = {
   search: document.getElementById("search"),
   category: document.getElementById("category"),
   source: document.getElementById("source"),
+  style: document.getElementById("style"),
   featured: document.getElementById("featured"),
   variable: document.getElementById("variable"),
   favoritesOnly: document.getElementById("favorites-only"),
@@ -136,14 +137,22 @@ function fillSelect(select, values) {
   }
 }
 
+function styleTagLabel(tagId) {
+  return state.styleLabels?.[tagId] || tagId.replace(/-/g, " ");
+}
+
 function renderStats(info) {
   const previewNote = info.preview_enriched
     ? `<span class="stat"><strong>${info.preview_enriched.toLocaleString()}</strong> live previews</span>`
+    : "";
+  const styleNote = info.style_tag_counts
+    ? `<span class="stat"><a href="#style" style="color:inherit">${Object.keys(info.style_tag_counts).length} style buckets</a></span>`
     : "";
   els.stats.innerHTML = `
     <span class="stat"><strong>${info.total_families.toLocaleString()}</strong> families</span>
     <span class="stat"><strong>${info.total_variants.toLocaleString()}</strong> variants</span>
     ${previewNote}
+    ${styleNote}
     <span class="stat">Updated ${new Date(info.generated_at).toLocaleDateString()}</span>
   `;
 }
@@ -152,6 +161,7 @@ function applyFilters() {
   const q = els.search.value.trim().toLowerCase();
   const category = els.category.value;
   const source = els.source.value;
+  const styleTag = els.style?.value;
   const featuredOnly = els.featured.checked;
   const variableOnly = els.variable.checked;
   const favoritesOnly = els.favoritesOnly?.checked;
@@ -160,6 +170,7 @@ function applyFilters() {
   state.filtered = state.fonts.filter((font) => {
     if (category && font.category !== category) return false;
     if (source && font.source !== source) return false;
+    if (styleTag && !(font.style_tags || []).includes(styleTag)) return false;
     if (featuredOnly && !font.featured) return false;
     if (variableOnly && !font.variable) return false;
     if (favoritesOnly && !favs.has(font.id)) return false;
@@ -172,6 +183,7 @@ function applyFilters() {
       font.license_type,
       ...(font.designers || []),
       ...(font.tags || []),
+      ...(font.style_tags || []),
       ...(font.featured_lists || []),
     ]
       .join(" ")
@@ -203,6 +215,7 @@ function cardHtml(font) {
   const badges = [
     font.featured ? `<span class="badge featured">Featured</span>` : "",
     `<span class="badge">${font.category}</span>`,
+    ...(font.style_tags || []).slice(0, 2).map((t) => `<span class="badge style">${styleTagLabel(t)}</span>`),
     `<span class="badge">${font.source}</span>`,
     font.variable ? `<span class="badge">Variable</span>` : "",
   ].join("");
@@ -311,9 +324,13 @@ async function openDetail(font) {
   const styleCount = font.variant_count || font.variants?.length || 0;
   const similar = similarFonts(font);
   const pairings = suggestPairings(font);
+  const styleBadges = (font.style_tags || [])
+    .map((t) => `<span class="badge style">${styleTagLabel(t)}</span>`)
+    .join(" ");
 
   els.detailBody.innerHTML = `
     <h2>${font.family_name} <button type="button" class="fav-btn ${isFav ? "active" : ""}" id="detail-fav">${isFav ? "★" : "☆"}</button></h2>
+    ${styleBadges ? `<div class="badges">${styleBadges}</div>` : ""}
     <p class="detail-preview" style="font-family:${previewFamily}">
       ${font.preview_text || "The quick brown fox jumps over the lazy dog 0123456789"}
     </p>
@@ -338,7 +355,7 @@ async function openDetail(font) {
 }
 
 function wireEvents() {
-  for (const el of [els.search, els.category, els.source, els.featured, els.variable, els.favoritesOnly, els.sort]) {
+  for (const el of [els.search, els.category, els.source, els.style, els.featured, els.variable, els.favoritesOnly, els.sort]) {
     if (el) {
       el.addEventListener("input", applyFilters);
       el.addEventListener("change", applyFilters);
@@ -349,6 +366,7 @@ function wireEvents() {
     els.search.value = "";
     els.category.value = "";
     els.source.value = "";
+    if (els.style) els.style.value = "";
     els.featured.checked = false;
     els.variable.checked = false;
     if (els.favoritesOnly) els.favoritesOnly.checked = false;
@@ -382,10 +400,20 @@ async function init() {
 
     const catalog = await response.json();
     state.fonts = catalog.fonts;
+    state.styleLabels = catalog.catalog_info?.style_tag_labels || {};
     renderStats(catalog.catalog_info);
 
     fillSelect(els.category, [...new Set(state.fonts.map((f) => f.category))].sort());
     fillSelect(els.source, [...new Set(state.fonts.map((f) => f.source))].sort());
+    if (els.style) {
+      const tagIds = [...new Set(state.fonts.flatMap((f) => f.style_tags || []))].sort();
+      for (const id of tagIds) {
+        const option = document.createElement("option");
+        option.value = id;
+        option.textContent = state.styleLabels[id] || styleTagLabel(id);
+        els.style.appendChild(option);
+      }
+    }
 
     clearStatus();
     applyFilters();

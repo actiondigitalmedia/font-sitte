@@ -40,6 +40,10 @@
           "style": "normal",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "brand-display",
+        "experimental"
       ]
     }
   ]

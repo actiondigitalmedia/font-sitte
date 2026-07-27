@@ -13,9 +13,11 @@ SCRIPTS_DIR = Path(__file__).resolve().parent
 sys.path.insert(0, str(SCRIPTS_DIR))
 
 from sources import (  # noqa: E402
+    approved_candidates,
     font_squirrel,
     fontshare,
     fontsource,
+    free_faces,
     google_fonts,
     league,
     nerd_fonts,
@@ -37,6 +39,7 @@ SOURCE_ORDER = [
     "open-foundry",
     "font-squirrel",
     "nerd-fonts",
+    "approved-candidates",
 ]
 
 
@@ -126,6 +129,10 @@ def run(fetch: bool = True, libre_only: bool = True) -> dict:
         fontsource_raw = fontsource.fetch_raw()
         print("Fetching Omnibus Type...")
         omnibus_raw = omnibus_type.fetch_raw()
+        print("Fetching Free Faces (discovery scrape)...")
+        free_faces_raw = free_faces.fetch_raw()
+        print("Loading approved candidates...")
+        approved_raw = approved_candidates.fetch_raw()
     else:
         google_raw = load_json(RAW_DIR / "google-fonts.json")
         fontshare_raw = load_json(RAW_DIR / "fontshare.json")
@@ -137,6 +144,8 @@ def run(fetch: bool = True, libre_only: bool = True) -> dict:
         nerd_raw = load_json(RAW_DIR / "nerd-fonts.json")
         fontsource_raw = load_json(RAW_DIR / "fontsource.json")
         omnibus_raw = load_json(RAW_DIR / "omnibus-type.json")
+        free_faces_raw = load_json(RAW_DIR / "free-faces.json")
+        approved_raw = load_json(RAW_DIR / "approved-candidates.json")
 
     featured_map = usable_fonts.get_featured_map(usable_raw)
 
@@ -151,6 +160,7 @@ def run(fetch: bool = True, libre_only: bool = True) -> dict:
         ("open-foundry", open_foundry.to_catalog_entries(open_foundry_raw), open_foundry_raw),
         ("font-squirrel", font_squirrel.to_catalog_entries(squirrel_raw), squirrel_raw),
         ("nerd-fonts", nerd_fonts.to_catalog_entries(nerd_raw), nerd_raw),
+        ("approved-candidates", approved_candidates.to_catalog_entries(approved_raw), approved_raw),
     ]
 
     for source_id, entries, raw in source_entries:
@@ -186,6 +196,9 @@ def run(fetch: bool = True, libre_only: bool = True) -> dict:
         "fonts": merged,
     }
 
+    catalog = post_merge_style_tags(catalog)
+    merged = catalog["fonts"]
+
     save_json(OUTPUT_DIR / "catalog.json", catalog)
     write_csv_rows(
         OUTPUT_DIR / "catalog.csv",
@@ -219,12 +232,22 @@ def run(fetch: bool = True, libre_only: bool = True) -> dict:
         "categories": dict(sorted(categories.items(), key=lambda x: -x[1])),
         "top_licenses": dict(sorted(licenses.items(), key=lambda x: -x[1])[:15]),
         "sources": [{"id": s["id"], "families": s["family_count"]} for s in source_stats],
+        "style_tag_counts": catalog["catalog_info"].get("style_tag_counts", {}),
     })
 
     print(f"\nCatalog written: {len(merged)} families, {total_variants} variants")
     print(f"  JSON: {OUTPUT_DIR / 'catalog.json'}")
     print(f"  CSV:  {OUTPUT_DIR / 'catalog.csv'}")
 
+    return catalog
+
+
+def post_merge_style_tags(catalog: dict) -> dict:
+    from apply_style_tags import apply_to_fonts
+
+    fonts, counts = apply_to_fonts(catalog["fonts"])
+    catalog["fonts"] = fonts
+    catalog["catalog_info"]["style_tag_counts"] = dict(sorted(counts.items(), key=lambda x: -x[1]))
     return catalog
 
 

@@ -237,6 +237,11 @@ select {
   border-color: transparent;
 }
 
+.badge.style {
+  color: var(--accent);
+  border-color: color-mix(in srgb, var(--accent) 40%, var(--border));
+}
+
 .preview {
   margin-top: 0.85rem;
   min-height: 3.2rem;

@@ -33,6 +33,7 @@ A reproducible pipeline that aggregates **2,000+ commercial-safe libre fonts** f
 ```bash
 cd free-font-site
 python3 scripts/build_all.py   # builds dist/ with SEO pages
+python3 scripts/build_all.py --discover   # optional discovery report after build
 python3 scripts/serve.py 8080
 # open http://localhost:8080/
 ```
@@ -43,7 +44,21 @@ Outputs land in `data/output/`:
 - `catalog.csv` — flat summary for spreadsheets / DB import
 - `by-source/*.json` — per-source slices
 
-### Options
+## Continuing font discovery
+
+We maintain an ongoing operation to find **new legal free fonts** (Old English, Y2K, pixel, web-modern, etc.) and merge them into the catalog.
+
+- **Playbook:** [`docs/font-discovery-operation.md`](docs/font-discovery-operation.md)
+- **Human-approved adds:** edit [`discovery/approved-candidates.json`](discovery/approved-candidates.json) (OFL/commercial verified)
+- **Style filters:** [`discovery/style-taxonomy.json`](discovery/style-taxonomy.json) → applied on every `aggregate.py` run
+- **Reports:** `discovery/reports/YYYY-MM-DD-discovery.json` (also via GitHub Action `discover-fonts.yml` on Mondays)
+
+```bash
+python3 scripts/discover_fonts.py
+python3 scripts/apply_style_tags.py   # only if you skipped aggregate
+```
+
+### Aggregate options
 
 ```bash
 python3 scripts/aggregate.py --no-fetch          # rebuild from cached raw data
@@ -79,6 +94,7 @@ python3 scripts/aggregate.py --include-all-licenses  # keep personal-use-only fo
 The catalog supports filtering by:
 
 - **Category:** serif, sans-serif, slab-serif, monospace, display, handwriting, script
+- **Style buckets:** Old English, Y2K, pixel-retro, web-modern, experimental, etc. (`style_tags` in catalog)
 - **Featured:** usable-fonts, typewolf-top, fontshare, velvetyne, league
 - **Variable fonts:** `variable: true`
 - **Tags:** brand-grade, experimental, nerd-font, developer, etc.
@@ -97,8 +113,11 @@ free-font-site/
 ├── schema/font.schema.json    # JSON Schema for catalog
 ├── scripts/
 │   ├── aggregate.py           # Main orchestrator
-│   ├── utils.py               # Normalization helpers
+│   ├── discover_fonts.py      # Weekly source diff reports
+│   ├── apply_style_tags.py    # Style taxonomy → catalog
 │   └── sources/               # Per-source fetch adapters
+├── discovery/                 # Registry, taxonomy, approved candidates, reports/
+├── docs/font-discovery-operation.md
 ├── data/
 │   ├── raw/                   # Cached API responses (gitignored)
 │   └── output/                # catalog.json, catalog.csv, by-source/

@@ -41,7 +41,8 @@
           "style": "normal",
           "files": {}
         }
-      ]
+      ],
+      "style_tags": []
     },
     {
       "id": "omnibus-archivonarrow",
@@ -82,7 +83,8 @@
           "style": "normal",
           "files": {}
         }
-      ]
+      ],
+      "style_tags": []
     },
     {
       "id": "omnibus-asap-sharp",
@@ -110,9 +112,9 @@
       ],
       "variable": false,
       "axes": [],
-      "popularity": 5,
+      "popularity": 6,
       "date_added": null,
-      "last_modified": "2026-07-07T13:24:30Z",
+      "last_modified": "2026-07-25T04:07:01Z",
       "preview_text": "Asap Sharp is the sharp version of Asap",
       "download_url": "https://github.com/Omnibus-Type/Asap_Sharp.git",
       "github_url": "https://github.com/Omnibus-Type/Asap_Sharp",
@@ -123,7 +125,8 @@
           "style": "normal",
           "files": {}
         }
-      ]
+      ],
+      "style_tags": []
     },
     {
       "id": "omnibus-asap-symbol",
@@ -165,7 +168,8 @@
           "style": "normal",
           "files": {}
         }
-      ]
+      ],
+      "style_tags": []
     },
     {
       "id": "omnibus-asapcondensed",
@@ -206,7 +210,8 @@
           "style": "normal",
           "files": {}
         }
-      ]
+      ],
+      "style_tags": []
     },
     {
       "id": "omnibus-pragatinarrow",
@@ -247,7 +252,8 @@
           "style": "normal",
           "files": {}
         }
-      ]
+      ],
+      "style_tags": []
     },
     {
       "id": "omnibus-saira-parametric",
@@ -288,7 +294,8 @@
           "style": "normal",
           "files": {}
         }
-      ]
+      ],
+      "style_tags": []
     },
     {
       "id": "omnibus-tools",
@@ -329,7 +336,8 @@
           "style": "normal",
           "files": {}
         }
-      ]
+      ],
+      "style_tags": []
     }
   ]
 }

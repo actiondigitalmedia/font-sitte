@@ -35,7 +35,7 @@
         {
           "name": "Weight",
           "property": "wght",
-          "range_default": 400.0,
+          "range_default": 650.0,
           "range_left": 200.0,
           "range_right": 700.0
         }
@@ -103,6 +103,9 @@
             "woff2": "https://cdn.fontshare.com/wf/Q27SHUILAI67FICNJF2CYV5TY5DNQNJ3/43ZQHOC6QBKEJW3PNBS6TWWZIQGW27JN/WA7OX75GZRWOZCVPMRPD4RIBFFTMCHCK"
           }
         }
+      ],
+      "style_tags": [
+        "brand-display"
       ]
     }
   ]

@@ -55,7 +55,8 @@
           "style": "normal",
           "files": {}
         }
-      ]
+      ],
+      "style_tags": []
     },
     {
       "id": "fontsource-league-mono",
@@ -139,6 +140,9 @@
           "style": "normal",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "monospace-dev"
       ]
     },
     {
@@ -200,6 +204,9 @@
           "style": "normal",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "brand-display"
       ]
     },
     {
@@ -255,6 +262,9 @@
           "style": "italic",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "monospace-dev"
       ]
     },
     {
@@ -394,7 +404,8 @@
           "style": "italic",
           "files": {}
         }
-      ]
+      ],
+      "style_tags": []
     },
     {
       "id": "fontsource-aileron",
@@ -498,7 +509,8 @@
           "style": "italic",
           "files": {}
         }
-      ]
+      ],
+      "style_tags": []
     },
     {
       "id": "fontsource-apfel-grotezk",
@@ -541,7 +553,8 @@
           "style": "normal",
           "files": {}
         }
-      ]
+      ],
+      "style_tags": []
     },
     {
       "id": "fontsource-argentum-sans",
@@ -680,7 +693,8 @@
           "style": "italic",
           "files": {}
         }
-      ]
+      ],
+      "style_tags": []
     },
     {
       "id": "fontsource-bagnard",
@@ -717,6 +731,9 @@
           "style": "normal",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "slab-workhorse"
       ]
     },
     {
@@ -754,7 +771,8 @@
           "style": "normal",
           "files": {}
         }
-      ]
+      ],
+      "style_tags": []
     },
     {
       "id": "fontsource-blackout-midnight",
@@ -791,6 +809,9 @@
           "style": "normal",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "brand-display"
       ]
     },
     {
@@ -828,6 +849,9 @@
           "style": "normal",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "brand-display"
       ]
     },
     {
@@ -865,6 +889,9 @@
           "style": "normal",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "brand-display"
       ]
     },
     {
@@ -909,7 +936,8 @@
           "style": "italic",
           "files": {}
         }
-      ]
+      ],
+      "style_tags": []
     },
     {
       "id": "fontsource-bravura",
@@ -946,7 +974,8 @@
           "style": "normal",
           "files": {}
         }
-      ]
+      ],
+      "style_tags": []
     },
     {
       "id": "fontsource-bravura-text",
@@ -983,7 +1012,8 @@
           "style": "normal",
           "files": {}
         }
-      ]
+      ],
+      "style_tags": []
     },
     {
       "id": "fontsource-chunk-five",
@@ -1020,6 +1050,9 @@
           "style": "normal",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "slab-workhorse"
       ]
     },
     {
@@ -1112,7 +1145,8 @@
           "style": "italic",
           "files": {}
         }
-      ]
+      ],
+      "style_tags": []
     },
     {
       "id": "fontsource-comic-mono",
@@ -1155,6 +1189,9 @@
           "style": "normal",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "monospace-dev"
       ]
     },
     {
@@ -1258,6 +1295,9 @@
           "style": "italic",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "monospace-dev"
       ]
     },
     {
@@ -1386,7 +1426,8 @@
           "style": "italic",
           "files": {}
         }
-      ]
+      ],
+      "style_tags": []
     },
     {
       "id": "fontsource-dejavu-math",
@@ -1423,6 +1464,9 @@
           "style": "normal",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "brand-display"
       ]
     },
     {
@@ -1478,6 +1522,9 @@
           "style": "italic",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "monospace-dev"
       ]
     },
     {
@@ -1534,7 +1581,8 @@
           "style": "italic",
           "files": {}
         }
-      ]
+      ],
+      "style_tags": []
     },
     {
       "id": "fontsource-dejavu-serif",
@@ -1590,6 +1638,9 @@
           "style": "italic",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "slab-workhorse"
       ]
     },
     {
@@ -1627,7 +1678,8 @@
           "style": "normal",
           "files": {}
         }
-      ]
+      ],
+      "style_tags": []
     },
     {
       "id": "fontsource-dseg14-classic",
@@ -1694,7 +1746,8 @@
           "style": "italic",
           "files": {}
         }
-      ]
+      ],
+      "style_tags": []
     },
     {
       "id": "fontsource-dseg14-classic-mini",
@@ -1761,7 +1814,8 @@
           "style": "italic",
           "files": {}
         }
-      ]
+      ],
+      "style_tags": []
     },
     {
       "id": "fontsource-dseg14-modern",
@@ -1828,7 +1882,8 @@
           "style": "italic",
           "files": {}
         }
-      ]
+      ],
+      "style_tags": []
     },
     {
       "id": "fontsource-dseg14-modern-mini",
@@ -1895,7 +1950,8 @@
           "style": "italic",
           "files": {}
         }
-      ]
+      ],
+      "style_tags": []
     },
     {
       "id": "fontsource-dseg7-classic",
@@ -1962,7 +2018,8 @@
           "style": "italic",
           "files": {}
         }
-      ]
+      ],
+      "style_tags": []
     },
     {
       "id": "fontsource-dseg7-classic-mini",
@@ -2029,7 +2086,8 @@
           "style": "italic",
           "files": {}
         }
-      ]
+      ],
+      "style_tags": []
     },
     {
       "id": "fontsource-dseg7-modern",
@@ -2096,7 +2154,8 @@
           "style": "italic",
           "files": {}
         }
-      ]
+      ],
+      "style_tags": []
     },
     {
       "id": "fontsource-dseg7-modern-mini",
@@ -2163,7 +2222,8 @@
           "style": "italic",
           "files": {}
         }
-      ]
+      ],
+      "style_tags": []
     },
     {
       "id": "fontsource-dseg7-segg-chan",
@@ -2200,7 +2260,8 @@
           "style": "normal",
           "files": {}
         }
-      ]
+      ],
+      "style_tags": []
     },
     {
       "id": "fontsource-dseg7-segg-chan-mini",
@@ -2237,7 +2298,8 @@
           "style": "normal",
           "files": {}
         }
-      ]
+      ],
+      "style_tags": []
     },
     {
       "id": "fontsource-firago",
@@ -2376,7 +2438,8 @@
           "style": "italic",
           "files": {}
         }
-      ]
+      ],
+      "style_tags": []
     },
     {
       "id": "fontsource-fusion-kai-g",
@@ -2413,6 +2476,9 @@
           "style": "normal",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "handwritten-script"
       ]
     },
     {
@@ -2450,6 +2516,9 @@
           "style": "normal",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "handwritten-script"
       ]
     },
     {
@@ -2487,6 +2556,9 @@
           "style": "normal",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "handwritten-script"
       ]
     },
     {
@@ -2524,6 +2596,10 @@
           "style": "normal",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "monospace-dev",
+        "pixel-retro"
       ]
     },
     {
@@ -2561,6 +2637,10 @@
           "style": "normal",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "monospace-dev",
+        "pixel-retro"
       ]
     },
     {
@@ -2598,6 +2678,10 @@
           "style": "normal",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "monospace-dev",
+        "pixel-retro"
       ]
     },
     {
@@ -2635,6 +2719,10 @@
           "style": "normal",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "monospace-dev",
+        "pixel-retro"
       ]
     },
     {
@@ -2672,6 +2760,9 @@
           "style": "normal",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "pixel-retro"
       ]
     },
     {
@@ -2709,6 +2800,9 @@
           "style": "normal",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "pixel-retro"
       ]
     },
     {
@@ -2746,6 +2840,9 @@
           "style": "normal",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "pixel-retro"
       ]
     },
     {
@@ -2783,6 +2880,9 @@
           "style": "normal",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "pixel-retro"
       ]
     },
     {
@@ -2820,6 +2920,10 @@
           "style": "normal",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "monospace-dev",
+        "pixel-retro"
       ]
     },
     {
@@ -2857,6 +2961,10 @@
           "style": "normal",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "monospace-dev",
+        "pixel-retro"
       ]
     },
     {
@@ -2894,6 +3002,10 @@
           "style": "normal",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "monospace-dev",
+        "pixel-retro"
       ]
     },
     {
@@ -2931,6 +3043,10 @@
           "style": "normal",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "monospace-dev",
+        "pixel-retro"
       ]
     },
     {
@@ -2968,6 +3084,9 @@
           "style": "normal",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "pixel-retro"
       ]
     },
     {
@@ -3005,6 +3124,9 @@
           "style": "normal",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "pixel-retro"
       ]
     },
     {
@@ -3042,6 +3164,9 @@
           "style": "normal",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "pixel-retro"
       ]
     },
     {
@@ -3079,6 +3204,9 @@
           "style": "normal",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "pixel-retro"
       ]
     },
     {
@@ -3116,6 +3244,10 @@
           "style": "normal",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "monospace-dev",
+        "pixel-retro"
       ]
     },
     {
@@ -3153,6 +3285,10 @@
           "style": "normal",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "monospace-dev",
+        "pixel-retro"
       ]
     },
     {
@@ -3190,6 +3326,10 @@
           "style": "normal",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "monospace-dev",
+        "pixel-retro"
       ]
     },
     {
@@ -3227,6 +3367,10 @@
           "style": "normal",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "monospace-dev",
+        "pixel-retro"
       ]
     },
     {
@@ -3264,6 +3408,9 @@
           "style": "normal",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "pixel-retro"
       ]
     },
     {
@@ -3301,6 +3448,9 @@
           "style": "normal",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "pixel-retro"
       ]
     },
     {
@@ -3338,6 +3488,9 @@
           "style": "normal",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "pixel-retro"
       ]
     },
     {
@@ -3375,6 +3528,9 @@
           "style": "normal",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "pixel-retro"
       ]
     },
     {
@@ -3460,6 +3616,9 @@
           "style": "normal",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "web-modern"
       ]
     },
     {
@@ -3533,7 +3692,8 @@
           "style": "normal",
           "files": {}
         }
-      ]
+      ],
+      "style_tags": []
     },
     {
       "id": "fontsource-hauora-sans",
@@ -3606,7 +3766,8 @@
           "style": "normal",
           "files": {}
         }
-      ]
+      ],
+      "style_tags": []
     },
     {
       "id": "fontsource-ia-writer-duo",
@@ -3661,6 +3822,9 @@
           "style": "italic",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "monospace-dev"
       ]
     },
     {
@@ -3719,6 +3883,9 @@
           "style": "italic",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "monospace-dev"
       ]
     },
     {
@@ -3774,7 +3941,8 @@
           "style": "italic",
           "files": {}
         }
-      ]
+      ],
+      "style_tags": []
     },
     {
       "id": "fontsource-iosevka",
@@ -3916,6 +4084,9 @@
           "style": "italic",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "monospace-dev"
       ]
     },
     {
@@ -4055,6 +4226,9 @@
           "style": "italic",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "monospace-dev"
       ]
     },
     {
@@ -4194,6 +4368,9 @@
           "style": "italic",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "monospace-dev"
       ]
     },
     {
@@ -4333,6 +4510,10 @@
           "style": "italic",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "monospace-dev",
+        "slab-workhorse"
       ]
     },
     {
@@ -4472,6 +4653,9 @@
           "style": "italic",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "monospace-dev"
       ]
     },
     {
@@ -4516,7 +4700,8 @@
           "style": "normal",
           "files": {}
         }
-      ]
+      ],
+      "style_tags": []
     },
     {
       "id": "fontsource-lextrall",
@@ -4601,7 +4786,8 @@
           "style": "normal",
           "files": {}
         }
-      ]
+      ],
+      "style_tags": []
     },
     {
       "id": "fontsource-libre-caslon-condensed",
@@ -4680,6 +4866,9 @@
           "style": "italic",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "slab-workhorse"
       ]
     },
     {
@@ -4729,7 +4918,8 @@
           "style": "normal",
           "files": {}
         }
-      ]
+      ],
+      "style_tags": []
     },
     {
       "id": "fontsource-maple-mono",
@@ -4856,6 +5046,9 @@
           "style": "italic",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "monospace-dev"
       ]
     },
     {
@@ -4995,7 +5188,8 @@
           "style": "italic",
           "files": {}
         }
-      ]
+      ],
+      "style_tags": []
     },
     {
       "id": "fontsource-monaspace-argon",
@@ -5110,6 +5304,9 @@
           "style": "italic",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "monospace-dev"
       ]
     },
     {
@@ -5225,6 +5422,9 @@
           "style": "italic",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "monospace-dev"
       ]
     },
     {
@@ -5340,6 +5540,9 @@
           "style": "italic",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "monospace-dev"
       ]
     },
     {
@@ -5455,6 +5658,9 @@
           "style": "italic",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "handwritten-script"
       ]
     },
     {
@@ -5570,6 +5776,9 @@
           "style": "italic",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "slab-workhorse"
       ]
     },
     {
@@ -5628,6 +5837,9 @@
           "style": "italic",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "monospace-dev"
       ]
     },
     {
@@ -5731,7 +5943,8 @@
           "style": "italic",
           "files": {}
         }
-      ]
+      ],
+      "style_tags": []
     },
     {
       "id": "fontsource-norwester",
@@ -5769,6 +5982,9 @@
           "style": "normal",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "brand-display"
       ]
     },
     {
@@ -5807,6 +6023,9 @@
           "style": "normal",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "monospace-dev"
       ]
     },
     {
@@ -5862,7 +6081,8 @@
           "style": "normal",
           "files": {}
         }
-      ]
+      ],
+      "style_tags": []
     },
     {
       "id": "fontsource-open-sauce-one",
@@ -5977,7 +6197,8 @@
           "style": "italic",
           "files": {}
         }
-      ]
+      ],
+      "style_tags": []
     },
     {
       "id": "fontsource-open-sauce-sans",
@@ -6092,7 +6313,8 @@
           "style": "italic",
           "files": {}
         }
-      ]
+      ],
+      "style_tags": []
     },
     {
       "id": "fontsource-open-sauce-two",
@@ -6207,7 +6429,8 @@
           "style": "italic",
           "files": {}
         }
-      ]
+      ],
+      "style_tags": []
     },
     {
       "id": "fontsource-opendyslexic",
@@ -6265,7 +6488,8 @@
           "style": "italic",
           "files": {}
         }
-      ]
+      ],
+      "style_tags": []
     },
     {
       "id": "fontsource-peace-sans",
@@ -6303,7 +6527,8 @@
           "style": "normal",
           "files": {}
         }
-      ]
+      ],
+      "style_tags": []
     },
     {
       "id": "fontsource-pitagon-sans",
@@ -6370,7 +6595,8 @@
           "style": "normal",
           "files": {}
         }
-      ]
+      ],
+      "style_tags": []
     },
     {
       "id": "fontsource-pitagon-sans-mono",
@@ -6497,6 +6723,9 @@
           "style": "italic",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "monospace-dev"
       ]
     },
     {
@@ -6612,7 +6841,8 @@
           "style": "italic",
           "files": {}
         }
-      ]
+      ],
+      "style_tags": []
     },
     {
       "id": "fontsource-pitagon-serif",
@@ -6751,6 +6981,9 @@
           "style": "italic",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "slab-workhorse"
       ]
     },
     {
@@ -6836,7 +7069,8 @@
           "style": "normal",
           "files": {}
         }
-      ]
+      ],
+      "style_tags": []
     },
     {
       "id": "fontsource-redaction",
@@ -6891,6 +7125,9 @@
           "style": "italic",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "slab-workhorse"
       ]
     },
     {
@@ -6946,6 +7183,9 @@
           "style": "italic",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "slab-workhorse"
       ]
     },
     {
@@ -7001,6 +7241,9 @@
           "style": "italic",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "slab-workhorse"
       ]
     },
     {
@@ -7056,6 +7299,9 @@
           "style": "italic",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "slab-workhorse"
       ]
     },
     {
@@ -7111,6 +7357,9 @@
           "style": "italic",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "slab-workhorse"
       ]
     },
     {
@@ -7166,6 +7415,9 @@
           "style": "italic",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "slab-workhorse"
       ]
     },
     {
@@ -7221,6 +7473,9 @@
           "style": "italic",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "slab-workhorse"
       ]
     },
     {
@@ -7258,7 +7513,8 @@
           "style": "normal",
           "files": {}
         }
-      ]
+      ],
+      "style_tags": []
     },
     {
       "id": "fontsource-syne-italic",
@@ -7295,7 +7551,8 @@
           "style": "italic",
           "files": {}
         }
-      ]
+      ],
+      "style_tags": []
     },
     {
       "id": "fontsource-uncut-sans",
@@ -7387,6 +7644,9 @@
           "style": "italic",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "experimental"
       ]
     },
     {
@@ -7424,7 +7684,8 @@
           "style": "normal",
           "files": {}
         }
-      ]
+      ],
+      "style_tags": []
     },
     {
       "id": "fontsource-unifontex",
@@ -7461,6 +7722,9 @@
           "style": "normal",
           "files": {}
         }
+      ],
+      "style_tags": [
+        "monospace-dev"
       ]
     },
     {
@@ -7498,7 +7762,8 @@
           "style": "normal",
           "files": {}
         }
-      ]
+      ],
+      "style_tags": []
     },
     {
       "id": "fontsource-yakuhanjp",
@@ -7571,7 +7836,8 @@
           "style": "normal",
           "files": {}
         }
-      ]
+      ],
+      "style_tags": []
     },
     {
       "id": "fontsource-yakuhanjps",
@@ -7644,7 +7910,8 @@
           "style": "normal",
           "files": {}
         }
-      ]
+      ],
+      "style_tags": []
     },
     {
       "id": "fontsource-yakuhanmp",
@@ -7717,7 +7984,8 @@
           "style": "normal",
           "files": {}
         }
-      ]
+      ],
+      "style_tags": []
     },
     {
       "id": "fontsource-yakuhanmps",
@@ -7790,7 +8058,8 @@
           "style": "normal",
           "files": {}
         }
-      ]
+      ],
+      "style_tags": []
     },
     {
       "id": "fontsource-yakuhanrp",
@@ -7863,7 +8132,8 @@
           "style": "normal",
           "files": {}
         }
-      ]
+      ],
+      "style_tags": []
     },
     {
       "id": "fontsource-yakuhanrps",
@@ -7936,7 +8206,8 @@
           "style": "normal",
           "files": {}
         }
-      ]
+      ],
+      "style_tags": []
     }
   ]
 }

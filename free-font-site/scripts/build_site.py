@@ -71,6 +71,14 @@ def specimen_page(font: dict, similar: list[dict]) -> str:
         if font.get(key):
             links.append(f'<a href="{esc(font[key])}" rel="noopener">{label}</a>')
 
+    style_tags = font.get("style_tags") or []
+    style_html = ""
+    if style_tags:
+        chips = "".join(
+            f'<span class="badge style">{esc(t.replace("-", " ").title())}</span>' for t in style_tags
+        )
+        style_html = f'<div class="badges">{chips}</div>'
+
     similar_html = "".join(
         f'<a class="chip" href="/fonts/{esc(s["id"])}/">{esc(s["family_name"])}</a>' for s in similar[:6]
     )
@@ -82,6 +90,7 @@ def specimen_page(font: dict, similar: list[dict]) -> str:
   <main class="specimen-main">
     <div class="ad-slot ad-leaderboard" data-ad-slot="specimen-top"></div>
     <p class="specimen-preview" id="specimen-preview" data-font-id="{esc(font['id'])}">{esc(font.get('preview_text') or 'The quick brown fox jumps over the lazy dog')}</p>
+    {style_html}
     <dl class="detail-grid">
       <div><dt>License</dt><dd>{esc(font['license_type'])}</dd></div>
       <div><dt>Source</dt><dd>{esc(font['source'])}</dd></div>
