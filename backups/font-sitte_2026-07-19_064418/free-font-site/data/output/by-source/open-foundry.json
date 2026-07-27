@@ -1,0 +1,46 @@
+{
+  "source": "open-foundry",
+  "count": 1,
+  "fonts": [
+    {
+      "id": "open-foundry-explore",
+      "family_name": "Explore",
+      "license_type": "OFL",
+      "license_url": "https://openfontlicense.org",
+      "commercial_use": true,
+      "source": "open-foundry",
+      "source_url": "https://open-foundry.com/fonts/mplus-mtype-1",
+      "foundry": "Open Foundry",
+      "designers": [],
+      "category": "display",
+      "subsets": [
+        "latin"
+      ],
+      "tags": [
+        "open-foundry",
+        "curated",
+        "libre"
+      ],
+      "featured": true,
+      "featured_lists": [
+        "open-foundry"
+      ],
+      "variable": false,
+      "axes": [],
+      "popularity": null,
+      "date_added": null,
+      "last_modified": null,
+      "preview_text": "Open-source typeface from Open Foundry",
+      "download_url": "https://open-foundry.com/fonts/mplus-mtype-1",
+      "github_url": null,
+      "variants": [
+        {
+          "name": "Regular",
+          "weight": 400,
+          "style": "normal",
+          "files": {}
+        }
+      ]
+    }
+  ]
+}

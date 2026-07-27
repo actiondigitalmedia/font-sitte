@@ -1,0 +1,76 @@
+{
+  "generated_at": "2026-07-27T05:12:48+00:00",
+  "total_families": 2136,
+  "total_variants": 8580,
+  "featured_count": 132,
+  "license_policy": "libre-commercial-safe",
+  "categories": {
+    "sans-serif": 787,
+    "display": 501,
+    "serif": 362,
+    "handwriting": 362,
+    "monospace": 106,
+    "other": 18
+  },
+  "top_licenses": {
+    "OFL": 2097,
+    "Mixed": 35,
+    "CC0": 1,
+    "Apache-2.0": 1,
+    "MIT": 1,
+    "Unlicense": 1
+  },
+  "sources": [
+    {
+      "id": "google-fonts",
+      "families": 1942
+    },
+    {
+      "id": "fontshare",
+      "families": 100
+    },
+    {
+      "id": "fontsource",
+      "families": 120
+    },
+    {
+      "id": "omnibus-type",
+      "families": 29
+    },
+    {
+      "id": "velvetyne",
+      "families": 22
+    },
+    {
+      "id": "league-of-moveable-type",
+      "families": 20
+    },
+    {
+      "id": "open-foundry",
+      "families": 1
+    },
+    {
+      "id": "font-squirrel",
+      "families": 608
+    },
+    {
+      "id": "nerd-fonts",
+      "families": 67
+    },
+    {
+      "id": "approved-candidates",
+      "families": 1
+    }
+  ],
+  "style_tag_counts": {
+    "brand-display": 544,
+    "handwritten-script": 385,
+    "slab-workhorse": 365,
+    "monospace-dev": 145,
+    "web-modern": 46,
+    "pixel-retro": 30,
+    "experimental": 24,
+    "y2k-web": 7,
+    "old-english": 7
+  }
+}

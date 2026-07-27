@@ -1,0 +1,410 @@
+{
+  "source": "league-of-moveable-type",
+  "count": 10,
+  "fonts": [
+    {
+      "id": "league-blackout",
+      "family_name": "Blackout",
+      "license_type": "OFL",
+      "license_url": "https://openfontlicense.org",
+      "commercial_use": true,
+      "source": "league-of-moveable-type",
+      "source_url": "https://www.theleagueofmoveabletype.com/blackout",
+      "foundry": "The League of Moveable Type",
+      "designers": [],
+      "category": "display",
+      "subsets": [
+        "latin"
+      ],
+      "tags": [
+        "classic",
+        "display",
+        "league",
+        "open-source"
+      ],
+      "featured": true,
+      "featured_lists": [
+        "league"
+      ],
+      "variable": false,
+      "axes": [],
+      "popularity": 145,
+      "date_added": null,
+      "last_modified": "2026-05-17T02:34:16Z",
+      "preview_text": "A bad-ass, unholy-mother-shut-your-mouth stencil sans-serif.",
+      "download_url": "https://github.com/theleagueof/blackout.git",
+      "github_url": "https://github.com/theleagueof/blackout",
+      "variants": [
+        {
+          "name": "Regular",
+          "weight": 400,
+          "style": "normal",
+          "files": {}
+        }
+      ]
+    },
+    {
+      "id": "league-chunk",
+      "family_name": "Chunk",
+      "license_type": "OFL",
+      "license_url": "https://openfontlicense.org",
+      "commercial_use": true,
+      "source": "league-of-moveable-type",
+      "source_url": "https://www.theleagueofmoveabletype.com/chunk",
+      "foundry": "The League of Moveable Type",
+      "designers": [],
+      "category": "display",
+      "subsets": [
+        "latin"
+      ],
+      "tags": [
+        "classic",
+        "open-source",
+        "league"
+      ],
+      "featured": true,
+      "featured_lists": [
+        "league"
+      ],
+      "variable": false,
+      "axes": [],
+      "popularity": 272,
+      "date_added": null,
+      "last_modified": "2026-02-17T19:07:27Z",
+      "preview_text": "An ultra-bold, ultra-awesome slab serif typeface.",
+      "download_url": "https://github.com/theleagueof/chunk.git",
+      "github_url": "https://github.com/theleagueof/chunk",
+      "variants": [
+        {
+          "name": "Regular",
+          "weight": 400,
+          "style": "normal",
+          "files": {}
+        }
+      ]
+    },
+    {
+      "id": "league-fanwood",
+      "family_name": "Fanwood",
+      "license_type": "OFL",
+      "license_url": "https://openfontlicense.org",
+      "commercial_use": true,
+      "source": "league-of-moveable-type",
+      "source_url": "https://www.theleagueofmoveabletype.com/fanwood",
+      "foundry": "The League of Moveable Type",
+      "designers": [],
+      "category": "display",
+      "subsets": [
+        "latin"
+      ],
+      "tags": [
+        "classic",
+        "league",
+        "open-source",
+        "serif"
+      ],
+      "featured": true,
+      "featured_lists": [
+        "league"
+      ],
+      "variable": false,
+      "axes": [],
+      "popularity": 193,
+      "date_added": null,
+      "last_modified": "2026-05-19T14:03:30Z",
+      "preview_text": "A serif based on the work of a famous Czech-American type designer of yesteryear. ",
+      "download_url": "https://github.com/theleagueof/fanwood.git",
+      "github_url": "https://github.com/theleagueof/fanwood",
+      "variants": [
+        {
+          "name": "Regular",
+          "weight": 400,
+          "style": "normal",
+          "files": {}
+        }
+      ]
+    },
+    {
+      "id": "league-fontship",
+      "family_name": "Fontship",
+      "license_type": "OFL",
+      "license_url": "https://openfontlicense.org",
+      "commercial_use": true,
+      "source": "league-of-moveable-type",
+      "source_url": "https://www.theleagueofmoveabletype.com/fontship",
+      "foundry": "The League of Moveable Type",
+      "designers": [],
+      "category": "display",
+      "subsets": [
+        "latin"
+      ],
+      "tags": [
+        "classic",
+        "open-source",
+        "league"
+      ],
+      "featured": true,
+      "featured_lists": [
+        "league"
+      ],
+      "variable": false,
+      "axes": [],
+      "popularity": 116,
+      "date_added": null,
+      "last_modified": "2026-06-17T23:30:38Z",
+      "preview_text": "A font development toolkit and collaborative work flow.",
+      "download_url": "https://github.com/theleagueof/fontship.git",
+      "github_url": "https://github.com/theleagueof/fontship",
+      "variants": [
+        {
+          "name": "Regular",
+          "weight": 400,
+          "style": "normal",
+          "files": {}
+        }
+      ]
+    },
+    {
+      "id": "league-junction",
+      "family_name": "Junction",
+      "license_type": "OFL",
+      "license_url": "https://openfontlicense.org",
+      "commercial_use": true,
+      "source": "league-of-moveable-type",
+      "source_url": "https://www.theleagueofmoveabletype.com/junction",
+      "foundry": "The League of Moveable Type",
+      "designers": [],
+      "category": "display",
+      "subsets": [
+        "latin"
+      ],
+      "tags": [
+        "classic",
+        "league",
+        "open-source",
+        "sans-serif"
+      ],
+      "featured": true,
+      "featured_lists": [
+        "league"
+      ],
+      "variable": false,
+      "axes": [],
+      "popularity": 431,
+      "date_added": null,
+      "last_modified": "2026-05-19T13:57:01Z",
+      "preview_text": "Our first open source type project, expanding a humanist sans-serif typeface, Junction.",
+      "download_url": "https://github.com/theleagueof/junction.git",
+      "github_url": "https://github.com/theleagueof/junction",
+      "variants": [
+        {
+          "name": "Regular",
+          "weight": 400,
+          "style": "normal",
+          "files": {}
+        }
+      ]
+    },
+    {
+      "id": "league-league-mono",
+      "family_name": "League Mono",
+      "license_type": "OFL",
+      "license_url": "https://openfontlicense.org",
+      "commercial_use": true,
+      "source": "league-of-moveable-type",
+      "source_url": "https://www.theleagueofmoveabletype.com/league-mono",
+      "foundry": "The League of Moveable Type",
+      "designers": [],
+      "category": "display",
+      "subsets": [
+        "latin"
+      ],
+      "tags": [
+        "classic",
+        "open-source",
+        "league"
+      ],
+      "featured": true,
+      "featured_lists": [
+        "league"
+      ],
+      "variable": false,
+      "axes": [],
+      "popularity": 471,
+      "date_added": null,
+      "last_modified": "2026-07-03T23:43:21Z",
+      "preview_text": "A monospace typeface inspired by Fira Mono, Libertinus Mono, and Courier.",
+      "download_url": "https://github.com/theleagueof/league-mono.git",
+      "github_url": "https://github.com/theleagueof/league-mono",
+      "variants": [
+        {
+          "name": "Regular",
+          "weight": 400,
+          "style": "normal",
+          "files": {}
+        }
+      ]
+    },
+    {
+      "id": "league-league-script-number-one",
+      "family_name": "League Script Number One",
+      "license_type": "OFL",
+      "license_url": "https://openfontlicense.org",
+      "commercial_use": true,
+      "source": "league-of-moveable-type",
+      "source_url": "https://www.theleagueofmoveabletype.com/league-script-number-one",
+      "foundry": "The League of Moveable Type",
+      "designers": [],
+      "category": "display",
+      "subsets": [
+        "latin"
+      ],
+      "tags": [
+        "classic",
+        "open-source",
+        "league"
+      ],
+      "featured": true,
+      "featured_lists": [
+        "league"
+      ],
+      "variable": false,
+      "axes": [],
+      "popularity": 60,
+      "date_added": null,
+      "last_modified": "2025-01-26T15:00:21Z",
+      "preview_text": "A modern, coquettish script font that sits somewhere between your high school girlfriend’s love notes and handwritten letters from the '20s.",
+      "download_url": "https://github.com/theleagueof/league-script-number-one.git",
+      "github_url": "https://github.com/theleagueof/league-script-number-one",
+      "variants": [
+        {
+          "name": "Regular",
+          "weight": 400,
+          "style": "normal",
+          "files": {}
+        }
+      ]
+    },
+    {
+      "id": "league-licenses",
+      "family_name": "Licenses",
+      "license_type": "OFL",
+      "license_url": "https://openfontlicense.org",
+      "commercial_use": true,
+      "source": "league-of-moveable-type",
+      "source_url": "https://www.theleagueofmoveabletype.com/licenses",
+      "foundry": "The League of Moveable Type",
+      "designers": [],
+      "category": "display",
+      "subsets": [
+        "latin"
+      ],
+      "tags": [
+        "classic",
+        "open-source",
+        "league"
+      ],
+      "featured": true,
+      "featured_lists": [
+        "league"
+      ],
+      "variable": false,
+      "axes": [],
+      "popularity": 9,
+      "date_added": null,
+      "last_modified": "2021-01-27T08:19:05Z",
+      "preview_text": "A collection of files to describe The League's OFL Licenses.",
+      "download_url": "https://github.com/theleagueof/licenses.git",
+      "github_url": "https://github.com/theleagueof/licenses",
+      "variants": [
+        {
+          "name": "Regular",
+          "weight": 400,
+          "style": "normal",
+          "files": {}
+        }
+      ]
+    },
+    {
+      "id": "league-ostrich-sans",
+      "family_name": "Ostrich Sans",
+      "license_type": "OFL",
+      "license_url": "https://openfontlicense.org",
+      "commercial_use": true,
+      "source": "league-of-moveable-type",
+      "source_url": "https://www.theleagueofmoveabletype.com/ostrich-sans",
+      "foundry": "The League of Moveable Type",
+      "designers": [],
+      "category": "display",
+      "subsets": [
+        "latin"
+      ],
+      "tags": [
+        "classic",
+        "display",
+        "league",
+        "open-source"
+      ],
+      "featured": true,
+      "featured_lists": [
+        "league"
+      ],
+      "variable": false,
+      "axes": [],
+      "popularity": 471,
+      "date_added": null,
+      "last_modified": "2026-05-25T06:12:35Z",
+      "preview_text": "A gorgeous modern sans-serif with a very long neck.",
+      "download_url": "https://github.com/theleagueof/ostrich-sans.git",
+      "github_url": "https://github.com/theleagueof/ostrich-sans",
+      "variants": [
+        {
+          "name": "Regular",
+          "weight": 400,
+          "style": "normal",
+          "files": {}
+        }
+      ]
+    },
+    {
+      "id": "league-the-neue-black",
+      "family_name": "The Neue Black",
+      "license_type": "OFL",
+      "license_url": "https://openfontlicense.org",
+      "commercial_use": true,
+      "source": "league-of-moveable-type",
+      "source_url": "https://www.theleagueofmoveabletype.com/the-neue-black",
+      "foundry": "The League of Moveable Type",
+      "designers": [],
+      "category": "display",
+      "subsets": [
+        "latin"
+      ],
+      "tags": [
+        "classic",
+        "open-source",
+        "league"
+      ],
+      "featured": true,
+      "featured_lists": [
+        "league"
+      ],
+      "variable": false,
+      "axes": [],
+      "popularity": 27,
+      "date_added": null,
+      "last_modified": "2026-05-30T10:25:08Z",
+      "preview_text": "Tré Seals’ first open-source font, a typeface based on the Chicago Freedom Movement.",
+      "download_url": "https://github.com/theleagueof/the-neue-black.git",
+      "github_url": "https://github.com/theleagueof/the-neue-black",
+      "variants": [
+        {
+          "name": "Regular",
+          "weight": 400,
+          "style": "normal",
+          "files": {}
+        }
+      ]
+    }
+  ]
+}

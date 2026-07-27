@@ -1,0 +1,46 @@
+# font-sitte Project Intelligence
+
+## Project location
+- Repo root: `/workspace`
+- App folder: `free-font-site/` (keep isolated from other projects)
+
+## User preferences observed
+- Wants real fixes, not half-steps
+- Confirmed UI "looking nice" — preserve current UI patterns
+- Wants memory banks maintained and backups before losing progress
+- Never create new .env files
+- Run commands yourself; don't ask user to run things you can run
+
+## Critical gotchas
+1. **app.js syntax** — Always run `node --check free-font-site/web/app.js` after editing
+2. **Cursor preview** — Must use `http://localhost:8080/web/` via server, not file://
+3. **Server bind** — Always `--bind 0.0.0.0` for cloud agent port forwarding
+4. **Catalog for UI** — Use `web/catalog-lite.json`, rebuild via `scripts/build_web_catalog.py` after aggregate
+5. **health.html** — First debug step when user sees blank page
+
+## Source merge priority
+google-fonts > fontshare > velvetyne > league > open-foundry > font-squirrel > nerd-fonts
+
+## License policy
+Default libre/commercial-safe only. Do not add DaFont without explicit user approval and license parsing.
+
+## After aggregate.py changes
+Always run:
+```bash
+python3 scripts/aggregate.py
+python3 scripts/build_web_catalog.py
+```
+
+## Backup
+```bash
+python3 scripts/backup_project.py
+```
+Creates dated snapshot in `backups/` with manifest.
+
+## Memory bank
+Read ALL files in `memory-bank/` at start of every session:
+- projectbrief.md, productContext.md, activeContext.md
+- systemPatterns.md, techContext.md, progress.md
+- summary.json, learningJournal.json
+
+Update after significant changes or when user asks.

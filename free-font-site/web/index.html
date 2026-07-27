@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Free Font Catalog — 2,000+ Commercial-Safe Libre Fonts</title>
+    <meta name="description" content="Browse and download 2,000+ free commercial-safe libre fonts. OFL, Apache, Fontshare. Search, preview, and download." />
+    <meta property="og:title" content="Free Font Catalog" />
+    <meta property="og:description" content="2,000+ libre fonts safe for commercial use" />
+    <meta property="og:type" content="website" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-inner">
+        <div class="brand">
+          <h1>Free Font Catalog</h1>
+          <p class="subtitle">Libre &amp; commercial-safe typefaces</p>
+        </div>
+        <div class="stats" id="stats"><span class="stat">Loading…</span></div>
+      </div>
+      <div class="ad-slot ad-leaderboard" data-ad-slot="header-leaderboard"></div>
+    </header>
+
+    <main class="layout">
+      <aside class="sidebar">
+        <div class="ad-slot ad-sidebar" data-ad-slot="sidebar-sticky"></div>
+        <label class="field">
+          <span>Search</span>
+          <input id="search" type="search" placeholder="Family, designer, tag…" autocomplete="off" />
+        </label>
+        <label class="field">
+          <span>Category</span>
+          <select id="category"><option value="">All categories</option></select>
+        </label>
+        <label class="field">
+          <span>Source</span>
+          <select id="source"><option value="">All sources</option></select>
+        </label>
+        <label class="field">
+          <span>Style</span>
+          <select id="style"><option value="">All styles</option></select>
+        </label>
+        <label class="check"><input id="featured" type="checkbox" /> Featured only</label>
+        <label class="check"><input id="variable" type="checkbox" /> Variable fonts only</label>
+        <label class="check"><input id="favorites-only" type="checkbox" /> Favorites only</label>
+        <button id="reset" class="btn-secondary" type="button">Reset filters</button>
+      </aside>
+
+      <section class="content">
+        <div id="status" class="status loading">Booting UI…</div>
+        <div class="toolbar">
+          <p id="result-count">Loading catalog…</p>
+          <label class="field inline">
+            <span>Sort</span>
+            <select id="sort">
+              <option value="name">Name A–Z</option>
+              <option value="featured">Featured first</option>
+              <option value="category">Category</option>
+            </select>
+          </label>
+        </div>
+        <div id="grid" class="grid"></div>
+        <div id="sentinel" class="sentinel"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="ad-slot ad-footer" data-ad-slot="footer-banner"></div>
+      <p><a href="/privacy.html">Privacy</a> · Libre fonts only · <a href="/sitemap.xml">Sitemap</a></p>
+    </footer>
+
+    <dialog id="detail">
+      <form method="dialog" class="detail-shell">
+        <button class="close" aria-label="Close">&times;</button>
+        <div id="detail-body"></div>
+      </form>
+    </dialog>
+
+    <script src="ads.js" defer></script>
+    <script src="app.js" defer></script>
+  </body>
+</html>
