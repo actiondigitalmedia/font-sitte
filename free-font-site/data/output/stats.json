@@ -1,20 +1,22 @@
 {
-  "generated_at": "2026-07-27T05:12:48+00:00",
-  "total_families": 2136,
-  "total_variants": 8580,
-  "featured_count": 132,
+  "generated_at": "2026-11-07T23:28:04+00:00",
+  "total_families": 2207,
+  "total_variants": 9200,
+  "featured_count": 197,
   "license_policy": "libre-commercial-safe",
   "categories": {
-    "sans-serif": 787,
-    "display": 501,
-    "serif": 362,
+    "sans-serif": 792,
+    "display": 522,
+    "serif": 369,
     "handwriting": 362,
-    "monospace": 106,
-    "other": 18
+    "monospace": 104,
+    "other": 54,
+    "script": 4
   },
   "top_licenses": {
-    "OFL": 2097,
-    "Mixed": 35,
+    "OFL": 2106,
+    "ITF FFL": 64,
+    "Mixed": 33,
     "CC0": 1,
     "Apache-2.0": 1,
     "MIT": 1,
@@ -23,7 +25,7 @@
   "sources": [
     {
       "id": "google-fonts",
-      "families": 1942
+      "families": 1959
     },
     {
       "id": "fontshare",
@@ -31,11 +33,11 @@
     },
     {
       "id": "fontsource",
-      "families": 120
+      "families": 119
     },
     {
       "id": "omnibus-type",
-      "families": 29
+      "families": 30
     },
     {
       "id": "velvetyne",
@@ -55,7 +57,7 @@
     },
     {
       "id": "nerd-fonts",
-      "families": 67
+      "families": 72
     },
     {
       "id": "approved-candidates",
@@ -63,14 +65,14 @@
     }
   ],
   "style_tag_counts": {
-    "brand-display": 544,
-    "handwritten-script": 385,
-    "slab-workhorse": 365,
-    "monospace-dev": 145,
-    "web-modern": 46,
+    "brand-display": 615,
+    "handwritten-script": 392,
+    "slab-workhorse": 375,
+    "monospace-dev": 146,
+    "web-modern": 49,
     "pixel-retro": 30,
-    "experimental": 24,
-    "y2k-web": 7,
+    "experimental": 27,
+    "y2k-web": 9,
     "old-english": 7
   }
 }

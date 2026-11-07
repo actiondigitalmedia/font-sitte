@@ -34,6 +34,9 @@ def fetch_source_names(source_id: str) -> list[str]:
         "fontshare": "fontshare.json",
         "fontsource": "fontsource.json",
         "omnibus-type": "omnibus-type.json",
+        "velvetyne": "velvetyne.json",
+        "league-of-moveable-type": "league.json",
+        "font-squirrel": "font-squirrel.json",
         "free-faces": "free-faces.json",
     }
     fname = raw_map.get(source_id)
@@ -54,6 +57,12 @@ def fetch_source_names(source_id: str) -> list[str]:
         return [r.get("name", "").replace("-", " ") for r in data.get("repos", [])]
     if source_id == "free-faces":
         return [f.get("name", "") for f in data.get("fonts", [])]
+    if source_id == "velvetyne":
+        return [r.get("name", "").replace("-", " ").title() for r in data.get("repos", [])]
+    if source_id == "league-of-moveable-type":
+        return [f.get("title", "") for f in data.get("fonts", [])]
+    if source_id == "font-squirrel":
+        return [f.get("family_name", "") for f in data.get("families", [])]
     return []
 
 

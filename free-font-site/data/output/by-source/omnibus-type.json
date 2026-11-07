@@ -28,9 +28,9 @@
       ],
       "variable": false,
       "axes": [],
-      "popularity": 39,
+      "popularity": 41,
       "date_added": null,
-      "last_modified": "2026-07-06T13:45:03Z",
+      "last_modified": "2026-09-28T21:35:33Z",
       "preview_text": "Archivo Black is a grotesque sans serif typeface",
       "download_url": "https://github.com/Omnibus-Type/ArchivoBlack.git",
       "github_url": "https://github.com/Omnibus-Type/ArchivoBlack",
@@ -70,54 +70,12 @@
       ],
       "variable": false,
       "axes": [],
-      "popularity": 29,
+      "popularity": 30,
       "date_added": null,
-      "last_modified": "2026-05-29T17:43:00Z",
+      "last_modified": "2026-09-28T21:32:46Z",
       "preview_text": "Archivo is a grotesque sans serif typeface family ",
       "download_url": "https://github.com/Omnibus-Type/ArchivoNarrow.git",
       "github_url": "https://github.com/Omnibus-Type/ArchivoNarrow",
-      "variants": [
-        {
-          "name": "Regular",
-          "weight": 400,
-          "style": "normal",
-          "files": {}
-        }
-      ],
-      "style_tags": []
-    },
-    {
-      "id": "omnibus-asap-sharp",
-      "family_name": "Asap Sharp",
-      "license_type": "OFL",
-      "license_url": "https://openfontlicense.org",
-      "commercial_use": true,
-      "source": "omnibus-type",
-      "source_url": "https://github.com/Omnibus-Type/Asap_Sharp",
-      "foundry": "Omnibus Type",
-      "designers": [],
-      "category": "sans-serif",
-      "subsets": [
-        "latin",
-        "latin-ext"
-      ],
-      "tags": [
-        "omnibus-type",
-        "libre",
-        "brand-grade"
-      ],
-      "featured": true,
-      "featured_lists": [
-        "omnibus-type"
-      ],
-      "variable": false,
-      "axes": [],
-      "popularity": 6,
-      "date_added": null,
-      "last_modified": "2026-07-25T04:07:01Z",
-      "preview_text": "Asap Sharp is the sharp version of Asap",
-      "download_url": "https://github.com/Omnibus-Type/Asap_Sharp.git",
-      "github_url": "https://github.com/Omnibus-Type/Asap_Sharp",
       "variants": [
         {
           "name": "Regular",
@@ -155,9 +113,9 @@
       ],
       "variable": false,
       "axes": [],
-      "popularity": 16,
+      "popularity": 17,
       "date_added": null,
-      "last_modified": "2026-02-08T09:48:00Z",
+      "last_modified": "2026-07-30T19:00:21Z",
       "preview_text": "Asap-Symbol files",
       "download_url": "https://github.com/Omnibus-Type/Asap-Symbol.git",
       "github_url": "https://github.com/Omnibus-Type/Asap-Symbol",
@@ -197,12 +155,54 @@
       ],
       "variable": false,
       "axes": [],
-      "popularity": 14,
+      "popularity": 15,
       "date_added": null,
-      "last_modified": "2026-05-10T23:51:13Z",
+      "last_modified": "2026-09-28T21:35:45Z",
       "preview_text": "Asap Condensed offers a standardized character width on all styles.",
       "download_url": "https://github.com/Omnibus-Type/AsapCondensed.git",
       "github_url": "https://github.com/Omnibus-Type/AsapCondensed",
+      "variants": [
+        {
+          "name": "Regular",
+          "weight": 400,
+          "style": "normal",
+          "files": {}
+        }
+      ],
+      "style_tags": []
+    },
+    {
+      "id": "omnibus-leluja",
+      "family_name": "Leluja",
+      "license_type": "OFL",
+      "license_url": "https://openfontlicense.org",
+      "commercial_use": true,
+      "source": "omnibus-type",
+      "source_url": "https://github.com/Omnibus-Type/Leluja",
+      "foundry": "Omnibus Type",
+      "designers": [],
+      "category": "sans-serif",
+      "subsets": [
+        "latin",
+        "latin-ext"
+      ],
+      "tags": [
+        "omnibus-type",
+        "libre",
+        "brand-grade"
+      ],
+      "featured": true,
+      "featured_lists": [
+        "omnibus-type"
+      ],
+      "variable": false,
+      "axes": [],
+      "popularity": 2,
+      "date_added": null,
+      "last_modified": "2026-10-24T19:23:54Z",
+      "preview_text": "Leluja, inspired by wycinanki, the Polish art of paper cutting. Elegant letterforms with ink-trap details.",
+      "download_url": "https://github.com/Omnibus-Type/Leluja.git",
+      "github_url": "https://github.com/Omnibus-Type/Leluja",
       "variants": [
         {
           "name": "Regular",
@@ -281,9 +281,9 @@
       ],
       "variable": false,
       "axes": [],
-      "popularity": 6,
+      "popularity": 7,
       "date_added": null,
-      "last_modified": "2026-07-09T00:47:13Z",
+      "last_modified": "2026-10-22T12:50:04Z",
       "preview_text": "Fully parametric version of Saira made with AVAR2 data (work in progress)",
       "download_url": "https://github.com/Omnibus-Type/Saira_Parametric.git",
       "github_url": "https://github.com/Omnibus-Type/Saira_Parametric",
@@ -323,9 +323,9 @@
       ],
       "variable": false,
       "axes": [],
-      "popularity": 0,
+      "popularity": 2,
       "date_added": null,
-      "last_modified": "2026-07-14T18:46:14Z",
+      "last_modified": "2026-09-24T05:18:31Z",
       "preview_text": "Open-source font from Omnibus Type",
       "download_url": "https://github.com/Omnibus-Type/Tools.git",
       "github_url": "https://github.com/Omnibus-Type/Tools",
