@@ -47,6 +47,13 @@ LICENSE_COMMERCIAL_OK = {
     "gpl",
     "gpl-3.0",
     "open font license",
+  # Fontshare / Indian Type Foundry
+    "itf",
+    "itf_ffl",
+    "itf free font license",
+    "itf-ffl",
+    "fontshare",
+    "free font license",
 }
 
 
@@ -92,6 +99,8 @@ def normalize_license(raw: str | None) -> str:
         return "CC0"
     if "GPL" in upper:
         return "GPL"
+    if "ITF" in upper or "FFL" in upper:
+        return "ITF FFL"
     return text
 
 

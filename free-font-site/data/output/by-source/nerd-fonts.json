@@ -1,10 +1,10 @@
 {
   "source": "nerd-fonts",
-  "count": 35,
+  "count": 33,
   "fonts": [
     {
       "id": "nerd-fonts-0xproto",
-      "family_name": "0Xproto",
+      "family_name": "0xProto",
       "license_type": "Mixed",
       "license_url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/refs/heads/master/LICENSE",
       "commercial_use": true,
@@ -29,17 +29,18 @@
       "axes": [],
       "popularity": 50,
       "date_added": null,
-      "last_modified": "2026-07-26T05:57:06.337648Z",
+      "last_modified": "2026-09-15T08:20:03.812456Z",
       "preview_text": "λ ∑ ∞ → dev icons included",
       "download_url": "https://github.com/ryanoasis/nerd-fonts",
       "github_url": "https://github.com/ryanoasis/nerd-fonts",
       "variants": [
         {
-          "name": "0Xproto Regular",
+          "name": "0xProto Regular",
           "weight": 400,
           "style": "normal",
           "files": {
-            "zip": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/0xProto.zip"
+            "tar_xz": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/0xProto.tar.xz",
+            "zip": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/0xProto.zip"
           }
         }
       ],
@@ -74,7 +75,7 @@
       "axes": [],
       "popularity": 50,
       "date_added": null,
-      "last_modified": "2026-07-26T05:57:06.337679Z",
+      "last_modified": "2026-09-15T08:20:03.812456Z",
       "preview_text": "λ ∑ ∞ → dev icons included",
       "download_url": "https://github.com/ryanoasis/nerd-fonts",
       "github_url": "https://github.com/ryanoasis/nerd-fonts",
@@ -84,52 +85,8 @@
           "weight": 400,
           "style": "normal",
           "files": {
-            "zip": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/3270.zip"
-          }
-        }
-      ],
-      "style_tags": [
-        "monospace-dev"
-      ]
-    },
-    {
-      "id": "nerd-fonts-adwaitamono",
-      "family_name": "Adwaitamono",
-      "license_type": "Mixed",
-      "license_url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/refs/heads/master/LICENSE",
-      "commercial_use": true,
-      "source": "nerd-fonts",
-      "source_url": "https://github.com/ryanoasis/nerd-fonts/releases/latest",
-      "foundry": "Nerd Fonts",
-      "designers": [
-        "Ryan L McIntyre (Nerd Fonts Patcher)"
-      ],
-      "category": "monospace",
-      "subsets": [
-        "latin"
-      ],
-      "tags": [
-        "nerd-font",
-        "icons",
-        "developer"
-      ],
-      "featured": false,
-      "featured_lists": [],
-      "variable": false,
-      "axes": [],
-      "popularity": 50,
-      "date_added": null,
-      "last_modified": "2026-07-26T05:57:06.337686Z",
-      "preview_text": "λ ∑ ∞ → dev icons included",
-      "download_url": "https://github.com/ryanoasis/nerd-fonts",
-      "github_url": "https://github.com/ryanoasis/nerd-fonts",
-      "variants": [
-        {
-          "name": "Adwaitamono Regular",
-          "weight": 400,
-          "style": "normal",
-          "files": {
-            "zip": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/AdwaitaMono.zip"
+            "tar_xz": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/3270.tar.xz",
+            "zip": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/3270.zip"
           }
         }
       ],
@@ -164,7 +121,7 @@
       "axes": [],
       "popularity": 50,
       "date_added": null,
-      "last_modified": "2026-07-26T05:57:06.337693Z",
+      "last_modified": "2026-09-15T08:20:03.812456Z",
       "preview_text": "λ ∑ ∞ → dev icons included",
       "download_url": "https://github.com/ryanoasis/nerd-fonts",
       "github_url": "https://github.com/ryanoasis/nerd-fonts",
@@ -174,7 +131,8 @@
           "weight": 400,
           "style": "normal",
           "files": {
-            "zip": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Agave.zip"
+            "tar_xz": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/Agave.tar.xz",
+            "zip": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/Agave.zip"
           }
         }
       ],
@@ -183,8 +141,8 @@
       ]
     },
     {
-      "id": "nerd-fonts-anonymouspro",
-      "family_name": "Anonymouspro",
+      "id": "nerd-fonts-annotation-mono",
+      "family_name": "Annotation Mono",
       "license_type": "Mixed",
       "license_url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/refs/heads/master/LICENSE",
       "commercial_use": true,
@@ -209,62 +167,18 @@
       "axes": [],
       "popularity": 50,
       "date_added": null,
-      "last_modified": "2026-07-26T05:57:06.337699Z",
+      "last_modified": "2026-09-15T08:20:03.812456Z",
       "preview_text": "λ ∑ ∞ → dev icons included",
       "download_url": "https://github.com/ryanoasis/nerd-fonts",
       "github_url": "https://github.com/ryanoasis/nerd-fonts",
       "variants": [
         {
-          "name": "Anonymouspro Regular",
+          "name": "Annotation Mono Regular",
           "weight": 400,
           "style": "normal",
           "files": {
-            "zip": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/AnonymousPro.zip"
-          }
-        }
-      ],
-      "style_tags": [
-        "monospace-dev"
-      ]
-    },
-    {
-      "id": "nerd-fonts-atkinsonhyperlegiblemono",
-      "family_name": "Atkinsonhyperlegiblemono",
-      "license_type": "Mixed",
-      "license_url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/refs/heads/master/LICENSE",
-      "commercial_use": true,
-      "source": "nerd-fonts",
-      "source_url": "https://github.com/ryanoasis/nerd-fonts/releases/latest",
-      "foundry": "Nerd Fonts",
-      "designers": [
-        "Ryan L McIntyre (Nerd Fonts Patcher)"
-      ],
-      "category": "monospace",
-      "subsets": [
-        "latin"
-      ],
-      "tags": [
-        "nerd-font",
-        "icons",
-        "developer"
-      ],
-      "featured": false,
-      "featured_lists": [],
-      "variable": false,
-      "axes": [],
-      "popularity": 50,
-      "date_added": null,
-      "last_modified": "2026-07-26T05:57:06.337710Z",
-      "preview_text": "λ ∑ ∞ → dev icons included",
-      "download_url": "https://github.com/ryanoasis/nerd-fonts",
-      "github_url": "https://github.com/ryanoasis/nerd-fonts",
-      "variants": [
-        {
-          "name": "Atkinsonhyperlegiblemono Regular",
-          "weight": 400,
-          "style": "normal",
-          "files": {
-            "zip": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/AtkinsonHyperlegibleMono.zip"
+            "tar_xz": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/AnnotationMono.tar.xz",
+            "zip": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/AnnotationMono.zip"
           }
         }
       ],
@@ -299,7 +213,7 @@
       "axes": [],
       "popularity": 50,
       "date_added": null,
-      "last_modified": "2026-07-26T05:57:06.337722Z",
+      "last_modified": "2026-09-15T08:20:03.812456Z",
       "preview_text": "λ ∑ ∞ → dev icons included",
       "download_url": "https://github.com/ryanoasis/nerd-fonts",
       "github_url": "https://github.com/ryanoasis/nerd-fonts",
@@ -309,52 +223,8 @@
           "weight": 400,
           "style": "normal",
           "files": {
-            "zip": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/BigBlueTerminal.zip"
-          }
-        }
-      ],
-      "style_tags": [
-        "monospace-dev"
-      ]
-    },
-    {
-      "id": "nerd-fonts-cascadiamono",
-      "family_name": "Cascadiamono",
-      "license_type": "Mixed",
-      "license_url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/refs/heads/master/LICENSE",
-      "commercial_use": true,
-      "source": "nerd-fonts",
-      "source_url": "https://github.com/ryanoasis/nerd-fonts/releases/latest",
-      "foundry": "Nerd Fonts",
-      "designers": [
-        "Ryan L McIntyre (Nerd Fonts Patcher)"
-      ],
-      "category": "monospace",
-      "subsets": [
-        "latin"
-      ],
-      "tags": [
-        "nerd-font",
-        "icons",
-        "developer"
-      ],
-      "featured": false,
-      "featured_lists": [],
-      "variable": false,
-      "axes": [],
-      "popularity": 50,
-      "date_added": null,
-      "last_modified": "2026-07-26T05:57:06.337740Z",
-      "preview_text": "λ ∑ ∞ → dev icons included",
-      "download_url": "https://github.com/ryanoasis/nerd-fonts",
-      "github_url": "https://github.com/ryanoasis/nerd-fonts",
-      "variants": [
-        {
-          "name": "Cascadiamono Regular",
-          "weight": 400,
-          "style": "normal",
-          "files": {
-            "zip": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/CascadiaMono.zip"
+            "tar_xz": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/BigBlueTerminal.tar.xz",
+            "zip": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/BigBlueTerminal.zip"
           }
         }
       ],
@@ -389,7 +259,7 @@
       "axes": [],
       "popularity": 50,
       "date_added": null,
-      "last_modified": "2026-07-26T05:57:06.337747Z",
+      "last_modified": "2026-09-15T08:20:03.812456Z",
       "preview_text": "λ ∑ ∞ → dev icons included",
       "download_url": "https://github.com/ryanoasis/nerd-fonts",
       "github_url": "https://github.com/ryanoasis/nerd-fonts",
@@ -399,7 +269,8 @@
           "weight": 400,
           "style": "normal",
           "files": {
-            "zip": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/CodeNewRoman.zip"
+            "tar_xz": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/CodeNewRoman.tar.xz",
+            "zip": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/CodeNewRoman.zip"
           }
         }
       ],
@@ -434,7 +305,7 @@
       "axes": [],
       "popularity": 50,
       "date_added": null,
-      "last_modified": "2026-07-26T05:57:06.337753Z",
+      "last_modified": "2026-09-15T08:20:03.812456Z",
       "preview_text": "λ ∑ ∞ → dev icons included",
       "download_url": "https://github.com/ryanoasis/nerd-fonts",
       "github_url": "https://github.com/ryanoasis/nerd-fonts",
@@ -444,52 +315,8 @@
           "weight": 400,
           "style": "normal",
           "files": {
-            "zip": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/ComicShannsMono.zip"
-          }
-        }
-      ],
-      "style_tags": [
-        "monospace-dev"
-      ]
-    },
-    {
-      "id": "nerd-fonts-commitmono",
-      "family_name": "Commitmono",
-      "license_type": "Mixed",
-      "license_url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/refs/heads/master/LICENSE",
-      "commercial_use": true,
-      "source": "nerd-fonts",
-      "source_url": "https://github.com/ryanoasis/nerd-fonts/releases/latest",
-      "foundry": "Nerd Fonts",
-      "designers": [
-        "Ryan L McIntyre (Nerd Fonts Patcher)"
-      ],
-      "category": "monospace",
-      "subsets": [
-        "latin"
-      ],
-      "tags": [
-        "nerd-font",
-        "icons",
-        "developer"
-      ],
-      "featured": false,
-      "featured_lists": [],
-      "variable": false,
-      "axes": [],
-      "popularity": 50,
-      "date_added": null,
-      "last_modified": "2026-07-26T05:57:06.337759Z",
-      "preview_text": "λ ∑ ∞ → dev icons included",
-      "download_url": "https://github.com/ryanoasis/nerd-fonts",
-      "github_url": "https://github.com/ryanoasis/nerd-fonts",
-      "variants": [
-        {
-          "name": "Commitmono Regular",
-          "weight": 400,
-          "style": "normal",
-          "files": {
-            "zip": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/CommitMono.zip"
+            "tar_xz": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/ComicShannsMono.tar.xz",
+            "zip": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/ComicShannsMono.zip"
           }
         }
       ],
@@ -524,7 +351,7 @@
       "axes": [],
       "popularity": 50,
       "date_added": null,
-      "last_modified": "2026-07-26T05:57:06.337770Z",
+      "last_modified": "2026-09-15T08:20:03.812456Z",
       "preview_text": "λ ∑ ∞ → dev icons included",
       "download_url": "https://github.com/ryanoasis/nerd-fonts",
       "github_url": "https://github.com/ryanoasis/nerd-fonts",
@@ -534,7 +361,8 @@
           "weight": 400,
           "style": "normal",
           "files": {
-            "zip": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/D2Coding.zip"
+            "tar_xz": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/D2Coding.tar.xz",
+            "zip": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/D2Coding.zip"
           }
         }
       ],
@@ -569,7 +397,7 @@
       "axes": [],
       "popularity": 50,
       "date_added": null,
-      "last_modified": "2026-07-26T05:57:06.337776Z",
+      "last_modified": "2026-09-15T08:20:03.812456Z",
       "preview_text": "λ ∑ ∞ → dev icons included",
       "download_url": "https://github.com/ryanoasis/nerd-fonts",
       "github_url": "https://github.com/ryanoasis/nerd-fonts",
@@ -579,7 +407,8 @@
           "weight": 400,
           "style": "normal",
           "files": {
-            "zip": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/DaddyTimeMono.zip"
+            "tar_xz": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/DaddyTimeMono.tar.xz",
+            "zip": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/DaddyTimeMono.zip"
           }
         }
       ],
@@ -588,8 +417,8 @@
       ]
     },
     {
-      "id": "nerd-fonts-departuremono",
-      "family_name": "Departuremono",
+      "id": "nerd-fonts-departure-mono",
+      "family_name": "Departure Mono",
       "license_type": "Mixed",
       "license_url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/refs/heads/master/LICENSE",
       "commercial_use": true,
@@ -614,17 +443,18 @@
       "axes": [],
       "popularity": 50,
       "date_added": null,
-      "last_modified": "2026-07-26T05:57:06.337787Z",
+      "last_modified": "2026-09-15T08:20:03.812456Z",
       "preview_text": "λ ∑ ∞ → dev icons included",
       "download_url": "https://github.com/ryanoasis/nerd-fonts",
       "github_url": "https://github.com/ryanoasis/nerd-fonts",
       "variants": [
         {
-          "name": "Departuremono Regular",
+          "name": "Departure Mono Regular",
           "weight": 400,
           "style": "normal",
           "files": {
-            "zip": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/DepartureMono.zip"
+            "tar_xz": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/DepartureMono.tar.xz",
+            "zip": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/DepartureMono.zip"
           }
         }
       ],
@@ -633,8 +463,8 @@
       ]
     },
     {
-      "id": "nerd-fonts-envycoder",
-      "family_name": "Envycoder",
+      "id": "nerd-fonts-envy-code-r",
+      "family_name": "Envy Code R",
       "license_type": "Mixed",
       "license_url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/refs/heads/master/LICENSE",
       "commercial_use": true,
@@ -659,158 +489,23 @@
       "axes": [],
       "popularity": 50,
       "date_added": null,
-      "last_modified": "2026-07-26T05:57:06.337798Z",
+      "last_modified": "2026-09-15T08:20:03.812456Z",
       "preview_text": "λ ∑ ∞ → dev icons included",
       "download_url": "https://github.com/ryanoasis/nerd-fonts",
       "github_url": "https://github.com/ryanoasis/nerd-fonts",
       "variants": [
         {
-          "name": "Envycoder Regular",
+          "name": "Envy Code R Regular",
           "weight": 400,
           "style": "normal",
           "files": {
-            "zip": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/EnvyCodeR.zip"
+            "tar_xz": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/EnvyCodeR.tar.xz",
+            "zip": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/EnvyCodeR.zip"
           }
         }
       ],
       "style_tags": [
         "monospace-dev"
-      ]
-    },
-    {
-      "id": "nerd-fonts-firamono",
-      "family_name": "Firamono",
-      "license_type": "Mixed",
-      "license_url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/refs/heads/master/LICENSE",
-      "commercial_use": true,
-      "source": "nerd-fonts",
-      "source_url": "https://github.com/ryanoasis/nerd-fonts/releases/latest",
-      "foundry": "Nerd Fonts",
-      "designers": [
-        "Ryan L McIntyre (Nerd Fonts Patcher)"
-      ],
-      "category": "monospace",
-      "subsets": [
-        "latin"
-      ],
-      "tags": [
-        "nerd-font",
-        "icons",
-        "developer"
-      ],
-      "featured": false,
-      "featured_lists": [],
-      "variable": false,
-      "axes": [],
-      "popularity": 50,
-      "date_added": null,
-      "last_modified": "2026-07-26T05:57:06.337815Z",
-      "preview_text": "λ ∑ ∞ → dev icons included",
-      "download_url": "https://github.com/ryanoasis/nerd-fonts",
-      "github_url": "https://github.com/ryanoasis/nerd-fonts",
-      "variants": [
-        {
-          "name": "Firamono Regular",
-          "weight": 400,
-          "style": "normal",
-          "files": {
-            "zip": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/FiraMono.zip"
-          }
-        }
-      ],
-      "style_tags": [
-        "monospace-dev"
-      ]
-    },
-    {
-      "id": "nerd-fonts-fontpatcher",
-      "family_name": "Fontpatcher",
-      "license_type": "Mixed",
-      "license_url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/refs/heads/master/LICENSE",
-      "commercial_use": true,
-      "source": "nerd-fonts",
-      "source_url": "https://github.com/ryanoasis/nerd-fonts/releases/latest",
-      "foundry": "Nerd Fonts",
-      "designers": [
-        "Ryan L McIntyre (Nerd Fonts Patcher)"
-      ],
-      "category": "monospace",
-      "subsets": [
-        "latin"
-      ],
-      "tags": [
-        "nerd-font",
-        "icons",
-        "developer"
-      ],
-      "featured": false,
-      "featured_lists": [],
-      "variable": false,
-      "axes": [],
-      "popularity": 50,
-      "date_added": null,
-      "last_modified": "2026-07-26T05:57:06.337821Z",
-      "preview_text": "λ ∑ ∞ → dev icons included",
-      "download_url": "https://github.com/ryanoasis/nerd-fonts",
-      "github_url": "https://github.com/ryanoasis/nerd-fonts",
-      "variants": [
-        {
-          "name": "Fontpatcher Regular",
-          "weight": 400,
-          "style": "normal",
-          "files": {
-            "zip": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/FontPatcher.zip"
-          }
-        }
-      ],
-      "style_tags": [
-        "monospace-dev"
-      ]
-    },
-    {
-      "id": "nerd-fonts-geistmono",
-      "family_name": "Geistmono",
-      "license_type": "Mixed",
-      "license_url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/refs/heads/master/LICENSE",
-      "commercial_use": true,
-      "source": "nerd-fonts",
-      "source_url": "https://github.com/ryanoasis/nerd-fonts/releases/latest",
-      "foundry": "Nerd Fonts",
-      "designers": [
-        "Ryan L McIntyre (Nerd Fonts Patcher)"
-      ],
-      "category": "monospace",
-      "subsets": [
-        "latin"
-      ],
-      "tags": [
-        "nerd-font",
-        "icons",
-        "developer"
-      ],
-      "featured": false,
-      "featured_lists": [],
-      "variable": false,
-      "axes": [],
-      "popularity": 50,
-      "date_added": null,
-      "last_modified": "2026-07-26T05:57:06.337826Z",
-      "preview_text": "λ ∑ ∞ → dev icons included",
-      "download_url": "https://github.com/ryanoasis/nerd-fonts",
-      "github_url": "https://github.com/ryanoasis/nerd-fonts",
-      "variants": [
-        {
-          "name": "Geistmono Regular",
-          "weight": 400,
-          "style": "normal",
-          "files": {
-            "zip": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/GeistMono.zip"
-          }
-        }
-      ],
-      "style_tags": [
-        "monospace-dev",
-        "web-modern"
       ]
     },
     {
@@ -840,7 +535,7 @@
       "axes": [],
       "popularity": 50,
       "date_added": null,
-      "last_modified": "2026-07-26T05:57:06.337832Z",
+      "last_modified": "2026-09-15T08:20:03.812456Z",
       "preview_text": "λ ∑ ∞ → dev icons included",
       "download_url": "https://github.com/ryanoasis/nerd-fonts",
       "github_url": "https://github.com/ryanoasis/nerd-fonts",
@@ -850,7 +545,8 @@
           "weight": 400,
           "style": "normal",
           "files": {
-            "zip": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Go-Mono.zip"
+            "tar_xz": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/Go-Mono.tar.xz",
+            "zip": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/Go-Mono.zip"
           }
         }
       ],
@@ -885,7 +581,7 @@
       "axes": [],
       "popularity": 50,
       "date_added": null,
-      "last_modified": "2026-07-26T05:57:06.337838Z",
+      "last_modified": "2026-09-15T08:20:03.812456Z",
       "preview_text": "λ ∑ ∞ → dev icons included",
       "download_url": "https://github.com/ryanoasis/nerd-fonts",
       "github_url": "https://github.com/ryanoasis/nerd-fonts",
@@ -895,7 +591,8 @@
           "weight": 400,
           "style": "normal",
           "files": {
-            "zip": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Gohu.zip"
+            "tar_xz": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/Gohu.tar.xz",
+            "zip": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/Gohu.zip"
           }
         }
       ],
@@ -930,7 +627,7 @@
       "axes": [],
       "popularity": 50,
       "date_added": null,
-      "last_modified": "2026-07-26T05:57:06.337849Z",
+      "last_modified": "2026-09-15T08:20:03.812456Z",
       "preview_text": "λ ∑ ∞ → dev icons included",
       "download_url": "https://github.com/ryanoasis/nerd-fonts",
       "github_url": "https://github.com/ryanoasis/nerd-fonts",
@@ -940,7 +637,54 @@
           "weight": 400,
           "style": "normal",
           "files": {
-            "zip": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Hasklig.zip"
+            "tar_xz": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/Hasklig.tar.xz",
+            "zip": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/Hasklig.zip"
+          }
+        }
+      ],
+      "style_tags": [
+        "monospace-dev"
+      ]
+    },
+    {
+      "id": "nerd-fonts-heavydata",
+      "family_name": "HeavyData",
+      "license_type": "Mixed",
+      "license_url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/refs/heads/master/LICENSE",
+      "commercial_use": true,
+      "source": "nerd-fonts",
+      "source_url": "https://github.com/ryanoasis/nerd-fonts/releases/latest",
+      "foundry": "Nerd Fonts",
+      "designers": [
+        "Ryan L McIntyre (Nerd Fonts Patcher)"
+      ],
+      "category": "monospace",
+      "subsets": [
+        "latin"
+      ],
+      "tags": [
+        "nerd-font",
+        "icons",
+        "developer"
+      ],
+      "featured": false,
+      "featured_lists": [],
+      "variable": false,
+      "axes": [],
+      "popularity": 50,
+      "date_added": null,
+      "last_modified": "2026-09-15T08:20:03.812456Z",
+      "preview_text": "λ ∑ ∞ → dev icons included",
+      "download_url": "https://github.com/ryanoasis/nerd-fonts",
+      "github_url": "https://github.com/ryanoasis/nerd-fonts",
+      "variants": [
+        {
+          "name": "HeavyData Regular",
+          "weight": 400,
+          "style": "normal",
+          "files": {
+            "tar_xz": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/HeavyData.tar.xz",
+            "zip": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/HeavyData.zip"
           }
         }
       ],
@@ -975,7 +719,7 @@
       "axes": [],
       "popularity": 50,
       "date_added": null,
-      "last_modified": "2026-07-26T05:57:06.337861Z",
+      "last_modified": "2026-09-15T08:20:03.812456Z",
       "preview_text": "λ ∑ ∞ → dev icons included",
       "download_url": "https://github.com/ryanoasis/nerd-fonts",
       "github_url": "https://github.com/ryanoasis/nerd-fonts",
@@ -985,7 +729,8 @@
           "weight": 400,
           "style": "normal",
           "files": {
-            "zip": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Hermit.zip"
+            "tar_xz": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/Hermit.tar.xz",
+            "zip": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/Hermit.zip"
           }
         }
       ],
@@ -994,7 +739,238 @@
       ]
     },
     {
-      "id": "nerd-fonts-m",
+      "id": "nerd-fonts-ia-writer",
+      "family_name": "iA Writer",
+      "license_type": "Mixed",
+      "license_url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/refs/heads/master/LICENSE",
+      "commercial_use": true,
+      "source": "nerd-fonts",
+      "source_url": "https://github.com/ryanoasis/nerd-fonts/releases/latest",
+      "foundry": "Nerd Fonts",
+      "designers": [
+        "Ryan L McIntyre (Nerd Fonts Patcher)"
+      ],
+      "category": "monospace",
+      "subsets": [
+        "latin"
+      ],
+      "tags": [
+        "nerd-font",
+        "icons",
+        "developer"
+      ],
+      "featured": false,
+      "featured_lists": [],
+      "variable": false,
+      "axes": [],
+      "popularity": 50,
+      "date_added": null,
+      "last_modified": "2026-09-15T08:20:03.812456Z",
+      "preview_text": "λ ∑ ∞ → dev icons included",
+      "download_url": "https://github.com/ryanoasis/nerd-fonts",
+      "github_url": "https://github.com/ryanoasis/nerd-fonts",
+      "variants": [
+        {
+          "name": "iA Writer Regular",
+          "weight": 400,
+          "style": "normal",
+          "files": {
+            "tar_xz": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/iA-Writer.tar.xz",
+            "zip": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/iA-Writer.zip"
+          }
+        }
+      ],
+      "style_tags": [
+        "monospace-dev"
+      ]
+    },
+    {
+      "id": "nerd-fonts-inconsolata-go",
+      "family_name": "Inconsolata Go",
+      "license_type": "Mixed",
+      "license_url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/refs/heads/master/LICENSE",
+      "commercial_use": true,
+      "source": "nerd-fonts",
+      "source_url": "https://github.com/ryanoasis/nerd-fonts/releases/latest",
+      "foundry": "Nerd Fonts",
+      "designers": [
+        "Ryan L McIntyre (Nerd Fonts Patcher)"
+      ],
+      "category": "monospace",
+      "subsets": [
+        "latin"
+      ],
+      "tags": [
+        "nerd-font",
+        "icons",
+        "developer"
+      ],
+      "featured": false,
+      "featured_lists": [],
+      "variable": false,
+      "axes": [],
+      "popularity": 50,
+      "date_added": null,
+      "last_modified": "2026-09-15T08:20:03.812456Z",
+      "preview_text": "λ ∑ ∞ → dev icons included",
+      "download_url": "https://github.com/ryanoasis/nerd-fonts",
+      "github_url": "https://github.com/ryanoasis/nerd-fonts",
+      "variants": [
+        {
+          "name": "Inconsolata Go Regular",
+          "weight": 400,
+          "style": "normal",
+          "files": {
+            "tar_xz": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/InconsolataGo.tar.xz",
+            "zip": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/InconsolataGo.zip"
+          }
+        }
+      ],
+      "style_tags": [
+        "monospace-dev"
+      ]
+    },
+    {
+      "id": "nerd-fonts-inconsolata-lgc",
+      "family_name": "Inconsolata LGC",
+      "license_type": "Mixed",
+      "license_url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/refs/heads/master/LICENSE",
+      "commercial_use": true,
+      "source": "nerd-fonts",
+      "source_url": "https://github.com/ryanoasis/nerd-fonts/releases/latest",
+      "foundry": "Nerd Fonts",
+      "designers": [
+        "Ryan L McIntyre (Nerd Fonts Patcher)"
+      ],
+      "category": "monospace",
+      "subsets": [
+        "latin"
+      ],
+      "tags": [
+        "nerd-font",
+        "icons",
+        "developer"
+      ],
+      "featured": false,
+      "featured_lists": [],
+      "variable": false,
+      "axes": [],
+      "popularity": 50,
+      "date_added": null,
+      "last_modified": "2026-09-15T08:20:03.812456Z",
+      "preview_text": "λ ∑ ∞ → dev icons included",
+      "download_url": "https://github.com/ryanoasis/nerd-fonts",
+      "github_url": "https://github.com/ryanoasis/nerd-fonts",
+      "variants": [
+        {
+          "name": "Inconsolata LGC Regular",
+          "weight": 400,
+          "style": "normal",
+          "files": {
+            "tar_xz": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/InconsolataLGC.tar.xz",
+            "zip": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/InconsolataLGC.zip"
+          }
+        }
+      ],
+      "style_tags": [
+        "monospace-dev"
+      ]
+    },
+    {
+      "id": "nerd-fonts-iosevka-term",
+      "family_name": "Iosevka Term",
+      "license_type": "Mixed",
+      "license_url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/refs/heads/master/LICENSE",
+      "commercial_use": true,
+      "source": "nerd-fonts",
+      "source_url": "https://github.com/ryanoasis/nerd-fonts/releases/latest",
+      "foundry": "Nerd Fonts",
+      "designers": [
+        "Ryan L McIntyre (Nerd Fonts Patcher)"
+      ],
+      "category": "monospace",
+      "subsets": [
+        "latin"
+      ],
+      "tags": [
+        "nerd-font",
+        "icons",
+        "developer"
+      ],
+      "featured": false,
+      "featured_lists": [],
+      "variable": false,
+      "axes": [],
+      "popularity": 50,
+      "date_added": null,
+      "last_modified": "2026-09-15T08:20:03.812456Z",
+      "preview_text": "λ ∑ ∞ → dev icons included",
+      "download_url": "https://github.com/ryanoasis/nerd-fonts",
+      "github_url": "https://github.com/ryanoasis/nerd-fonts",
+      "variants": [
+        {
+          "name": "Iosevka Term Regular",
+          "weight": 400,
+          "style": "normal",
+          "files": {
+            "tar_xz": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/IosevkaTerm.tar.xz",
+            "zip": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/IosevkaTerm.zip"
+          }
+        }
+      ],
+      "style_tags": [
+        "monospace-dev"
+      ]
+    },
+    {
+      "id": "nerd-fonts-iosevka-term-slab",
+      "family_name": "Iosevka Term Slab",
+      "license_type": "Mixed",
+      "license_url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/refs/heads/master/LICENSE",
+      "commercial_use": true,
+      "source": "nerd-fonts",
+      "source_url": "https://github.com/ryanoasis/nerd-fonts/releases/latest",
+      "foundry": "Nerd Fonts",
+      "designers": [
+        "Ryan L McIntyre (Nerd Fonts Patcher)"
+      ],
+      "category": "monospace",
+      "subsets": [
+        "latin"
+      ],
+      "tags": [
+        "nerd-font",
+        "icons",
+        "developer"
+      ],
+      "featured": false,
+      "featured_lists": [],
+      "variable": false,
+      "axes": [],
+      "popularity": 50,
+      "date_added": null,
+      "last_modified": "2026-09-15T08:20:03.812456Z",
+      "preview_text": "λ ∑ ∞ → dev icons included",
+      "download_url": "https://github.com/ryanoasis/nerd-fonts",
+      "github_url": "https://github.com/ryanoasis/nerd-fonts",
+      "variants": [
+        {
+          "name": "Iosevka Term Slab Regular",
+          "weight": 400,
+          "style": "normal",
+          "files": {
+            "tar_xz": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/IosevkaTermSlab.tar.xz",
+            "zip": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/IosevkaTermSlab.zip"
+          }
+        }
+      ],
+      "style_tags": [
+        "monospace-dev",
+        "slab-workhorse"
+      ]
+    },
+    {
+      "id": "nerd-fonts-m-plus",
       "family_name": "M+",
       "license_type": "Mixed",
       "license_url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/refs/heads/master/LICENSE",
@@ -1020,7 +996,7 @@
       "axes": [],
       "popularity": 50,
       "date_added": null,
-      "last_modified": "2026-07-26T05:57:06.337950Z",
+      "last_modified": "2026-09-15T08:20:03.812456Z",
       "preview_text": "λ ∑ ∞ → dev icons included",
       "download_url": "https://github.com/ryanoasis/nerd-fonts",
       "github_url": "https://github.com/ryanoasis/nerd-fonts",
@@ -1030,52 +1006,8 @@
           "weight": 400,
           "style": "normal",
           "files": {
-            "zip": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/MPlus.zip"
-          }
-        }
-      ],
-      "style_tags": [
-        "monospace-dev"
-      ]
-    },
-    {
-      "id": "nerd-fonts-martianmono",
-      "family_name": "Martianmono",
-      "license_type": "Mixed",
-      "license_url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/refs/heads/master/LICENSE",
-      "commercial_use": true,
-      "source": "nerd-fonts",
-      "source_url": "https://github.com/ryanoasis/nerd-fonts/releases/latest",
-      "foundry": "Nerd Fonts",
-      "designers": [
-        "Ryan L McIntyre (Nerd Fonts Patcher)"
-      ],
-      "category": "monospace",
-      "subsets": [
-        "latin"
-      ],
-      "tags": [
-        "nerd-font",
-        "icons",
-        "developer"
-      ],
-      "featured": false,
-      "featured_lists": [],
-      "variable": false,
-      "axes": [],
-      "popularity": 50,
-      "date_added": null,
-      "last_modified": "2026-07-26T05:57:06.337916Z",
-      "preview_text": "λ ∑ ∞ → dev icons included",
-      "download_url": "https://github.com/ryanoasis/nerd-fonts",
-      "github_url": "https://github.com/ryanoasis/nerd-fonts",
-      "variants": [
-        {
-          "name": "Martianmono Regular",
-          "weight": 400,
-          "style": "normal",
-          "files": {
-            "zip": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/MartianMono.zip"
+            "tar_xz": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/MPlus.tar.xz",
+            "zip": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/MPlus.zip"
           }
         }
       ],
@@ -1110,7 +1042,7 @@
       "axes": [],
       "popularity": 80,
       "date_added": null,
-      "last_modified": "2026-07-26T05:57:06.337922Z",
+      "last_modified": "2026-09-15T08:20:03.812456Z",
       "preview_text": "λ ∑ ∞ → dev icons included",
       "download_url": "https://github.com/ryanoasis/nerd-fonts",
       "github_url": "https://github.com/ryanoasis/nerd-fonts",
@@ -1120,7 +1052,8 @@
           "weight": 400,
           "style": "normal",
           "files": {
-            "zip": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Meslo.zip"
+            "tar_xz": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/Meslo.tar.xz",
+            "zip": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/Meslo.zip"
           }
         }
       ],
@@ -1155,7 +1088,7 @@
       "axes": [],
       "popularity": 50,
       "date_added": null,
-      "last_modified": "2026-07-26T05:57:06.337928Z",
+      "last_modified": "2026-09-15T08:20:03.812456Z",
       "preview_text": "λ ∑ ∞ → dev icons included",
       "download_url": "https://github.com/ryanoasis/nerd-fonts",
       "github_url": "https://github.com/ryanoasis/nerd-fonts",
@@ -1165,7 +1098,8 @@
           "weight": 400,
           "style": "normal",
           "files": {
-            "zip": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Monaspace.zip"
+            "tar_xz": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/Monaspace.tar.xz",
+            "zip": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/Monaspace.zip"
           }
         }
       ],
@@ -1200,7 +1134,7 @@
       "axes": [],
       "popularity": 50,
       "date_added": null,
-      "last_modified": "2026-07-26T05:57:06.337933Z",
+      "last_modified": "2026-09-15T08:20:03.812456Z",
       "preview_text": "λ ∑ ∞ → dev icons included",
       "download_url": "https://github.com/ryanoasis/nerd-fonts",
       "github_url": "https://github.com/ryanoasis/nerd-fonts",
@@ -1210,7 +1144,8 @@
           "weight": 400,
           "style": "normal",
           "files": {
-            "zip": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Monofur.zip"
+            "tar_xz": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/Monofur.tar.xz",
+            "zip": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/Monofur.zip"
           }
         }
       ],
@@ -1245,7 +1180,7 @@
       "axes": [],
       "popularity": 50,
       "date_added": null,
-      "last_modified": "2026-07-26T05:57:06.337939Z",
+      "last_modified": "2026-09-15T08:20:03.812456Z",
       "preview_text": "λ ∑ ∞ → dev icons included",
       "download_url": "https://github.com/ryanoasis/nerd-fonts",
       "github_url": "https://github.com/ryanoasis/nerd-fonts",
@@ -1255,7 +1190,54 @@
           "weight": 400,
           "style": "normal",
           "files": {
-            "zip": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Monoid.zip"
+            "tar_xz": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/Monoid.tar.xz",
+            "zip": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/Monoid.zip"
+          }
+        }
+      ],
+      "style_tags": [
+        "monospace-dev"
+      ]
+    },
+    {
+      "id": "nerd-fonts-noto",
+      "family_name": "Noto",
+      "license_type": "Mixed",
+      "license_url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/refs/heads/master/LICENSE",
+      "commercial_use": true,
+      "source": "nerd-fonts",
+      "source_url": "https://github.com/ryanoasis/nerd-fonts/releases/latest",
+      "foundry": "Nerd Fonts",
+      "designers": [
+        "Ryan L McIntyre (Nerd Fonts Patcher)"
+      ],
+      "category": "monospace",
+      "subsets": [
+        "latin"
+      ],
+      "tags": [
+        "nerd-font",
+        "icons",
+        "developer"
+      ],
+      "featured": false,
+      "featured_lists": [],
+      "variable": false,
+      "axes": [],
+      "popularity": 50,
+      "date_added": null,
+      "last_modified": "2026-09-15T08:20:03.812456Z",
+      "preview_text": "λ ∑ ∞ → dev icons included",
+      "download_url": "https://github.com/ryanoasis/nerd-fonts",
+      "github_url": "https://github.com/ryanoasis/nerd-fonts",
+      "variants": [
+        {
+          "name": "Noto Regular",
+          "weight": 400,
+          "style": "normal",
+          "files": {
+            "tar_xz": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/Noto.tar.xz",
+            "zip": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/Noto.zip"
           }
         }
       ],
@@ -1290,7 +1272,7 @@
       "axes": [],
       "popularity": 50,
       "date_added": null,
-      "last_modified": "2026-07-26T05:57:06.337977Z",
+      "last_modified": "2026-09-15T08:20:03.812456Z",
       "preview_text": "λ ∑ ∞ → dev icons included",
       "download_url": "https://github.com/ryanoasis/nerd-fonts",
       "github_url": "https://github.com/ryanoasis/nerd-fonts",
@@ -1300,7 +1282,8 @@
           "weight": 400,
           "style": "normal",
           "files": {
-            "zip": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/ProFont.zip"
+            "tar_xz": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/ProFont.tar.xz",
+            "zip": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/ProFont.zip"
           }
         }
       ],
@@ -1335,7 +1318,7 @@
       "axes": [],
       "popularity": 50,
       "date_added": null,
-      "last_modified": "2026-07-26T05:57:06.337983Z",
+      "last_modified": "2026-09-15T08:20:03.812456Z",
       "preview_text": "λ ∑ ∞ → dev icons included",
       "download_url": "https://github.com/ryanoasis/nerd-fonts",
       "github_url": "https://github.com/ryanoasis/nerd-fonts",
@@ -1345,7 +1328,8 @@
           "weight": 400,
           "style": "normal",
           "files": {
-            "zip": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/ProggyClean.zip"
+            "tar_xz": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/ProggyClean.tar.xz",
+            "zip": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/ProggyClean.zip"
           }
         }
       ],
@@ -1354,8 +1338,8 @@
       ]
     },
     {
-      "id": "nerd-fonts-sharetechmono",
-      "family_name": "Sharetechmono",
+      "id": "nerd-fonts-recursive",
+      "family_name": "Recursive Mono",
       "license_type": "Mixed",
       "license_url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/refs/heads/master/LICENSE",
       "commercial_use": true,
@@ -1380,27 +1364,29 @@
       "axes": [],
       "popularity": 50,
       "date_added": null,
-      "last_modified": "2026-07-26T05:57:06.337999Z",
+      "last_modified": "2026-09-15T08:20:03.812456Z",
       "preview_text": "λ ∑ ∞ → dev icons included",
       "download_url": "https://github.com/ryanoasis/nerd-fonts",
       "github_url": "https://github.com/ryanoasis/nerd-fonts",
       "variants": [
         {
-          "name": "Sharetechmono Regular",
+          "name": "Recursive Mono Regular",
           "weight": 400,
           "style": "normal",
           "files": {
-            "zip": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/ShareTechMono.zip"
+            "tar_xz": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/Recursive.tar.xz",
+            "zip": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/Recursive.zip"
           }
         }
       ],
       "style_tags": [
+        "handwritten-script",
         "monospace-dev"
       ]
     },
     {
-      "id": "nerd-fonts-symbolsonly",
-      "family_name": "Symbolsonly",
+      "id": "nerd-fonts-symbols-only",
+      "family_name": "Symbols Only",
       "license_type": "Mixed",
       "license_url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/refs/heads/master/LICENSE",
       "commercial_use": true,
@@ -1425,17 +1411,18 @@
       "axes": [],
       "popularity": 50,
       "date_added": null,
-      "last_modified": "2026-07-26T05:57:06.337956Z",
+      "last_modified": "2026-09-15T08:20:03.812456Z",
       "preview_text": "λ ∑ ∞ → dev icons included",
       "download_url": "https://github.com/ryanoasis/nerd-fonts",
       "github_url": "https://github.com/ryanoasis/nerd-fonts",
       "variants": [
         {
-          "name": "Symbolsonly Regular",
+          "name": "Symbols Only Regular",
           "weight": 400,
           "style": "normal",
           "files": {
-            "zip": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/NerdFontsSymbolsOnly.zip"
+            "tar_xz": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/NerdFontsSymbolsOnly.tar.xz",
+            "zip": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/NerdFontsSymbolsOnly.zip"
           }
         }
       ],
@@ -1470,7 +1457,7 @@
       "axes": [],
       "popularity": 65,
       "date_added": null,
-      "last_modified": "2026-07-26T05:57:06.338015Z",
+      "last_modified": "2026-09-15T08:20:03.812456Z",
       "preview_text": "λ ∑ ∞ → dev icons included",
       "download_url": "https://github.com/ryanoasis/nerd-fonts",
       "github_url": "https://github.com/ryanoasis/nerd-fonts",
@@ -1480,7 +1467,8 @@
           "weight": 400,
           "style": "normal",
           "files": {
-            "zip": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Terminus.zip"
+            "tar_xz": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/Terminus.tar.xz",
+            "zip": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/Terminus.zip"
           }
         }
       ],
@@ -1489,8 +1477,8 @@
       ]
     },
     {
-      "id": "nerd-fonts-ubuntusans",
-      "family_name": "Ubuntusans",
+      "id": "nerd-fonts-zed-mono",
+      "family_name": "Zed Mono",
       "license_type": "Mixed",
       "license_url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/refs/heads/master/LICENSE",
       "commercial_use": true,
@@ -1515,62 +1503,18 @@
       "axes": [],
       "popularity": 50,
       "date_added": null,
-      "last_modified": "2026-07-26T05:57:06.338036Z",
+      "last_modified": "2026-09-15T08:20:03.812456Z",
       "preview_text": "λ ∑ ∞ → dev icons included",
       "download_url": "https://github.com/ryanoasis/nerd-fonts",
       "github_url": "https://github.com/ryanoasis/nerd-fonts",
       "variants": [
         {
-          "name": "Ubuntusans Regular",
+          "name": "Zed Mono Regular",
           "weight": 400,
           "style": "normal",
           "files": {
-            "zip": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/UbuntuSans.zip"
-          }
-        }
-      ],
-      "style_tags": [
-        "monospace-dev"
-      ]
-    },
-    {
-      "id": "nerd-fonts-zedmono",
-      "family_name": "Zedmono",
-      "license_type": "Mixed",
-      "license_url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/refs/heads/master/LICENSE",
-      "commercial_use": true,
-      "source": "nerd-fonts",
-      "source_url": "https://github.com/ryanoasis/nerd-fonts/releases/latest",
-      "foundry": "Nerd Fonts",
-      "designers": [
-        "Ryan L McIntyre (Nerd Fonts Patcher)"
-      ],
-      "category": "monospace",
-      "subsets": [
-        "latin"
-      ],
-      "tags": [
-        "nerd-font",
-        "icons",
-        "developer"
-      ],
-      "featured": false,
-      "featured_lists": [],
-      "variable": false,
-      "axes": [],
-      "popularity": 50,
-      "date_added": null,
-      "last_modified": "2026-07-26T05:57:06.338047Z",
-      "preview_text": "λ ∑ ∞ → dev icons included",
-      "download_url": "https://github.com/ryanoasis/nerd-fonts",
-      "github_url": "https://github.com/ryanoasis/nerd-fonts",
-      "variants": [
-        {
-          "name": "Zedmono Regular",
-          "weight": 400,
-          "style": "normal",
-          "files": {
-            "zip": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/ZedMono.zip"
+            "tar_xz": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/ZedMono.tar.xz",
+            "zip": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/ZedMono.zip"
           }
         }
       ],
