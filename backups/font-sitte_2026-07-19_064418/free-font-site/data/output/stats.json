@@ -1,0 +1,28 @@
+{
+  "generated_at": "2026-07-06T17:22:12+00:00",
+  "total_families": 2013,
+  "total_variants": 7875,
+  "featured_count": 105,
+  "license_policy": "libre-commercial-safe",
+  "categories": {
+    "sans-serif": 716,
+    "display": 500,
+    "handwriting": 358,
+    "serif": 349,
+    "monospace": 89,
+    "other": 1
+  },
+  "top_licenses": {
+    "OFL": 1974,
+    "Mixed": 39
+  },
+  "sources": [
+    {"id": "google-fonts", "families": 1940},
+    {"id": "fontshare", "families": 100},
+    {"id": "font-squirrel", "families": 608},
+    {"id": "velvetyne", "families": 22},
+    {"id": "league-of-moveable-type", "families": 20},
+    {"id": "nerd-fonts", "families": 67},
+    {"id": "open-foundry", "families": 1}
+  ]
+}

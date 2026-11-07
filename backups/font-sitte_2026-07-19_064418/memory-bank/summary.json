@@ -1,0 +1,31 @@
+{
+  "project": "font-sitte",
+  "updated_at": "2026-07-19T04:54:00Z",
+  "status": "ui-working-locally",
+  "branch": "cursor/free-font-aggregation-43e3",
+  "pr": "https://github.com/actiondigitalmedia/font-sitte/pull/1",
+  "metrics": {
+    "total_families": 2013,
+    "total_variants": 7875,
+    "featured_count": 105,
+    "sources": 7
+  },
+  "key_paths": {
+    "project_root": "free-font-site/",
+    "aggregate": "free-font-site/scripts/aggregate.py",
+    "ui": "free-font-site/web/",
+    "catalog": "free-font-site/data/output/catalog.json",
+    "catalog_lite": "free-font-site/web/catalog-lite.json",
+    "health_check": "free-font-site/health.html"
+  },
+  "run_commands": {
+    "serve": "python3 -m http.server 8080 --bind 0.0.0.0 --directory free-font-site",
+    "aggregate": "cd free-font-site && python3 scripts/aggregate.py",
+    "build_lite": "cd free-font-site && python3 scripts/build_web_catalog.py"
+  },
+  "next_steps": [
+    "Public deployment",
+    "GitHub Action catalog refresh",
+    "Merge PR #1"
+  ]
+}

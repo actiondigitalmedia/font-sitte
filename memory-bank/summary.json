@@ -1,0 +1,18 @@
+{
+  "project": "font-sitte",
+  "updated_at": "2026-07-19T06:58:00Z",
+  "status": "phases-1-5-scaffold-complete",
+  "branch": "cursor/free-font-aggregation-43e3",
+  "metrics": {
+    "total_families": 2136,
+    "preview_enriched": 2061,
+    "total_variants": 8580,
+    "sources": 9
+  },
+  "key_paths": {
+    "build_all": "free-font-site/scripts/build_all.py",
+    "static_site": "free-font-site/dist/",
+    "serve": "free-font-site/scripts/serve.py",
+    "workflow": ".github/workflows/deploy-pages.yml"
+  }
+}

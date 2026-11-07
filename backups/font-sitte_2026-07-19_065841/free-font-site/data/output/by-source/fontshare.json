@@ -1,0 +1,109 @@
+{
+  "source": "fontshare",
+  "count": 1,
+  "fonts": [
+    {
+      "id": "fontshare-roundo",
+      "family_name": "Roundo",
+      "license_type": "OFL",
+      "license_url": "https://www.fontshare.com/licenses/itf-ffl",
+      "commercial_use": true,
+      "source": "fontshare",
+      "source_url": "https://www.fontshare.com/fonts/roundo",
+      "foundry": "Indian Type Foundry",
+      "designers": [
+        "Indian Type Foundry"
+      ],
+      "category": "other",
+      "subsets": [
+        "latin"
+      ],
+      "tags": [
+        "fontshare",
+        "brand-grade",
+        "App",
+        "Websites",
+        "Headline",
+        "Editorial"
+      ],
+      "featured": true,
+      "featured_lists": [
+        "fontshare"
+      ],
+      "variable": true,
+      "axes": [
+        {
+          "name": "Weight",
+          "property": "wght",
+          "range_default": 400.0,
+          "range_left": 200.0,
+          "range_right": 700.0
+        }
+      ],
+      "popularity": null,
+      "date_added": null,
+      "last_modified": null,
+      "preview_text": "The quick brown fox jumps over the lazy dog",
+      "download_url": "https://api.fontshare.com/v2/fonts/download/roundo",
+      "github_url": null,
+      "variants": [
+        {
+          "name": "Extra Light",
+          "weight": 200,
+          "style": "normal",
+          "files": {
+            "woff2": "https://cdn.fontshare.com/wf/QEQFPRBWHITXVW7AGDPA3WHMKIG2FSOC/5GNOJ4773AHJ6NTX4G662T444WRDFATF/AHDZLCWILESAAPRL7S5733QTBJ2D7BVT"
+          }
+        },
+        {
+          "name": "Light",
+          "weight": 300,
+          "style": "normal",
+          "files": {
+            "woff2": "https://cdn.fontshare.com/wf/JY4DJWCEHXY6MXYF3MOU5QVUFK7CGNB3/QMWRC3WIRYKRCJLWBVQJYKESG4K6MHM3/2JKPBTPPWLIQMC3QAQH2B7WFRKRHJZAX"
+          }
+        },
+        {
+          "name": "Regular",
+          "weight": 400,
+          "style": "normal",
+          "files": {
+            "woff2": "https://cdn.fontshare.com/wf/U2WCOTLND2HQV2ULWYIDRI2M6NL36ENE/E3D5WEVXPGTWYSMZ4PPC2QQJ6PWPBAB6/TKDKVV533PJFHTPALHLWYWKVIT6IG6AD"
+          }
+        },
+        {
+          "name": "Medium",
+          "weight": 500,
+          "style": "normal",
+          "files": {
+            "woff2": "https://cdn.fontshare.com/wf/EA637L4BIXB6O4MML2VOERWRQRJTV5JG/5WN5KIABABGBSH6P6F4H6MI4TYM5DSR3/F3PKOKZGKRKQJ4TVZHC35VVZNVO6G5U6"
+          }
+        },
+        {
+          "name": "Semi Bold",
+          "weight": 600,
+          "style": "normal",
+          "files": {
+            "woff2": "https://cdn.fontshare.com/wf/5X6EXGMDFEMG55FJQNEB43YX6JZ4F2M6/OLCOJ2EA5TYY45PFJRIHCTSERNKWJ44F/A5Y3H4CLF6CEJ4Q7GRBFAXPQ7TLYAONM"
+          }
+        },
+        {
+          "name": "Bold",
+          "weight": 700,
+          "style": "normal",
+          "files": {
+            "woff2": "https://cdn.fontshare.com/wf/FE6LFMIMV2EZQMC5ONCXSAK5QYWEOHP4/SDYEVNAIXEHBYASCAGCXKYAUD3B5IK6S/V4PHQ63ODHAFH7T7R7RJRLEOHETBHSLX"
+          }
+        },
+        {
+          "name": "Variable",
+          "weight": 1,
+          "style": "normal",
+          "files": {
+            "woff2": "https://cdn.fontshare.com/wf/Q27SHUILAI67FICNJF2CYV5TY5DNQNJ3/43ZQHOC6QBKEJW3PNBS6TWWZIQGW27JN/WA7OX75GZRWOZCVPMRPD4RIBFFTMCHCK"
+          }
+        }
+      ]
+    }
+  ]
+}

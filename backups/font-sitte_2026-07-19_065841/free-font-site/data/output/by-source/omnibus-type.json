@@ -1,0 +1,335 @@
+{
+  "source": "omnibus-type",
+  "count": 8,
+  "fonts": [
+    {
+      "id": "omnibus-archivoblack",
+      "family_name": "ArchivoBlack",
+      "license_type": "OFL",
+      "license_url": "https://openfontlicense.org",
+      "commercial_use": true,
+      "source": "omnibus-type",
+      "source_url": "https://github.com/Omnibus-Type/ArchivoBlack",
+      "foundry": "Omnibus Type",
+      "designers": [],
+      "category": "sans-serif",
+      "subsets": [
+        "latin",
+        "latin-ext"
+      ],
+      "tags": [
+        "omnibus-type",
+        "libre",
+        "brand-grade"
+      ],
+      "featured": true,
+      "featured_lists": [
+        "omnibus-type"
+      ],
+      "variable": false,
+      "axes": [],
+      "popularity": 39,
+      "date_added": null,
+      "last_modified": "2026-07-06T13:45:03Z",
+      "preview_text": "Archivo Black is a grotesque sans serif typeface",
+      "download_url": "https://github.com/Omnibus-Type/ArchivoBlack.git",
+      "github_url": "https://github.com/Omnibus-Type/ArchivoBlack",
+      "variants": [
+        {
+          "name": "Regular",
+          "weight": 400,
+          "style": "normal",
+          "files": {}
+        }
+      ]
+    },
+    {
+      "id": "omnibus-archivonarrow",
+      "family_name": "ArchivoNarrow",
+      "license_type": "OFL",
+      "license_url": "https://openfontlicense.org",
+      "commercial_use": true,
+      "source": "omnibus-type",
+      "source_url": "https://github.com/Omnibus-Type/ArchivoNarrow",
+      "foundry": "Omnibus Type",
+      "designers": [],
+      "category": "sans-serif",
+      "subsets": [
+        "latin",
+        "latin-ext"
+      ],
+      "tags": [
+        "omnibus-type",
+        "libre",
+        "brand-grade"
+      ],
+      "featured": true,
+      "featured_lists": [
+        "omnibus-type"
+      ],
+      "variable": false,
+      "axes": [],
+      "popularity": 29,
+      "date_added": null,
+      "last_modified": "2026-05-29T17:43:00Z",
+      "preview_text": "Archivo is a grotesque sans serif typeface family ",
+      "download_url": "https://github.com/Omnibus-Type/ArchivoNarrow.git",
+      "github_url": "https://github.com/Omnibus-Type/ArchivoNarrow",
+      "variants": [
+        {
+          "name": "Regular",
+          "weight": 400,
+          "style": "normal",
+          "files": {}
+        }
+      ]
+    },
+    {
+      "id": "omnibus-asap-sharp",
+      "family_name": "Asap Sharp",
+      "license_type": "OFL",
+      "license_url": "https://openfontlicense.org",
+      "commercial_use": true,
+      "source": "omnibus-type",
+      "source_url": "https://github.com/Omnibus-Type/Asap_Sharp",
+      "foundry": "Omnibus Type",
+      "designers": [],
+      "category": "sans-serif",
+      "subsets": [
+        "latin",
+        "latin-ext"
+      ],
+      "tags": [
+        "omnibus-type",
+        "libre",
+        "brand-grade"
+      ],
+      "featured": true,
+      "featured_lists": [
+        "omnibus-type"
+      ],
+      "variable": false,
+      "axes": [],
+      "popularity": 5,
+      "date_added": null,
+      "last_modified": "2026-07-07T13:24:30Z",
+      "preview_text": "Asap Sharp is the sharp version of Asap",
+      "download_url": "https://github.com/Omnibus-Type/Asap_Sharp.git",
+      "github_url": "https://github.com/Omnibus-Type/Asap_Sharp",
+      "variants": [
+        {
+          "name": "Regular",
+          "weight": 400,
+          "style": "normal",
+          "files": {}
+        }
+      ]
+    },
+    {
+      "id": "omnibus-asap-symbol",
+      "family_name": "Asap Symbol",
+      "license_type": "OFL",
+      "license_url": "https://openfontlicense.org",
+      "commercial_use": true,
+      "source": "omnibus-type",
+      "source_url": "https://github.com/Omnibus-Type/Asap-Symbol",
+      "foundry": "Omnibus Type",
+      "designers": [],
+      "category": "sans-serif",
+      "subsets": [
+        "latin",
+        "latin-ext"
+      ],
+      "tags": [
+        "brand-grade",
+        "libre",
+        "omnibus-type",
+        "sans-serif"
+      ],
+      "featured": true,
+      "featured_lists": [
+        "omnibus-type"
+      ],
+      "variable": false,
+      "axes": [],
+      "popularity": 16,
+      "date_added": null,
+      "last_modified": "2026-02-08T09:48:00Z",
+      "preview_text": "Asap-Symbol files",
+      "download_url": "https://github.com/Omnibus-Type/Asap-Symbol.git",
+      "github_url": "https://github.com/Omnibus-Type/Asap-Symbol",
+      "variants": [
+        {
+          "name": "Regular",
+          "weight": 400,
+          "style": "normal",
+          "files": {}
+        }
+      ]
+    },
+    {
+      "id": "omnibus-asapcondensed",
+      "family_name": "AsapCondensed",
+      "license_type": "OFL",
+      "license_url": "https://openfontlicense.org",
+      "commercial_use": true,
+      "source": "omnibus-type",
+      "source_url": "https://github.com/Omnibus-Type/AsapCondensed",
+      "foundry": "Omnibus Type",
+      "designers": [],
+      "category": "sans-serif",
+      "subsets": [
+        "latin",
+        "latin-ext"
+      ],
+      "tags": [
+        "omnibus-type",
+        "libre",
+        "brand-grade"
+      ],
+      "featured": true,
+      "featured_lists": [
+        "omnibus-type"
+      ],
+      "variable": false,
+      "axes": [],
+      "popularity": 14,
+      "date_added": null,
+      "last_modified": "2026-05-10T23:51:13Z",
+      "preview_text": "Asap Condensed offers a standardized character width on all styles.",
+      "download_url": "https://github.com/Omnibus-Type/AsapCondensed.git",
+      "github_url": "https://github.com/Omnibus-Type/AsapCondensed",
+      "variants": [
+        {
+          "name": "Regular",
+          "weight": 400,
+          "style": "normal",
+          "files": {}
+        }
+      ]
+    },
+    {
+      "id": "omnibus-pragatinarrow",
+      "family_name": "PragatiNarrow",
+      "license_type": "OFL",
+      "license_url": "https://openfontlicense.org",
+      "commercial_use": true,
+      "source": "omnibus-type",
+      "source_url": "https://github.com/Omnibus-Type/PragatiNarrow",
+      "foundry": "Omnibus Type",
+      "designers": [],
+      "category": "sans-serif",
+      "subsets": [
+        "latin",
+        "latin-ext"
+      ],
+      "tags": [
+        "omnibus-type",
+        "libre",
+        "brand-grade"
+      ],
+      "featured": true,
+      "featured_lists": [
+        "omnibus-type"
+      ],
+      "variable": false,
+      "axes": [],
+      "popularity": 17,
+      "date_added": null,
+      "last_modified": "2026-02-08T09:48:02Z",
+      "preview_text": "Pragati Narrow is a libre Devanagari typeface family designed as a complement to Archivo Narrow",
+      "download_url": "https://github.com/Omnibus-Type/PragatiNarrow.git",
+      "github_url": "https://github.com/Omnibus-Type/PragatiNarrow",
+      "variants": [
+        {
+          "name": "Regular",
+          "weight": 400,
+          "style": "normal",
+          "files": {}
+        }
+      ]
+    },
+    {
+      "id": "omnibus-saira-parametric",
+      "family_name": "Saira Parametric",
+      "license_type": "OFL",
+      "license_url": "https://openfontlicense.org",
+      "commercial_use": true,
+      "source": "omnibus-type",
+      "source_url": "https://github.com/Omnibus-Type/Saira_Parametric",
+      "foundry": "Omnibus Type",
+      "designers": [],
+      "category": "sans-serif",
+      "subsets": [
+        "latin",
+        "latin-ext"
+      ],
+      "tags": [
+        "omnibus-type",
+        "libre",
+        "brand-grade"
+      ],
+      "featured": true,
+      "featured_lists": [
+        "omnibus-type"
+      ],
+      "variable": false,
+      "axes": [],
+      "popularity": 6,
+      "date_added": null,
+      "last_modified": "2026-07-09T00:47:13Z",
+      "preview_text": "Fully parametric version of Saira made with AVAR2 data (work in progress)",
+      "download_url": "https://github.com/Omnibus-Type/Saira_Parametric.git",
+      "github_url": "https://github.com/Omnibus-Type/Saira_Parametric",
+      "variants": [
+        {
+          "name": "Regular",
+          "weight": 400,
+          "style": "normal",
+          "files": {}
+        }
+      ]
+    },
+    {
+      "id": "omnibus-tools",
+      "family_name": "Tools",
+      "license_type": "OFL",
+      "license_url": "https://openfontlicense.org",
+      "commercial_use": true,
+      "source": "omnibus-type",
+      "source_url": "https://github.com/Omnibus-Type/Tools",
+      "foundry": "Omnibus Type",
+      "designers": [],
+      "category": "sans-serif",
+      "subsets": [
+        "latin",
+        "latin-ext"
+      ],
+      "tags": [
+        "omnibus-type",
+        "libre",
+        "brand-grade"
+      ],
+      "featured": true,
+      "featured_lists": [
+        "omnibus-type"
+      ],
+      "variable": false,
+      "axes": [],
+      "popularity": 0,
+      "date_added": null,
+      "last_modified": "2026-07-14T18:46:14Z",
+      "preview_text": "Open-source font from Omnibus Type",
+      "download_url": "https://github.com/Omnibus-Type/Tools.git",
+      "github_url": "https://github.com/Omnibus-Type/Tools",
+      "variants": [
+        {
+          "name": "Regular",
+          "weight": 400,
+          "style": "normal",
+          "files": {}
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Font Site Health Check</title>
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        background: #0f1115;
+        color: #eef1f6;
+        padding: 2rem;
+        line-height: 1.5;
+      }
+      .ok { color: #6ee7b7; }
+      a { color: #60a5fa; }
+      code { background: #1e222b; padding: 0.15rem 0.4rem; border-radius: 6px; }
+    </style>
+  </head>
+  <body>
+    <h1 class="ok">Server is running</h1>
+    <p>If you can read this page, port forwarding to the cloud agent works.</p>
+    <p>Next open the real UI: <a href="/web/">/web/</a></p>
+    <p>Command: <code>python3 -m http.server 8080 --bind 0.0.0.0 --directory free-font-site</code></p>
+  </body>
+</html>

@@ -1,0 +1,121 @@
+{
+  "version": "1.0.0",
+  "updated_at": "2026-07-27",
+  "policy": {
+    "commercial_use_required": true,
+    "allowed_licenses": ["OFL", "Apache-2.0", "UFL", "MIT", "BSD", "CC0", "GPL", "ITF FFL"],
+    "reject_if_contains": ["personal use only", "demo", "trial", "not for commercial"]
+  },
+  "sources": [
+    {
+      "id": "google-fonts",
+      "name": "Google Fonts",
+      "url": "https://fonts.google.com",
+      "adapter": "google_fonts",
+      "auto_merge": true,
+      "legal_tier": "verified-libre",
+      "discovery": { "enabled": true, "method": "metadata-api" }
+    },
+    {
+      "id": "fontshare",
+      "name": "Fontshare",
+      "url": "https://www.fontshare.com",
+      "adapter": "fontshare",
+      "auto_merge": true,
+      "legal_tier": "verified-commercial-free",
+      "discovery": { "enabled": true, "method": "api-v2" }
+    },
+    {
+      "id": "fontsource",
+      "name": "Fontsource (non-Google)",
+      "url": "https://fontsource.org",
+      "adapter": "fontsource",
+      "auto_merge": true,
+      "legal_tier": "verified-libre",
+      "discovery": { "enabled": true, "method": "api-v1", "note": "Non-Google entries only" }
+    },
+    {
+      "id": "omnibus-type",
+      "name": "Omnibus Type",
+      "url": "https://www.omnibus-type.com",
+      "adapter": "omnibus_type",
+      "auto_merge": true,
+      "legal_tier": "verified-ofl",
+      "discovery": { "enabled": true, "method": "github-user-repos" }
+    },
+    {
+      "id": "velvetyne",
+      "name": "Velvetyne Type Foundry",
+      "url": "https://velvetyne.fr",
+      "adapter": "velvetyne",
+      "auto_merge": true,
+      "legal_tier": "verified-ofl",
+      "discovery": { "enabled": true, "method": "github-org" },
+      "style_hint": ["experimental", "web-modern"]
+    },
+    {
+      "id": "league-of-moveable-type",
+      "name": "The League of Moveable Type",
+      "adapter": "league",
+      "auto_merge": true,
+      "legal_tier": "verified-ofl",
+      "discovery": { "enabled": true, "method": "github-org" }
+    },
+    {
+      "id": "font-squirrel",
+      "name": "Font Squirrel",
+      "url": "https://www.fontsquirrel.com",
+      "adapter": "font_squirrel",
+      "auto_merge": true,
+      "legal_tier": "reviewed-commercial-free",
+      "discovery": { "enabled": true, "method": "fontget-mirror" }
+    },
+    {
+      "id": "nerd-fonts",
+      "name": "Nerd Fonts",
+      "adapter": "nerd_fonts",
+      "auto_merge": true,
+      "legal_tier": "mixed-inherits-base",
+      "discovery": { "enabled": false }
+    },
+    {
+      "id": "free-faces",
+      "name": "Free Faces Gallery",
+      "url": "https://www.freefaces.gallery",
+      "adapter": "free_faces",
+      "auto_merge": false,
+      "legal_tier": "manual-review",
+      "discovery": { "enabled": true, "method": "scrape-gallery", "note": "SPA — verify each license" }
+    },
+    {
+      "id": "uncut-wtf",
+      "name": "UNCUT.wtf",
+      "url": "https://uncut.wtf",
+      "adapter": null,
+      "auto_merge": false,
+      "legal_tier": "manual-review",
+      "discovery": { "enabled": true, "method": "planned", "status": "backlog" }
+    },
+    {
+      "id": "open-foundry",
+      "name": "Open Foundry",
+      "adapter": "open_foundry",
+      "auto_merge": true,
+      "legal_tier": "verified-libre",
+      "discovery": { "enabled": true, "method": "scrape", "status": "limited-spa" }
+    },
+    {
+      "id": "approved-candidates",
+      "name": "Human-approved candidates",
+      "adapter": "approved_candidates",
+      "auto_merge": true,
+      "legal_tier": "human-verified",
+      "discovery": { "enabled": false, "note": "Edit discovery/approved-candidates.json" }
+    }
+  ],
+  "backlog_sources": [
+    { "name": "Collletttivo", "url": "https://www.collletttivo.it/", "status": "find-github-or-api" },
+    { "name": "Open Foundry full API", "status": "needs-headless-or-api" },
+    { "name": "FontSpace commercial-free filter", "status": "requires-per-font-license-parse" }
+  ]
+}

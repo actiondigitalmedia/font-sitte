@@ -1,0 +1,16 @@
+{
+  "name": "Free Font Site",
+  "ports": [
+    {
+      "name": "Font catalog UI",
+      "port": 8080
+    }
+  ],
+  "terminals": [
+    {
+      "name": "font-ui",
+      "command": "python3 /workspace/free-font-site/scripts/serve.py 8080",
+      "description": "Serves the font catalog UI at /web/"
+    }
+  ]
+}

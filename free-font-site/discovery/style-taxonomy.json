@@ -1,0 +1,61 @@
+{
+  "version": "1.0.0",
+  "description": "Auto style tags for browse filters and SEO. Applied by scripts/apply_style_tags.py",
+  "style_tags": {
+    "old-english": {
+      "label": "Old English / Blackletter",
+      "keywords": [
+        "fraktur", "blackletter", "old english", "unifraktur", "medieval", "germania",
+        "kanzlei", "schwabacher", "textura", "bastarda"
+      ],
+      "family_name_patterns": ["fraktur", "blackletter", "medieval"]
+    },
+    "pixel-retro": {
+      "label": "Pixel / 8-bit",
+      "keywords": ["pixel", "8bit", "8-bit", "arcade", "fusion pixel", "dotgothic"],
+      "family_name_patterns": ["pixel", "press start"]
+    },
+    "y2k-web": {
+      "label": "Y2K / Web 2.0",
+      "keywords": [
+        "orbitron", "audiowide", "exo", "techno", "cyber", "digital", "futuristic",
+        "eurostile", "bank gothic", "microgram", "sports", "racing"
+      ],
+      "family_name_patterns": ["orbitron", "audiowide", "monoton", "major mono"]
+    },
+    "web-modern": {
+      "label": "Web 3.0 / Modern UI",
+      "keywords": [
+        "geist", "satoshi", "clash", "cabinet", "sora", "manrope", "inter", "figtree",
+        "variable", "neue", "grotesk", "display swap"
+      ],
+      "family_name_patterns": ["geist", "satoshi", "clash", "inter", "space grotesk"]
+    },
+    "handwritten-script": {
+      "label": "Script & Handwriting",
+      "keywords": ["script", "hand", "brush", "signature", "calligraphy", "cursive"],
+      "categories": ["handwriting", "script"]
+    },
+    "slab-workhorse": {
+      "label": "Slab & Workhorse",
+      "keywords": ["roboto slab", "rockwell", "slab", "serif text", "pt serif"],
+      "categories": ["slab-serif", "serif"]
+    },
+    "experimental": {
+      "label": "Experimental / Contemporary",
+      "keywords": ["experimental", "velvetyne", "uncut", "avant", "brutalist"],
+      "sources": ["velvetyne", "open-foundry"]
+    },
+    "monospace-dev": {
+      "label": "Monospace / Dev",
+      "keywords": ["mono", "code", "jetbrains", "fira code", "source code", "ibm plex mono"],
+      "categories": ["monospace"]
+    },
+    "brand-display": {
+      "label": "Brand / Display",
+      "keywords": ["display", "poster", "banner", "magazine", "bebas", "anton", "impact"],
+      "sources": ["fontshare"],
+      "categories": ["display"]
+    }
+  }
+}
