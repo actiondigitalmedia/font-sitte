@@ -1,7 +1,7 @@
 # Progress
 
 ## Working
-- 2,136 commercial-safe font families aggregated (9 sources + approved-candidates hook)
+- **2,207** commercial-safe font families (Fontshare ITF FFL fix restored 64 families)
 - 2,061 live previews (woff2 enrichment + localhost proxy)
 - Static site: specimen pages, categories, sitemap, ads scaffold, GitHub Pages workflow
 - Browse UI: search, filters (category, source, **style**), favorites, pairings, similar
@@ -20,9 +20,9 @@
 | y2k-web | 7 |
 | old-english | 7 |
 
-## Discovery backlog (from 2026-07-27 report)
-- Fontshare: 64 names not in merged catalog (dedupe investigation)
-- Free Faces: 47 candidate names for human license review
+## Discovery backlog
+- Free Faces: ~42 real font names (FF_FONTS scrape) for human license review
+- GitHub Actions deploys `dist/` → **gh-pages** Mon/Thu + on push to `main`
 - Extend raw adapters for velvetyne/league in `discover_fonts.py` for fuller diffs
 
 ## Known issues
