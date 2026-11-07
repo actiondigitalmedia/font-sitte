@@ -9,11 +9,7 @@
     <meta property="og:description" content="2,000+ libre fonts safe for commercial use" />
     <meta property="og:type" content="website" />
     <link rel="stylesheet" href="styles.css" />
-    <script>window.__SITE_BASE__="/font-sitte";</script>
-    <link rel="canonical" href="https://actiondigitalmedia.github.io/font-sitte/" />
-  <meta property="og:url" content="https://actiondigitalmedia.github.io/font-sitte/" />
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "Free Font Catalog", "url": "https://actiondigitalmedia.github.io/font-sitte/", "potentialAction": {"@type": "SearchAction", "target": "https://actiondigitalmedia.github.io/font-sitte/?q={search_term_string}", "query-input": "required name=search_term_string"}}</script>
-</head>
+  </head>
   <body>
     <header class="header">
       <div class="header-inner">
@@ -21,18 +17,15 @@
           <h1>Free Font Catalog</h1>
           <p class="subtitle">Libre &amp; commercial-safe typefaces</p>
         </div>
-        <nav class="header-nav" aria-label="Primary">
-          <a href="commercial-use/">Commercial use</a>
-          <a href="category/">Categories</a>
-          <a href="licenses/ofl/">OFL</a>
-        </nav>
         <div class="stats" id="stats"><span class="stat">Loading…</span></div>
       </div>
+      <div class="ad-slot ad-leaderboard" data-ad-slot="header-leaderboard"></div>
     </header>
 
     <main class="layout">
-      <aside class="sidebar" aria-label="Filters">
-        <label class="field field-search">
+      <aside class="sidebar">
+        <div class="ad-slot ad-sidebar" data-ad-slot="sidebar-sticky"></div>
+        <label class="field">
           <span>Search</span>
           <input id="search" type="search" placeholder="Family, designer, tag…" autocomplete="off" />
         </label>
@@ -44,6 +37,10 @@
           <span>Source</span>
           <select id="source"><option value="">All sources</option></select>
         </label>
+        <label class="field">
+          <span>Style</span>
+          <select id="style"><option value="">All styles</option></select>
+        </label>
         <label class="check"><input id="featured" type="checkbox" /> Featured only</label>
         <label class="check"><input id="variable" type="checkbox" /> Variable fonts only</label>
         <label class="check"><input id="favorites-only" type="checkbox" /> Favorites only</label>
@@ -53,10 +50,6 @@
       <section class="content">
         <div id="status" class="status loading">Booting UI…</div>
         <div class="toolbar">
-          <label class="field field-search-main">
-            <span class="visually-hidden">Search fonts</span>
-            <input id="search-main" type="search" placeholder="Search fonts by name, designer, tag…" autocomplete="off" />
-          </label>
           <p id="result-count">Loading catalog…</p>
           <label class="field inline">
             <span>Sort</span>
@@ -73,13 +66,8 @@
     </main>
 
     <footer class="site-footer">
-      <div class="ad-slot ad-footer" data-ad-slot="footer-banner" hidden></div>
-      <p>
-        <a href="commercial-use/">Commercial use</a> ·
-        <a href="privacy.html">Privacy</a> ·
-        Libre fonts only ·
-        <a href="sitemap.xml">Sitemap</a>
-      </p>
+      <div class="ad-slot ad-footer" data-ad-slot="footer-banner"></div>
+      <p><a href="/privacy.html">Privacy</a> · Libre fonts only · <a href="/sitemap.xml">Sitemap</a></p>
     </footer>
 
     <dialog id="detail">

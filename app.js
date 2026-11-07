@@ -1,14 +1,6 @@
 const PAGE_SIZE = 48;
-/** Insert a native card-sized ad after every N font cards (keeps grid complete). */
-const AD_EVERY_N_CARDS = 12;
 const CATALOG_URL = "./catalog-lite.json";
 const FAVORITES_KEY = "font-site-favorites";
-/** GitHub project Pages base, e.g. "/font-sitte" — set in index.html at build time */
-const SITE_BASE = (window.__SITE_BASE__ || "").replace(/\/$/, "");
-function sitePath(path) {
-  const p = path.startsWith("/") ? path : `/${path}`;
-  return `${SITE_BASE}${p}`;
-}
 const PAIRING_TARGETS = {
   "sans-serif": ["serif", "display"],
   serif: ["sans-serif"],
@@ -29,9 +21,9 @@ const state = {
 const els = {
   stats: document.getElementById("stats"),
   search: document.getElementById("search"),
-  searchMain: document.getElementById("search-main"),
   category: document.getElementById("category"),
   source: document.getElementById("source"),
+  style: document.getElementById("style"),
   featured: document.getElementById("featured"),
   variable: document.getElementById("variable"),
   favoritesOnly: document.getElementById("favorites-only"),
@@ -100,7 +92,7 @@ function suggestPairings(font, limit = 3) {
 }
 
 function chipLinks(fonts) {
-  return fonts.map((f) => `<a class="chip" href="${sitePath(`/fonts/${f.id}/`)}">${f.family_name}</a>`).join("");
+  return fonts.map((f) => `<a class="chip" href="/fonts/${f.id}/">${f.family_name}</a>`).join("");
 }
 
 async function loadPreviewFont(font) {
@@ -145,32 +137,40 @@ function fillSelect(select, values) {
   }
 }
 
+function styleTagLabel(tagId) {
+  return state.styleLabels?.[tagId] || tagId.replace(/-/g, " ");
+}
+
 function renderStats(info) {
   const previewNote = info.preview_enriched
     ? `<span class="stat"><strong>${info.preview_enriched.toLocaleString()}</strong> live previews</span>`
+    : "";
+  const styleNote = info.style_tag_counts
+    ? `<span class="stat"><a href="#style" style="color:inherit">${Object.keys(info.style_tag_counts).length} style buckets</a></span>`
     : "";
   els.stats.innerHTML = `
     <span class="stat"><strong>${info.total_families.toLocaleString()}</strong> families</span>
     <span class="stat"><strong>${info.total_variants.toLocaleString()}</strong> variants</span>
     ${previewNote}
+    ${styleNote}
     <span class="stat">Updated ${new Date(info.generated_at).toLocaleDateString()}</span>
   `;
 }
 
 function applyFilters() {
-  const q = (els.searchMain?.value || els.search?.value || "").trim().toLowerCase();
+  const q = els.search.value.trim().toLowerCase();
   const category = els.category.value;
   const source = els.source.value;
+  const styleTag = els.style?.value;
   const featuredOnly = els.featured.checked;
   const variableOnly = els.variable.checked;
   const favoritesOnly = els.favoritesOnly?.checked;
   const favs = getFavorites();
 
-  // Client-side filter stays snappy into the low tens of thousands of families.
-  // Beyond that we'd swap to a built search index (Minisearch) or shard the catalog.
   state.filtered = state.fonts.filter((font) => {
     if (category && font.category !== category) return false;
     if (source && font.source !== source) return false;
+    if (styleTag && !(font.style_tags || []).includes(styleTag)) return false;
     if (featuredOnly && !font.featured) return false;
     if (variableOnly && !font.variable) return false;
     if (favoritesOnly && !favs.has(font.id)) return false;
@@ -183,6 +183,7 @@ function applyFilters() {
       font.license_type,
       ...(font.designers || []),
       ...(font.tags || []),
+      ...(font.style_tags || []),
       ...(font.featured_lists || []),
     ]
       .join(" ")
@@ -204,14 +205,8 @@ function applyFilters() {
 
   state.rendered = 0;
   els.grid.innerHTML = "";
-  els.resultCount.textContent = `${state.filtered.length.toLocaleString()} fonts`;
+  els.resultCount.textContent = `${state.filtered.length.toLocaleString()} families match your filters`;
   renderMore();
-}
-
-let filterTimer = 0;
-function scheduleFilters() {
-  window.clearTimeout(filterTimer);
-  filterTimer = window.setTimeout(applyFilters, 120);
 }
 
 function cardHtml(font) {
@@ -220,6 +215,7 @@ function cardHtml(font) {
   const badges = [
     font.featured ? `<span class="badge featured">Featured</span>` : "",
     `<span class="badge">${font.category}</span>`,
+    ...(font.style_tags || []).slice(0, 2).map((t) => `<span class="badge style">${styleTagLabel(t)}</span>`),
     `<span class="badge">${font.source}</span>`,
     font.variable ? `<span class="badge">Variable</span>` : "",
   ].join("");
@@ -230,7 +226,7 @@ function cardHtml(font) {
   return `
     <article class="card" data-id="${font.id}">
       <div class="card-top">
-        <h2><a href="${sitePath(`/fonts/${font.id}/`)}" class="card-link">${font.family_name}</a></h2>
+        <h2><a href="/fonts/${font.id}/" class="card-link">${font.family_name}</a></h2>
         <button type="button" class="fav-btn ${isFav ? "active" : ""}" data-fav="${font.id}" aria-label="Favorite">${isFav ? "★" : "☆"}</button>
       </div>
       <div class="badges">${badges}</div>
@@ -242,29 +238,11 @@ function cardHtml(font) {
   `;
 }
 
-function nativeAdCardHtml() {
-  return `
-    <article class="card card-ad" data-ad="true" aria-label="Sponsored">
-      <div class="card-top">
-        <h2>Sponsored</h2>
-        <span class="badge">Ad</span>
-      </div>
-      <div class="badges"><span class="badge">Native placement</span></div>
-      <div class="ad-native-body" data-ad-slot="in-feed-native">
-        <span class="ad-placeholder">Ad space</span>
-      </div>
-      <p class="meta">Same size as font cards · non-intrusive</p>
-    </article>
-  `;
-}
-
-function insertNativeAd(container) {
-  const wrapper = document.createElement("div");
-  wrapper.innerHTML = nativeAdCardHtml();
-  const adCard = wrapper.firstElementChild;
-  // Don't open font detail when clicking ads
-  adCard.addEventListener("click", (e) => e.stopPropagation());
-  container.appendChild(adCard);
+function insertInFeedAd(container) {
+  const ad = document.createElement("div");
+  ad.className = "ad-slot ad-infeed";
+  ad.dataset.adSlot = "in-feed-native";
+  container.appendChild(ad);
   if (window.initAds) window.initAds();
 }
 
@@ -273,8 +251,7 @@ function renderMore() {
   if (!slice.length) return;
 
   const fragment = document.createDocumentFragment();
-  for (let i = 0; i < slice.length; i++) {
-    const font = slice[i];
+  for (const font of slice) {
     const wrapper = document.createElement("div");
     wrapper.innerHTML = cardHtml(font);
     const card = wrapper.firstElementChild;
@@ -288,9 +265,8 @@ function renderMore() {
     card.addEventListener("click", () => openDetail(font));
     fragment.appendChild(card);
 
-    const absoluteIndex = state.rendered + i + 1;
-    if (absoluteIndex % AD_EVERY_N_CARDS === 0) {
-      insertNativeAd(fragment);
+    if ((state.rendered + fragment.childElementCount) % 12 === 0) {
+      insertInFeedAd(fragment);
     }
   }
 
@@ -300,7 +276,7 @@ function renderMore() {
 }
 
 function observeCards() {
-  const cards = els.grid.querySelectorAll(".card:not([data-ad]):not([data-loaded])");
+  const cards = els.grid.querySelectorAll(".card:not([data-loaded])");
   const observer = new IntersectionObserver(
     (entries) => {
       for (const entry of entries) {
@@ -336,7 +312,7 @@ async function openDetail(font) {
   const isFav = getFavorites().has(font.id);
 
   const links = [
-    `<a href="${sitePath(`/fonts/${font.id}/`)}">Specimen page</a>`,
+    `<a href="/fonts/${font.id}/">Specimen page</a>`,
     font.source_url ? `<a href="${font.source_url}" target="_blank" rel="noopener">Source</a>` : "",
     font.download_url ? `<a href="${font.download_url}" target="_blank" rel="noopener">Download</a>` : "",
     font.github_url ? `<a href="${font.github_url}" target="_blank" rel="noopener">GitHub</a>` : "",
@@ -348,9 +324,13 @@ async function openDetail(font) {
   const styleCount = font.variant_count || font.variants?.length || 0;
   const similar = similarFonts(font);
   const pairings = suggestPairings(font);
+  const styleBadges = (font.style_tags || [])
+    .map((t) => `<span class="badge style">${styleTagLabel(t)}</span>`)
+    .join(" ");
 
   els.detailBody.innerHTML = `
     <h2>${font.family_name} <button type="button" class="fav-btn ${isFav ? "active" : ""}" id="detail-fav">${isFav ? "★" : "☆"}</button></h2>
+    ${styleBadges ? `<div class="badges">${styleBadges}</div>` : ""}
     <p class="detail-preview" style="font-family:${previewFamily}">
       ${font.preview_text || "The quick brown fox jumps over the lazy dog 0123456789"}
     </p>
@@ -374,32 +354,19 @@ async function openDetail(font) {
   els.detail.showModal();
 }
 
-function syncSearchInputs(source) {
-  const value = source?.value || "";
-  if (els.search && els.search !== source) els.search.value = value;
-  if (els.searchMain && els.searchMain !== source) els.searchMain.value = value;
-}
-
 function wireEvents() {
-  for (const el of [els.search, els.searchMain, els.category, els.source, els.featured, els.variable, els.favoritesOnly, els.sort]) {
-    if (!el) continue;
-    const isSearch = el === els.search || el === els.searchMain;
-    el.addEventListener("input", () => {
-      if (isSearch) syncSearchInputs(el);
-      if (isSearch) scheduleFilters();
-      else applyFilters();
-    });
-    el.addEventListener("change", () => {
-      if (isSearch) syncSearchInputs(el);
-      applyFilters();
-    });
+  for (const el of [els.search, els.category, els.source, els.style, els.featured, els.variable, els.favoritesOnly, els.sort]) {
+    if (el) {
+      el.addEventListener("input", applyFilters);
+      el.addEventListener("change", applyFilters);
+    }
   }
 
   els.reset.addEventListener("click", () => {
-    if (els.search) els.search.value = "";
-    if (els.searchMain) els.searchMain.value = "";
+    els.search.value = "";
     els.category.value = "";
     els.source.value = "";
+    if (els.style) els.style.value = "";
     els.featured.checked = false;
     els.variable.checked = false;
     if (els.favoritesOnly) els.favoritesOnly.checked = false;
@@ -433,10 +400,20 @@ async function init() {
 
     const catalog = await response.json();
     state.fonts = catalog.fonts;
+    state.styleLabels = catalog.catalog_info?.style_tag_labels || {};
     renderStats(catalog.catalog_info);
 
     fillSelect(els.category, [...new Set(state.fonts.map((f) => f.category))].sort());
     fillSelect(els.source, [...new Set(state.fonts.map((f) => f.source))].sort());
+    if (els.style) {
+      const tagIds = [...new Set(state.fonts.flatMap((f) => f.style_tags || []))].sort();
+      for (const id of tagIds) {
+        const option = document.createElement("option");
+        option.value = id;
+        option.textContent = state.styleLabels[id] || styleTagLabel(id);
+        els.style.appendChild(option);
+      }
+    }
 
     clearStatus();
     applyFilters();
