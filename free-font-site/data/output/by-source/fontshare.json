@@ -87,7 +87,7 @@
           "property": "wght",
           "range_left": 100.0,
           "range_right": 900.0,
-          "range_default": 580.0
+          "range_default": 660.0
         }
       ],
       "popularity": null,
@@ -193,7 +193,7 @@
           "property": "wght",
           "range_left": 300.0,
           "range_right": 700.0,
-          "range_default": 340.0
+          "range_default": 700.0
         }
       ],
       "popularity": null,
@@ -413,7 +413,7 @@
           "property": "wght",
           "range_left": 200.0,
           "range_right": 700.0,
-          "range_default": 350.0
+          "range_default": 300.0
         }
       ],
       "popularity": null,
@@ -579,7 +579,7 @@
           "property": "wght",
           "range_left": 300.0,
           "range_right": 800.0,
-          "range_default": 750.0
+          "range_default": 400.0
         }
       ],
       "popularity": null,
@@ -730,14 +730,14 @@
           "property": "wght",
           "range_left": 300.0,
           "range_right": 800.0,
-          "range_default": 800.0
+          "range_default": 500.0
         },
         {
           "name": "wght",
           "property": "wght",
           "range_left": 300.0,
           "range_right": 800.0,
-          "range_default": 700.0
+          "range_default": 350.0
         }
       ],
       "popularity": null,
@@ -888,7 +888,7 @@
           "property": "wght",
           "range_left": 300.0,
           "range_right": 800.0,
-          "range_default": 800.0
+          "range_default": 350.0
         }
       ],
       "popularity": null,
@@ -1039,7 +1039,7 @@
           "property": "wght",
           "range_left": 300.0,
           "range_right": 800.0,
-          "range_default": 800.0
+          "range_default": 350.0
         }
       ],
       "popularity": null,
@@ -1186,7 +1186,7 @@
           "property": "wght",
           "range_left": 100.0,
           "range_right": 900.0,
-          "range_default": 740.0
+          "range_default": 660.0
         }
       ],
       "popularity": null,
@@ -1381,7 +1381,7 @@
           "property": "wght",
           "range_left": 100.0,
           "range_right": 700.0,
-          "range_default": 160.0
+          "range_default": 700.0
         }
       ],
       "popularity": null,
@@ -1482,7 +1482,7 @@
           "property": "wght",
           "range_left": 200.0,
           "range_right": 900.0,
-          "range_default": 690.0
+          "range_default": 760.0
         }
       ],
       "popularity": null,
@@ -1698,7 +1698,7 @@
           "property": "wght",
           "range_left": 300.0,
           "range_right": 900.0,
-          "range_default": 540.0
+          "range_default": 720.0
         }
       ],
       "popularity": null,
@@ -1789,7 +1789,7 @@
           "property": "wght",
           "range_left": 100.0,
           "range_right": 900.0,
-          "range_default": 340.0
+          "range_default": 740.0
         }
       ],
       "popularity": null,
@@ -1913,7 +1913,7 @@
           "property": "wght",
           "range_left": 200.0,
           "range_right": 700.0,
-          "range_default": 250.0
+          "range_default": 550.0
         }
       ],
       "popularity": null,
@@ -2020,7 +2020,7 @@
           "property": "wght",
           "range_left": 200.0,
           "range_right": 700.0,
-          "range_default": 550.0
+          "range_default": 350.0
         },
         {
           "name": "wght",
@@ -2172,7 +2172,7 @@
           "property": "wght",
           "range_left": 200.0,
           "range_right": 700.0,
-          "range_default": 500.0
+          "range_default": 600.0
         }
       ],
       "popularity": null,
@@ -2279,7 +2279,7 @@
           "property": "wght",
           "range_left": 200.0,
           "range_right": 700.0,
-          "range_default": 600.0
+          "range_default": 250.0
         }
       ],
       "popularity": null,
@@ -2438,7 +2438,7 @@
           "property": "wght",
           "range_left": 300.0,
           "range_right": 700.0,
-          "range_default": 460.0
+          "range_default": 700.0
         }
       ],
       "popularity": null,
@@ -2584,7 +2584,7 @@
           "property": "wght",
           "range_left": 100.0,
           "range_right": 900.0,
-          "range_default": 260.0
+          "range_default": 340.0
         }
       ],
       "popularity": null,
@@ -2691,7 +2691,7 @@
           "property": "wght",
           "range_left": 400.0,
           "range_right": 900.0,
-          "range_default": 550.0
+          "range_default": 650.0
         }
       ],
       "popularity": null,
@@ -2832,14 +2832,14 @@
           "property": "wght",
           "range_left": 300.0,
           "range_right": 700.0,
-          "range_default": 580.0
+          "range_default": 700.0
         },
         {
           "name": "wght",
           "property": "wght",
           "range_left": 300.0,
           "range_right": 700.0,
-          "range_default": 620.0
+          "range_default": 580.0
         }
       ],
       "popularity": null,
@@ -2986,7 +2986,7 @@
           "property": "wght",
           "range_left": 200.0,
           "range_right": 700.0,
-          "range_default": 300.0
+          "range_default": 600.0
         }
       ],
       "popularity": null,
@@ -3150,7 +3150,7 @@
           "property": "wght",
           "range_left": 200.0,
           "range_right": 700.0,
-          "range_default": 350.0
+          "range_default": 600.0
         }
       ],
       "popularity": null,
@@ -3408,7 +3408,7 @@
           "property": "wght",
           "range_left": 300.0,
           "range_right": 700.0,
-          "range_default": 660.0
+          "range_default": 580.0
         }
       ],
       "popularity": null,
@@ -3506,7 +3506,7 @@
           "property": "wght",
           "range_left": 400.0,
           "range_right": 900.0,
-          "range_default": 850.0
+          "range_default": 750.0
         }
       ],
       "popularity": null,
@@ -3640,7 +3640,7 @@
           "property": "wght",
           "range_left": 200.0,
           "range_right": 700.0,
-          "range_default": 350.0
+          "range_default": 500.0
         }
       ],
       "popularity": null,
@@ -3740,7 +3740,7 @@
           "property": "wght",
           "range_left": 200.0,
           "range_right": 700.0,
-          "range_default": 700.0
+          "range_default": 650.0
         }
       ],
       "popularity": null,
@@ -4041,7 +4041,7 @@
           "property": "wght",
           "range_left": 300.0,
           "range_right": 700.0,
-          "range_default": 620.0
+          "range_default": 340.0
         }
       ],
       "popularity": null,
@@ -4176,7 +4176,7 @@
           "property": "wght",
           "range_left": 400.0,
           "range_right": 900.0,
-          "range_default": 750.0
+          "range_default": 800.0
         }
       ],
       "popularity": null,
@@ -4274,14 +4274,14 @@
           "property": "wght",
           "range_left": 300.0,
           "range_right": 900.0,
-          "range_default": 900.0
+          "range_default": 720.0
         },
         {
           "name": "wght",
           "property": "wght",
           "range_left": 300.0,
           "range_right": 900.0,
-          "range_default": 420.0
+          "range_default": 720.0
         }
       ],
       "popularity": null,
@@ -4429,7 +4429,7 @@
           "property": "wght",
           "range_left": 200.0,
           "range_right": 900.0,
-          "range_default": 550.0
+          "range_default": 620.0
         }
       ],
       "popularity": null,
@@ -4623,7 +4623,7 @@
           "property": "wght",
           "range_left": 400.0,
           "range_right": 700.0,
-          "range_default": 460.0
+          "range_default": 490.0
         }
       ],
       "popularity": null,
@@ -4714,7 +4714,7 @@
           "property": "wght",
           "range_left": 100.0,
           "range_right": 700.0,
-          "range_default": 700.0
+          "range_default": 160.0
         }
       ],
       "popularity": null,
@@ -4860,14 +4860,14 @@
           "property": "wght",
           "range_left": 300.0,
           "range_right": 700.0,
-          "range_default": 580.0
+          "range_default": 620.0
         },
         {
           "name": "wght",
           "property": "wght",
           "range_left": 300.0,
           "range_right": 700.0,
-          "range_default": 580.0
+          "range_default": 500.0
         }
       ],
       "popularity": null,
@@ -5064,7 +5064,7 @@
           "property": "wght",
           "range_left": 200.0,
           "range_right": 700.0,
-          "range_default": 700.0
+          "range_default": 300.0
         }
       ],
       "popularity": null,
@@ -5170,7 +5170,7 @@
           "property": "wght",
           "range_left": 300.0,
           "range_right": 700.0,
-          "range_default": 380.0
+          "range_default": 460.0
         }
       ],
       "popularity": null,
@@ -5318,7 +5318,7 @@
           "property": "wght",
           "range_left": 1.0,
           "range_right": 1000,
-          "range_default": 500.5
+          "range_default": 800.2
         }
       ],
       "popularity": null,
@@ -5376,7 +5376,7 @@
           "property": "wght",
           "range_left": 300.0,
           "range_right": 900.0,
-          "range_default": 540.0
+          "range_default": 840.0
         }
       ],
       "popularity": null,
@@ -5573,14 +5573,14 @@
           "property": "wght",
           "range_left": 200.0,
           "range_right": 700.0,
-          "range_default": 450.0
+          "range_default": 550.0
         },
         {
           "name": "wght",
           "property": "wght",
           "range_left": 200.0,
           "range_right": 700.0,
-          "range_default": 300.0
+          "range_default": 650.0
         }
       ],
       "popularity": null,
@@ -5728,7 +5728,7 @@
           "property": "wght",
           "range_left": 300.0,
           "range_right": 900.0,
-          "range_default": 540.0
+          "range_default": 480.0
         }
       ],
       "popularity": null,
@@ -5931,7 +5931,7 @@
           "property": "wght",
           "range_left": 200.0,
           "range_right": 900.0,
-          "range_default": 830.0
+          "range_default": 620.0
         }
       ],
       "popularity": null,
@@ -6056,7 +6056,7 @@
           "property": "wght",
           "range_left": 100.0,
           "range_right": 800.0,
-          "range_default": 590.0
+          "range_default": 170.0
         }
       ],
       "popularity": null,
@@ -6236,7 +6236,7 @@
           "property": "wght",
           "range_left": 100.0,
           "range_right": 900.0,
-          "range_default": 900.0
+          "range_default": 340.0
         }
       ],
       "popularity": null,
@@ -6447,7 +6447,7 @@
           "property": "wght",
           "range_left": 200.0,
           "range_right": 700.0,
-          "range_default": 600.0
+          "range_default": 400.0
         }
       ],
       "popularity": null,
@@ -6554,7 +6554,7 @@
           "property": "wght",
           "range_left": 300.0,
           "range_right": 700.0,
-          "range_default": 340.0
+          "range_default": 660.0
         }
       ],
       "popularity": null,
@@ -6752,7 +6752,7 @@
           "property": "wght",
           "range_left": 200.0,
           "range_right": 900.0,
-          "range_default": 690.0
+          "range_default": 270.0
         }
       ],
       "popularity": null,
@@ -6867,7 +6867,7 @@
           "property": "wght",
           "range_left": 300.0,
           "range_right": 900.0,
-          "range_default": 540.0
+          "range_default": 480.0
         }
       ],
       "popularity": null,
@@ -6968,7 +6968,7 @@
           "property": "wght",
           "range_left": 300.0,
           "range_right": 700.0,
-          "range_default": 420.0
+          "range_default": 340.0
         }
       ],
       "popularity": null,
@@ -7121,7 +7121,7 @@
           "property": "wght",
           "range_left": 100.0,
           "range_right": 900.0,
-          "range_default": 180.0
+          "range_default": 820.0
         }
       ],
       "popularity": null,
