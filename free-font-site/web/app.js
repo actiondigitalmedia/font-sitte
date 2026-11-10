@@ -285,12 +285,14 @@ function cardHtml(font) {
       : "";
 
   return `
-    <article class="font-card ${hasPreview ? "font-pending" : "font-no-preview"}" data-id="${font.id}">
+    <article class="font-card font-row ${hasPreview ? "font-pending" : "font-no-preview"}" data-id="${font.id}">
       <a href="/fonts/${font.id}/" class="font-card__preview-link" onclick="event.stopPropagation()">
         <div class="font-card__preview-pane">
           <p class="font-card__title-sample" data-font-sample title="${name}">${name}</p>
-          <p class="font-card__alphabet" data-font-sample>${ALPHABET_SAMPLE}</p>
-          <p class="font-card__pangram" data-font-sample>${pangram}</p>
+          <div class="font-card__samples">
+            <p class="font-card__alphabet" data-font-sample>${ALPHABET_SAMPLE}</p>
+            <p class="font-card__pangram" data-font-sample>${pangram}</p>
+          </div>
           ${hasPreview ? "" : '<span class="font-card__no-face">Preview on download</span>'}
         </div>
       </a>
@@ -337,7 +339,7 @@ async function renderMore() {
     });
     fragment.appendChild(card);
 
-    if ((state.rendered + fragment.childElementCount) % 12 === 0) {
+    if ((state.rendered + fragment.childElementCount) % 8 === 0) {
       insertInFeedAd(fragment);
     }
   }
