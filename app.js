@@ -1,6 +1,8 @@
 const PAGE_SIZE = 48;
+const PREVIEW_CONCURRENCY = 12;
 const CATALOG_URL = "./catalog-lite.json";
 const FAVORITES_KEY = "font-site-favorites";
+const ALPHABET_SAMPLE = "Aa Bb Cc · 0123456789";
 const PAIRING_TARGETS = {
   "sans-serif": ["serif", "display"],
   serif: ["sans-serif"],
@@ -22,6 +24,7 @@ const els = {
   stats: document.getElementById("stats"),
   search: document.getElementById("search"),
   category: document.getElementById("category"),
+  categoryNav: document.getElementById("category-nav"),
   source: document.getElementById("source"),
   style: document.getElementById("style"),
   featured: document.getElementById("featured"),
@@ -95,6 +98,13 @@ function chipLinks(fonts) {
   return fonts.map((f) => `<a class="chip" href="/fonts/${f.id}/">${f.family_name}</a>`).join("");
 }
 
+function escapeHtml(text) {
+  return String(text)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/"/g, "&quot;");
+}
+
 async function loadPreviewFont(font) {
   const family = previewFamilyId(font);
   if (state.loadedFaces.has(font.id)) return family;
@@ -128,11 +138,39 @@ async function loadPreviewFont(font) {
   }
 }
 
+function applyFontToCard(card, family) {
+  if (!card || !family) return;
+  card.classList.add("font-loaded");
+  card.classList.remove("font-pending");
+  for (const el of card.querySelectorAll("[data-font-sample]")) {
+    el.style.fontFamily = `'${family}', Georgia, serif`;
+  }
+}
+
+async function hydratePreviews(fonts) {
+  const queue = fonts.filter((f) => f.preview_woff2);
+  let index = 0;
+
+  async function worker() {
+    while (index < queue.length) {
+      const i = index++;
+      const font = queue[i];
+      const family = await loadPreviewFont(font);
+      const card = els.grid.querySelector(`.font-card[data-id="${font.id}"]`);
+      if (family && card) applyFontToCard(card, family);
+      else if (card) card.classList.add("font-no-preview");
+    }
+  }
+
+  const workers = Array.from({ length: Math.min(PREVIEW_CONCURRENCY, queue.length || 1) }, () => worker());
+  await Promise.all(workers);
+}
+
 function fillSelect(select, values) {
   for (const value of values) {
     const option = document.createElement("option");
     option.value = value;
-    option.textContent = value;
+    option.textContent = value.replace(/-/g, " ");
     select.appendChild(option);
   }
 }
@@ -145,16 +183,39 @@ function renderStats(info) {
   const previewNote = info.preview_enriched
     ? `<span class="stat"><strong>${info.preview_enriched.toLocaleString()}</strong> live previews</span>`
     : "";
-  const styleNote = info.style_tag_counts
-    ? `<span class="stat"><a href="#style" style="color:inherit">${Object.keys(info.style_tag_counts).length} style buckets</a></span>`
-    : "";
   els.stats.innerHTML = `
-    <span class="stat"><strong>${info.total_families.toLocaleString()}</strong> families</span>
-    <span class="stat"><strong>${info.total_variants.toLocaleString()}</strong> variants</span>
+    <span class="stat"><strong>${info.total_families.toLocaleString()}</strong> fonts</span>
     ${previewNote}
-    ${styleNote}
-    <span class="stat">Updated ${new Date(info.generated_at).toLocaleDateString()}</span>
   `;
+}
+
+function syncCategoryPills() {
+  const current = els.category.value;
+  for (const pill of els.categoryNav.querySelectorAll(".cat-pill")) {
+    pill.classList.toggle("active", pill.dataset.category === current);
+  }
+}
+
+function buildCategoryNav(categories) {
+  const sorted = ["", ...categories.sort()];
+  const existing = new Set(
+    [...els.categoryNav.querySelectorAll(".cat-pill")].map((p) => p.dataset.category)
+  );
+  for (const cat of sorted) {
+    if (existing.has(cat)) continue;
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = `cat-pill${cat === "" ? " active" : ""}`;
+    btn.dataset.category = cat;
+    btn.textContent = cat ? cat.replace(/-/g, " ") : "All";
+    btn.addEventListener("click", () => {
+      els.category.value = cat;
+      syncCategoryPills();
+      applyFilters();
+    });
+    els.categoryNav.appendChild(btn);
+    existing.add(cat);
+  }
 }
 
 function applyFilters() {
@@ -203,37 +264,46 @@ function applyFilters() {
     return a.family_name.localeCompare(b.family_name);
   });
 
+  syncCategoryPills();
   state.rendered = 0;
   els.grid.innerHTML = "";
-  els.resultCount.textContent = `${state.filtered.length.toLocaleString()} families match your filters`;
+  els.resultCount.textContent = `${state.filtered.length.toLocaleString()} fonts ready to preview`;
   renderMore();
 }
 
 function cardHtml(font) {
   const favs = getFavorites();
   const isFav = favs.has(font.id);
-  const badges = [
-    font.featured ? `<span class="badge featured">Featured</span>` : "",
-    `<span class="badge">${font.category}</span>`,
-    ...(font.style_tags || []).slice(0, 2).map((t) => `<span class="badge style">${styleTagLabel(t)}</span>`),
-    `<span class="badge">${font.source}</span>`,
-    font.variable ? `<span class="badge">Variable</span>` : "",
-  ].join("");
-
+  const name = escapeHtml(font.family_name);
+  const pangram = escapeHtml(font.preview_text || "The quick brown fox jumps over the lazy dog");
   const styleCount = font.variant_count || font.variants?.length || 0;
   const hasPreview = Boolean(font.preview_woff2);
+  const download = font.download_url
+    ? `<a class="btn-download" href="${escapeHtml(font.download_url)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">Download</a>`
+    : font.source_url
+      ? `<a class="btn-download" href="${escapeHtml(font.source_url)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">Get font</a>`
+      : "";
 
   return `
-    <article class="card" data-id="${font.id}">
-      <div class="card-top">
-        <h2><a href="/fonts/${font.id}/" class="card-link">${font.family_name}</a></h2>
-        <button type="button" class="fav-btn ${isFav ? "active" : ""}" data-fav="${font.id}" aria-label="Favorite">${isFav ? "★" : "☆"}</button>
+    <article class="font-card ${hasPreview ? "font-pending" : "font-no-preview"}" data-id="${font.id}">
+      <a href="/fonts/${font.id}/" class="font-card__preview-link" onclick="event.stopPropagation()">
+        <div class="font-card__preview-pane">
+          <p class="font-card__title-sample" data-font-sample title="${name}">${name}</p>
+          <p class="font-card__alphabet" data-font-sample>${ALPHABET_SAMPLE}</p>
+          <p class="font-card__pangram" data-font-sample>${pangram}</p>
+          ${hasPreview ? "" : '<span class="font-card__no-face">Preview on download</span>'}
+        </div>
+      </a>
+      <div class="font-card__footer">
+        <div class="font-card__meta">
+          <h2 class="font-card__name"><a href="/fonts/${font.id}/">${name}</a></h2>
+          <p class="font-card__sub">${escapeHtml(font.license_type)} · ${styleCount} styles · ${escapeHtml(font.category)}</p>
+        </div>
+        <div class="font-card__actions">
+          <button type="button" class="fav-btn ${isFav ? "active" : ""}" data-fav="${font.id}" aria-label="Favorite">${isFav ? "★" : "☆"}</button>
+          ${download}
+        </div>
       </div>
-      <div class="badges">${badges}</div>
-      <p class="preview ${hasPreview ? "loading" : "no-preview"}" data-preview="${font.id}" style="font-family: var(--font-ui)">
-        ${font.preview_text || "The quick brown fox jumps over the lazy dog"}
-      </p>
-      <p class="meta">${font.license_type} · ${styleCount} styles${hasPreview ? "" : " · download to preview"}</p>
     </article>
   `;
 }
@@ -246,7 +316,7 @@ function insertInFeedAd(container) {
   if (window.initAds) window.initAds();
 }
 
-function renderMore() {
+async function renderMore() {
   const slice = state.filtered.slice(state.rendered, state.rendered + PAGE_SIZE);
   if (!slice.length) return;
 
@@ -261,8 +331,10 @@ function renderMore() {
       e.currentTarget.classList.toggle("active", active);
       e.currentTarget.textContent = active ? "★" : "☆";
     });
-    card.querySelector(".card-link")?.addEventListener("click", (e) => e.stopPropagation());
-    card.addEventListener("click", () => openDetail(font));
+    card.addEventListener("click", (e) => {
+      if (e.target.closest("a, button")) return;
+      openDetail(font);
+    });
     fragment.appendChild(card);
 
     if ((state.rendered + fragment.childElementCount) % 12 === 0) {
@@ -272,38 +344,12 @@ function renderMore() {
 
   els.grid.appendChild(fragment);
   state.rendered += slice.length;
-  observeCards();
+  await hydratePreviews(slice);
+  observeSentinel();
 }
 
-function observeCards() {
-  const cards = els.grid.querySelectorAll(".card:not([data-loaded])");
-  const observer = new IntersectionObserver(
-    (entries) => {
-      for (const entry of entries) {
-        if (!entry.isIntersecting) continue;
-        const card = entry.target;
-        const font = state.filtered.find((f) => f.id === card.dataset.id);
-        if (font?.preview_woff2) {
-          loadPreviewFont(font).then((family) => {
-            const preview = card.querySelector(".preview");
-            if (family && preview) {
-              preview.style.fontFamily = `'${family}', var(--font-ui)`;
-              preview.classList.remove("loading");
-              preview.classList.add("loaded");
-            } else if (preview) {
-              preview.classList.remove("loading");
-              preview.classList.add("no-preview");
-            }
-          });
-        }
-        card.dataset.loaded = "true";
-        observer.unobserve(card);
-      }
-    },
-    { rootMargin: "250px" }
-  );
-
-  cards.forEach((card) => observer.observe(card));
+function observeSentinel() {
+  /* handled by global io in wireEvents */
 }
 
 async function openDetail(font) {
@@ -329,15 +375,17 @@ async function openDetail(font) {
     .join(" ");
 
   els.detailBody.innerHTML = `
-    <h2>${font.family_name} <button type="button" class="fav-btn ${isFav ? "active" : ""}" id="detail-fav">${isFav ? "★" : "☆"}</button></h2>
+    <h2>${escapeHtml(font.family_name)} <button type="button" class="fav-btn ${isFav ? "active" : ""}" id="detail-fav">${isFav ? "★" : "☆"}</button></h2>
     ${styleBadges ? `<div class="badges">${styleBadges}</div>` : ""}
-    <p class="detail-preview" style="font-family:${previewFamily}">
-      ${font.preview_text || "The quick brown fox jumps over the lazy dog 0123456789"}
-    </p>
+    <div class="detail-preview-pane">
+      <p class="detail-preview" style="font-family:${previewFamily}">${escapeHtml(font.family_name)}</p>
+      <p class="detail-preview-sub" style="font-family:${previewFamily}">${ALPHABET_SAMPLE}</p>
+      <p class="detail-preview-sub" style="font-family:${previewFamily}">${escapeHtml(font.preview_text || "The quick brown fox jumps over the lazy dog 0123456789")}</p>
+    </div>
     <dl class="detail-grid">
-      <div><dt>Category</dt><dd>${font.category}</dd></div>
-      <div><dt>Source</dt><dd>${font.source}</dd></div>
-      <div><dt>License</dt><dd>${font.license_type}</dd></div>
+      <div><dt>Category</dt><dd>${escapeHtml(font.category)}</dd></div>
+      <div><dt>Source</dt><dd>${escapeHtml(font.source)}</dd></div>
+      <div><dt>License</dt><dd>${escapeHtml(font.license_type)}</dd></div>
       <div><dt>Styles</dt><dd>${styleCount}</dd></div>
     </dl>
     <div class="links">${links}</div>
@@ -358,7 +406,10 @@ function wireEvents() {
   for (const el of [els.search, els.category, els.source, els.style, els.featured, els.variable, els.favoritesOnly, els.sort]) {
     if (el) {
       el.addEventListener("input", applyFilters);
-      el.addEventListener("change", applyFilters);
+      el.addEventListener("change", () => {
+        syncCategoryPills();
+        applyFilters();
+      });
     }
   }
 
@@ -371,6 +422,7 @@ function wireEvents() {
     els.variable.checked = false;
     if (els.favoritesOnly) els.favoritesOnly.checked = false;
     els.sort.value = "name";
+    syncCategoryPills();
     applyFilters();
   });
 
@@ -378,7 +430,7 @@ function wireEvents() {
     (entries) => {
       if (entries.some((e) => e.isIntersecting)) renderMore();
     },
-    { rootMargin: "400px" }
+    { rootMargin: "600px" }
   );
   io.observe(els.sentinel);
 }
@@ -403,7 +455,9 @@ async function init() {
     state.styleLabels = catalog.catalog_info?.style_tag_labels || {};
     renderStats(catalog.catalog_info);
 
-    fillSelect(els.category, [...new Set(state.fonts.map((f) => f.category))].sort());
+    const categories = [...new Set(state.fonts.map((f) => f.category))].sort();
+    fillSelect(els.category, categories);
+    buildCategoryNav(categories);
     fillSelect(els.source, [...new Set(state.fonts.map((f) => f.source))].sort());
     if (els.style) {
       const tagIds = [...new Set(state.fonts.flatMap((f) => f.style_tags || []))].sort();

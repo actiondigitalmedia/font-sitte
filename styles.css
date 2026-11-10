@@ -34,6 +34,137 @@ body {
   border-bottom: 1px solid var(--border);
 }
 
+/* —— Marketplace-style site header —— */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: linear-gradient(180deg, #12151c 0%, rgba(15, 17, 21, 0.96) 100%);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(14px);
+}
+
+.header-top {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0.85rem 1.25rem;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 1rem;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+.logo-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.35rem;
+  height: 2.35rem;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: #0f1115;
+  font-weight: 800;
+  font-size: 0.72rem;
+  letter-spacing: -0.04em;
+}
+
+.logo-text {
+  font-size: 1.05rem;
+  color: var(--muted);
+}
+
+.logo-text strong {
+  color: var(--text);
+  font-weight: 650;
+}
+
+.header-search-wrap {
+  width: 100%;
+  max-width: 520px;
+  justify-self: center;
+}
+
+.header-search {
+  width: 100%;
+  padding: 0.7rem 1rem 0.7rem 2.75rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--panel)
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' fill='%239aa3b2' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85zm-5.242 1.156a5 5 0 1 1 0-10 5 5 0 0 1 0 10z'/%3E%3C/svg%3E")
+    no-repeat 1rem center;
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+.header-search:focus {
+  outline: none;
+  border-color: var(--accent-2);
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.2);
+}
+
+.header-stats {
+  flex-wrap: nowrap;
+}
+
+.category-nav {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 1.25rem 0.65rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.cat-pill {
+  border: 1px solid var(--border);
+  background: var(--panel-2);
+  color: var(--muted);
+  border-radius: 999px;
+  padding: 0.35rem 0.85rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.cat-pill:hover {
+  color: var(--text);
+  border-color: var(--accent-2);
+}
+
+.cat-pill.active {
+  background: rgba(110, 231, 183, 0.15);
+  color: var(--accent);
+  border-color: rgba(110, 231, 183, 0.45);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.sidebar-title {
+  margin: 0 0 0.25rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
 .header-inner {
   max-width: 1400px;
   margin: 0 auto;
@@ -185,8 +316,167 @@ select {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.1rem;
+}
+
+/* —— Font list cards (FontSpace / 1001fonts style) —— */
+.font-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+}
+
+.font-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(96, 165, 250, 0.45);
+}
+
+.font-card__preview-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.font-card__preview-pane {
+  background: linear-gradient(165deg, #fafbfe 0%, #f0f2f8 100%);
+  color: #141820;
+  min-height: 9.5rem;
+  padding: 1.1rem 1.15rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.35rem;
+}
+
+.font-card.font-pending .font-card__title-sample,
+.font-card.font-pending .font-card__alphabet,
+.font-card.font-pending .font-card__pangram {
+  opacity: 0.35;
+}
+
+.font-card.font-loaded .font-card__title-sample,
+.font-card.font-loaded .font-card__alphabet,
+.font-card.font-loaded .font-card__pangram {
+  opacity: 1;
+  transition: opacity 0.25s ease;
+}
+
+.font-card__title-sample {
+  margin: 0;
+  font-size: clamp(1.65rem, 4vw, 2.15rem);
+  line-height: 1.1;
+  font-family: Georgia, serif;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 400;
+}
+
+.font-card__alphabet {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.2;
+  font-family: Georgia, serif;
+  color: #3d4554;
+}
+
+.font-card__pangram {
+  margin: 0.15rem 0 0;
+  font-size: 0.82rem;
+  line-height: 1.35;
+  font-family: Georgia, serif;
+  color: #5a6270;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.font-card__no-face {
+  font-size: 0.75rem;
+  color: #6b7280;
+  font-style: italic;
+  margin-top: 0.35rem;
+}
+
+.font-card__footer {
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.font-card__name {
+  margin: 0;
+  font-size: 0.95rem;
+  font-family: var(--font-ui);
+  font-weight: 600;
+}
+
+.font-card__name a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.font-card__name a:hover {
+  color: var(--accent);
+}
+
+.font-card__sub {
+  margin: 0.2rem 0 0;
+  font-size: 0.72rem;
+  color: var(--muted);
+}
+
+.font-card__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-shrink: 0;
+}
+
+.btn-download {
+  font-size: 0.72rem;
+  text-decoration: none;
+  color: #0f1115;
+  background: var(--accent);
+  border-radius: 8px;
+  padding: 0.35rem 0.55rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.btn-download:hover {
+  filter: brightness(1.05);
+}
+
+.detail-preview-pane {
+  background: linear-gradient(165deg, #fafbfe 0%, #f0f2f8 100%);
+  color: #141820;
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin: 0.75rem 0 1rem;
+}
+
+.detail-preview-pane .detail-preview {
+  color: #141820;
+  margin: 0;
+}
+
+.detail-preview-sub {
+  margin: 0.5rem 0 0;
+  font-size: 1.1rem;
+  line-height: 1.35;
+  color: #3d4554;
 }
 
 .card {
@@ -364,9 +654,17 @@ dialog::backdrop {
     display: none;
   }
 
-  .header-inner {
-    flex-direction: column;
-    align-items: start;
+  .header-top {
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+  }
+
+  .header-stats {
+    justify-content: flex-start;
+  }
+
+  .logo {
+    justify-content: center;
   }
 }
 
