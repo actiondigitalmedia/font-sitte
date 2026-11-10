@@ -4,7 +4,7 @@
 - **2,207** commercial-safe font families (Fontshare ITF FFL fix restored 64 families)
 - 2,061 live previews (woff2 enrichment + localhost proxy)
 - Static site: specimen pages, categories, sitemap, ads scaffold, GitHub Pages workflow
-- Browse UI: search, filters (category, source, **style**), favorites, pairings, similar
+- Browse UI: **FontSpace-style cards** (family name in-face on light preview pane), header search + category pills, style filters, favorites
 - **Font discovery operation** documented and scripted (discover → approve → aggregate → style tags → build)
 
 ## Style tag coverage (auto, 2026-07-27)
