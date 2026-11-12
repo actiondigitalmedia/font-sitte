@@ -1,20 +1,20 @@
 {
-  "generated_at": "2026-11-09T15:48:43+00:00",
-  "total_families": 2207,
-  "total_variants": 9200,
+  "generated_at": "2026-11-12T14:56:09+00:00",
+  "total_families": 2209,
+  "total_variants": 9215,
   "featured_count": 197,
   "license_policy": "libre-commercial-safe",
   "categories": {
-    "sans-serif": 792,
+    "sans-serif": 793,
     "display": 522,
     "serif": 369,
-    "handwriting": 362,
+    "handwriting": 363,
     "monospace": 104,
     "other": 54,
     "script": 4
   },
   "top_licenses": {
-    "OFL": 2106,
+    "OFL": 2108,
     "ITF FFL": 64,
     "Mixed": 33,
     "CC0": 1,
@@ -25,7 +25,7 @@
   "sources": [
     {
       "id": "google-fonts",
-      "families": 1959
+      "families": 1961
     },
     {
       "id": "fontshare",
@@ -66,7 +66,7 @@
   ],
   "style_tag_counts": {
     "brand-display": 615,
-    "handwritten-script": 392,
+    "handwritten-script": 393,
     "slab-workhorse": 375,
     "monospace-dev": 146,
     "web-modern": 49,
